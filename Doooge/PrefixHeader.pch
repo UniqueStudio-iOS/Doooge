@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  Doooge
+//
+//  Created by 陈志浩 on 2016/11/1.
+//  Copyright © 2016年 VicChan. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#include "Masonry.h"
+
+#define kIconSideLength 120.0
+
+#define mainColor [UIColor colorWithRed:0 green:0.722 blue:0.714 alpha:1]
+
+
+#endif /* PrefixHeader_pch */
