@@ -11,7 +11,7 @@
 @implementation DooogeUserDefaults
 static NSString * suiteName = @"group.com.vic.Doooge";
 static DooogeUserDefaults * instance = nil;
-
+#pragma mark singleton instance initialize
 + (instancetype)dooogeUserDefaults {
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
@@ -19,7 +19,7 @@ static DooogeUserDefaults * instance = nil;
     });
     return instance;
 }
-
+#pragma mark methods of setter
 - (void)setDailyRoutineDict:(NSDictionary *)dict forKey:(NSString *)key {
     [self setObject:dict forKey:key];
     [self synchronize];
@@ -30,6 +30,16 @@ static DooogeUserDefaults * instance = nil;
     [self synchronize];
 }
 
+- (void)setNameForPet:(NSString *)name {
+    [self setObject:name forKey:@"petName"];
+    [self synchronize];
+}
+
+- (void)setGrowthPointForPet:(NSInteger)growthPoint {
+    [self setInteger:growthPoint forKey:@"growthPoint"];
+    [self synchronize];
+}
+#pragma mark methods of getter
 - (NSDictionary *)dailyRoutineDictForKey:(NSString *)key {
     return [self dictionaryForKey:key];
 }
@@ -42,18 +52,7 @@ static DooogeUserDefaults * instance = nil;
     return [self stringForKey:@"petName"];
 }
 
-- (void)setNameForPet:(NSString *)name {
-    [self setObject:name forKey:@"petName"];
-    [self synchronize];
-}
-
 - (NSInteger)growthPointForPet {
     return [self integerForKey:@"growthPoint"];
 }
-
-- (void)setGrowthPointForPet:(NSInteger)growthPoint {
-    [self setInteger:growthPoint forKey:@"growthPoint"];
-    [self synchronize];
-}
-
 @end

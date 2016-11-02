@@ -293,6 +293,67 @@
 			name = EditName;
 			sourceTree = "<group>";
 		};
+		10C668081DC9890D0099C379 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F051DC5673A00E02A3F /* DooogeUserDefaults.h */,
+				2E9C1F061DC5673A00E02A3F /* DooogeUserDefaults.m */,
+				2E9C1F031DC5673A00E02A3F /* DooogeNotificationCenter.h */,
+				2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		10C668091DC98A940099C379 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		10C6680A1DC98E370099C379 /* HowToPlay */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F0F1DC5673A00E02A3F /* HowToPlayViewController.h */,
+				2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */,
+			);
+			name = HowToPlay;
+			sourceTree = "<group>";
+		};
+		10C6680B1DC98E4D0099C379 /* HabitDevelop */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
+				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
+				2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */,
+				2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */,
+				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
+				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
+			);
+			name = HabitDevelop;
+			sourceTree = "<group>";
+		};
+		10C6680C1DC98E720099C379 /* NewHabit */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F131DC5673A00E02A3F /* NewHabitViewController.h */,
+				2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */,
+			);
+			name = NewHabit;
+			sourceTree = "<group>";
+		};
+		10C6680D1DC98F0A0099C379 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				10C6680C1DC98E720099C379 /* NewHabit */,
+				10C6680B1DC98E4D0099C379 /* HabitDevelop */,
+				10C6680A1DC98E370099C379 /* HowToPlay */,
+				101E8D1B1DC8BAFB0034390E /* Main */,
+				101E8D1E1DC8C0650034390E /* EditName */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		2E1829901DC4CDF50072722C /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,25 +499,12 @@
 		2EA9306D1DC438BC0065B905 /* Doooge */ = {
 			isa = PBXGroup;
 			children = (
+				10C6680D1DC98F0A0099C379 /* UI */,
 				101E8D1C1DC8BC6C0034390E /* PCH */,
-				101E8D1B1DC8BAFB0034390E /* Main */,
-				101E8D1E1DC8C0650034390E /* EditName */,
+				10C668091DC98A940099C379 /* Database */,
+				10C668081DC9890D0099C379 /* Singleton */,
 				2E9C1F011DC5673A00E02A3F /* DailyRoutineModel.h */,
 				2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */,
-				2E9C1F031DC5673A00E02A3F /* DooogeNotificationCenter.h */,
-				2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */,
-				2E9C1F051DC5673A00E02A3F /* DooogeUserDefaults.h */,
-				2E9C1F061DC5673A00E02A3F /* DooogeUserDefaults.m */,
-				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
-				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
-				2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */,
-				2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */,
-				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
-				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
-				2E9C1F0F1DC5673A00E02A3F /* HowToPlayViewController.h */,
-				2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */,
-				2E9C1F131DC5673A00E02A3F /* NewHabitViewController.h */,
-				2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */,
 				2E7A47F41DC459D6007832E5 /* Doooge.entitlements */,
 				2EA930711DC438BC0065B905 /* AppDelegate.h */,
 				2EA930721DC438BC0065B905 /* AppDelegate.m */,
