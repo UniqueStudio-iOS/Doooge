@@ -2,22 +2,22 @@
 //  MainViewController.m
 //  Doooge
 //
-//  Created by 陈志浩 on 2016/10/29.
-//  Copyright © 2016年 placeholder. All rights reserved.
+//  Created by BlackDragon on 2016/10/29.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #import "MainViewController.h"
 #import "EditNameViewController.h"
 
-#import "DooogeUserDefaults.h"
-#import "DooogeNotificationCenter.h"
+#import "AppSettings.h"
+#import "AppNotificationCenter.h"
 
 @interface MainViewController ()
-@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * petName;
 @property (nonatomic) NSInteger growthPoint;
 
 @property (nonatomic, strong) IBOutlet UIImageView * imageView;
-@property (nonatomic, strong) IBOutlet UILabel * nameLabel;
+@property (nonatomic, strong) IBOutlet UILabel * petNameLabel;
 
 @property (nonatomic, strong) IBOutlet UILabel * growthPointLabel;
 @property (nonatomic, strong) IBOutlet UIButton * editNameButton;
@@ -39,16 +39,12 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
-- (void)viewWillDisAppear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark UIConfiguration
+#pragma mark UI
 - (void)advancedUIConfiguration {
     //ImageView
     self.imageView.layer.cornerRadius = kIconSideLength/2;
@@ -80,23 +76,29 @@
     CGPathRelease(backgroundPath);
     return backgroundLayer;
 }
-
+#pragma mark Data
 - (void)refreshData {
-    self.name = [[DooogeUserDefaults dooogeUserDefaults]nameForPet];
-    [self.nameLabel setText:self.name];
-    self.growthPoint = [[DooogeUserDefaults dooogeUserDefaults]growthPointForPet];
-    [self.growthPointLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoint]];
+    self.petName = [AppSettings sharedSettings].petName;
+    self.growthPoint = [AppSettings sharedSettings].growthPoints;
 }
 
+#pragma mark Methods of Setter
+- (void)setPetName:(NSString *)petName {
+    _petName = petName;
+    [self.petNameLabel setText:_petName];
+}
 
+- (void)setGrowthPoint:(NSInteger)growthPoint {
+    _growthPoint = growthPoint;
+    [self.growthPointLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoint]];
+}
+#pragma mark Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"fromMainToEdit"]) {
         EditNameViewController * destViewController = (EditNameViewController *)segue.destinationViewController;
-        destViewController.editedBlock = ^(NSString * name) {
-            self.name = name;
-            self.nameLabel.text = name;
-            [[DooogeUserDefaults dooogeUserDefaults]setNameForPet:name];
-            [[DooogeNotificationCenter currentNotificationCenter]requestAllHealthyRoutines];
+        destViewController.nameEditedHandler = ^(NSString * petName) {
+            self.petName = petName;
+            [AppSettings sharedSettings].petName = petName;
         };
     }
 }

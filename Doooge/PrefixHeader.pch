@@ -2,8 +2,8 @@
 //  PrefixHeader.pch
 //  Doooge
 //
-//  Created by 陈志浩 on 2016/11/1.
-//  Copyright © 2016年 VicChan. All rights reserved.
+//  Created by BlackDragon on 2016/11/1.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #ifndef PrefixHeader_pch
@@ -11,9 +11,22 @@
 
 #include "Masonry.h"
 
+typedef NS_OPTIONS(NSInteger, CustomHabitWeek) {
+    Monday      = 1 << 0,
+    Tuesday     = 1 << 1,
+    Wednesday   = 1 << 2,
+    Thursday    = 1 << 3,
+    Fridfay     = 1 << 4,
+    Saturday    = 1 << 5,
+    Sunday      = 1 << 6
+};
+
 #define kIconSideLength 120.0
 
+#define kNotificationBadgeNumber 1
+
 #define mainColor [UIColor colorWithRed:0 green:0.722 blue:0.714 alpha:1]
+
 
 
 #endif /* PrefixHeader_pch */
