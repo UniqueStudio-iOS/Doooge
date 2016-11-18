@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E1829891DC4BA5B0072722C /* doge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829881DC4BA5B0072722C /* doge1.gif */; };
-		2E18298D1DC4C5250072722C /* doge3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E18298C1DC4C5250072722C /* doge3.gif */; };
 		2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18298E1DC4C8D10072722C /* GifImageView.swift */; };
 		2E1829981DC4D1B60072722C /* sleep1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829911DC4D1B60072722C /* sleep1.png */; };
 		2E1829991DC4D1B60072722C /* sleep7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829921DC4D1B60072722C /* sleep7.png */; };
@@ -45,7 +43,6 @@
 		2E1829F01DC511540072722C /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829ED1DC511540072722C /* playBtn.png */; };
 		2E1829F11DC511540072722C /* feedBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829EE1DC511540072722C /* feedBtn.png */; };
 		2E1829F31DC511DE0072722C /* backapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829F21DC511DE0072722C /* backapp.png */; };
-		2E1829F51DC5143B0072722C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829F41DC5143B0072722C /* back.png */; };
 		2E1829F71DC515320072722C /* doge11.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829F61DC515320072722C /* doge11.png */; };
 		2E1829F91DC5153C0072722C /* eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829F81DC5153C0072722C /* eyes.png */; };
 		2E182A041DC5156A0072722C /* eat11.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829FA1DC5156A0072722C /* eat11.png */; };
@@ -65,6 +62,9 @@
 		2E182A191DC51A200072722C /* wear5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E182A131DC51A200072722C /* wear5.png */; };
 		2E182A1A1DC51A200072722C /* wear6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E182A141DC51A200072722C /* wear6.png */; };
 		2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */; };
+		2E2AC1BA1DDF61BF00FA5126 /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */; };
+		2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */; };
+		2E2AC1BE1DDF643100FA5126 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */; };
 		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
 		2E9C1EFE1DC5407400E02A3F /* diag.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFD1DC5407400E02A3F /* diag.png */; };
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
@@ -131,8 +131,6 @@
 /* Begin PBXFileReference section */
 		05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.debug.xcconfig"; sourceTree = "<group>"; };
 		101E8D1D1DC8BC870034390E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		2E1829881DC4BA5B0072722C /* doge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = doge1.gif; sourceTree = "<group>"; };
-		2E18298C1DC4C5250072722C /* doge3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = doge3.gif; sourceTree = "<group>"; };
 		2E18298E1DC4C8D10072722C /* GifImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		2E1829911DC4D1B60072722C /* sleep1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep1.png; sourceTree = "<group>"; };
 		2E1829921DC4D1B60072722C /* sleep7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep7.png; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		2E1829ED1DC511540072722C /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
 		2E1829EE1DC511540072722C /* feedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedBtn.png; sourceTree = "<group>"; };
 		2E1829F21DC511DE0072722C /* backapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backapp.png; sourceTree = "<group>"; };
-		2E1829F41DC5143B0072722C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		2E1829F61DC515320072722C /* doge11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doge11.png; sourceTree = "<group>"; };
 		2E1829F81DC5153C0072722C /* eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyes.png; sourceTree = "<group>"; };
 		2E1829FA1DC5156A0072722C /* eat11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eat11.png; sourceTree = "<group>"; };
@@ -189,6 +186,9 @@
 		2E182A131DC51A200072722C /* wear5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wear5.png; sourceTree = "<group>"; };
 		2E182A141DC51A200072722C /* wear6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wear6.png; sourceTree = "<group>"; };
 		2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
+		2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
 		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
 		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -396,11 +396,8 @@
 				2E1829A41DC4E0AE0072722C /* Static */,
 				2E1829A31DC4E0A30072722C /* Eat */,
 				2E1829901DC4CDF50072722C /* Sleep */,
-				2E18298C1DC4C5250072722C /* doge3.gif */,
 				2E1829F81DC5153C0072722C /* eyes.png */,
 				2E1829F61DC515320072722C /* doge11.png */,
-				2E1829881DC4BA5B0072722C /* doge1.gif */,
-				2E1829F41DC5143B0072722C /* back.png */,
 				2E1829E81DC510070072722C /* AssistorOn.png */,
 				2E1829EA1DC510330072722C /* AssistorOff.png */,
 				2E1829EC1DC511540072722C /* sleepBtn.png */,
@@ -513,11 +510,14 @@
 				2E7EED731DC470DA000AC993 /* GIF Contents */,
 				2E7EED721DC46119000AC993 /* My Doooge.entitlements */,
 				2EA930AA1DC43B910065B905 /* TodayViewController.swift */,
+				2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */,
 				2EA930AF1DC43B910065B905 /* Info.plist */,
 				2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */,
 				2E18298E1DC4C8D10072722C /* GifImageView.swift */,
 				2E1829A11DC4D7030072722C /* MessageView.swift */,
 				2E1829E01DC5000E0072722C /* Bubble.swift */,
+				2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */,
+				2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */,
 				2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */,
 			);
 			path = "My Doooge";
@@ -717,7 +717,6 @@
 				2E1829C61DC4EF9A0072722C /* play7.png in Resources */,
 				2E182A061DC5156A0072722C /* eat13.png in Resources */,
 				2E1829DD1DC4F9B00072722C /* eat.mp3 in Resources */,
-				2E1829F51DC5143B0072722C /* back.png in Resources */,
 				2E1829C11DC4EF9A0072722C /* play2.png in Resources */,
 				2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */,
 				2E182A0B1DC5156A0072722C /* eat18.png in Resources */,
@@ -736,7 +735,6 @@
 				2E182A161DC51A200072722C /* wear2.png in Resources */,
 				2E1829F11DC511540072722C /* feedBtn.png in Resources */,
 				2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */,
-				2E18298D1DC4C5250072722C /* doge3.gif in Resources */,
 				2E18299D1DC4D1B60072722C /* sleep5.png in Resources */,
 				2E1829D21DC4EFCB0072722C /* touch4.png in Resources */,
 				2E182A0A1DC5156A0072722C /* eat17.png in Resources */,
@@ -744,7 +742,6 @@
 				2E1829DB1DC4F5D70072722C /* touchdog.mp3 in Resources */,
 				2E182A0D1DC5156A0072722C /* eat110.png in Resources */,
 				2E1829F31DC511DE0072722C /* backapp.png in Resources */,
-				2E1829891DC4BA5B0072722C /* doge1.gif in Resources */,
 				2E9C1EFE1DC5407400E02A3F /* diag.png in Resources */,
 				2E18299A1DC4D1B60072722C /* sleep2.png in Resources */,
 				2E1829C01DC4EF9A0072722C /* play1.png in Resources */,
@@ -854,9 +851,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
 				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
 				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,
+				2E2AC1BE1DDF643100FA5126 /* NotificationManager.swift in Sources */,
+				2E2AC1BA1DDF61BF00FA5126 /* AnimationEngine.swift in Sources */,
 				2E1829E11DC5000E0072722C /* Bubble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

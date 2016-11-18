@@ -11,6 +11,8 @@ import NotificationCenter
 import AVFoundation
 
 
+
+
 extension CGRect {
     init(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) {
         self.init(x: x, y: y, width: width, height: height)
@@ -18,9 +20,7 @@ extension CGRect {
 }
 
 extension UserDefaults {
-    
     private static let groupIdentifier = "group.com.vic.Doooge"
-
     class func  doooge() -> UserDefaults {
         let user = UserDefaults(suiteName: groupIdentifier)!
         return user
@@ -200,6 +200,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let list = movement(type: .static2)
         self.imageView.play(imageNames: list,repeated: true)
 
+        
+        let arr = [NotificationModel(content: "HHHHHH"),
+                   NotificationModel(content: "WWWWWW"),
+                   NotificationModel(content: "SSSSSS"),
+                   NotificationModel(content: "FFFFFF")]
+        
+        NotificationManager().showRandom(content: arr)
+    
     }
     
     
@@ -220,7 +228,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         tag += 1
         lifeValue = UserDefaults.doooge().object(forKey: "growthPoint") as! Int
         
-        growthLabel.text = "\(lifeValue)"
+        //growthLabel.text = "\(lifeValue)"
 
 
         
@@ -239,7 +247,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func saveGrowth(value: Int) {
         lifeValue += value
-        growthLabel.text = "\(lifeValue)"
+        // growthLabel.text = "\(lifeValue)"
         let doooge = UserDefaults.doooge()
         doooge.set(lifeValue, forKey: "growthPoint")
         doooge.synchronize()
@@ -261,12 +269,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 4.0)
 
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(4.0)){
-            self.defaultState()
-        }
-        
-        */
         
         
 
@@ -459,10 +461,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
         case .move:return ["play1","play2","play3","play4","play5","play6","play7","play8","play9","play10"]
         case .wear: return ["wear1","wear2","wear3","wear4","wear5","wear6"]
-    
-        default:
-            break
-            
+
         }
         return []
     }
