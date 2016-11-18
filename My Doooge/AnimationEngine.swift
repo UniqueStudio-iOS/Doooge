@@ -11,28 +11,28 @@ import Foundation
 
 /// 动做处理处理引擎
 
+enum DooogeAnimationType: Int {
+
+    case normal = 0
+    case sleep  = 1
+    case eat    = 2
+    case play   = 3
+    case touch  = 4
+    
+}
+
 
 
 class AnimationEngine {
 
-
-
-}
-
-
-/*
-extension AnimationEngine {
-
-    
-    // 轮播 提醒
-    func showRandomNotification(content: []) {
-        
-    
-        
-        
+    struct FileManager {
         
     }
+    
+    
+    
+    
+
 
 }
 
-*/
