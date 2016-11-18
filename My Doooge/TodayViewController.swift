@@ -463,7 +463,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case .wear: return ["wear1","wear2","wear3","wear4","wear5","wear6"]
 
         }
-        return []
     }
  
     

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 VicChan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 /// 动做处理处理引擎
@@ -27,8 +27,35 @@ class AnimationEngine {
 
     struct FileManager {
         
+        var bundle: Bundle!
+        
+        static let manager: FileManager = {
+            var instance = FileManager()
+            let path = Bundle.main.path(forResource: "Movements", ofType: "bundle")
+            instance.bundle = Bundle.init(path: path!)
+            return instance
+        }()
+        
+        
+        func image(_ name: String) -> UIImage? {
+            let path = self.bundle.path(forResource: name, ofType: "png")
+            if let imagePath = path {
+                return UIImage.init(contentsOfFile: imagePath)
+            } else {
+                return nil
+            }
+        }
+        
+        
     }
     
+    
+    static let shared: AnimationEngine = {
+        let instance = AnimationEngine()
+        
+        
+        return instance
+    }()
     
     
     
