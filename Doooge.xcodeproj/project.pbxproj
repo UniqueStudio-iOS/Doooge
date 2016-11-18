@@ -64,6 +64,7 @@
 		2E182A181DC51A200072722C /* wear4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E182A121DC51A200072722C /* wear4.png */; };
 		2E182A191DC51A200072722C /* wear5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E182A131DC51A200072722C /* wear5.png */; };
 		2E182A1A1DC51A200072722C /* wear6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E182A141DC51A200072722C /* wear6.png */; };
+		2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */; };
 		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
 		2E9C1EFE1DC5407400E02A3F /* diag.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFD1DC5407400E02A3F /* diag.png */; };
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
@@ -187,6 +188,7 @@
 		2E182A121DC51A200072722C /* wear4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wear4.png; sourceTree = "<group>"; };
 		2E182A131DC51A200072722C /* wear5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wear5.png; sourceTree = "<group>"; };
 		2E182A141DC51A200072722C /* wear6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wear6.png; sourceTree = "<group>"; };
+		2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
 		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
 		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				2E18298E1DC4C8D10072722C /* GifImageView.swift */,
 				2E1829A11DC4D7030072722C /* MessageView.swift */,
 				2E1829E01DC5000E0072722C /* Bubble.swift */,
+				2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */,
 			);
 			path = "My Doooge";
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				2E1829DD1DC4F9B00072722C /* eat.mp3 in Resources */,
 				2E1829F51DC5143B0072722C /* back.png in Resources */,
 				2E1829C11DC4EF9A0072722C /* play2.png in Resources */,
+				2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */,
 				2E182A0B1DC5156A0072722C /* eat18.png in Resources */,
 				2E1829C21DC4EF9A0072722C /* play3.png in Resources */,
 				2E1829D61DC4EFE10072722C /* random2.png in Resources */,
