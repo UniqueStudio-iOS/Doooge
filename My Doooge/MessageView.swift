@@ -12,6 +12,9 @@ class MessageView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
     
+    
+    
+    
 
     open var isShow: Bool = false
     
@@ -48,6 +51,8 @@ class MessageView: UIView {
     static func appear(_ content: String) {
         
     }
+    
+    
     
     
     static func disappear(_ content: String) {

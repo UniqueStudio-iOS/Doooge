@@ -8,19 +8,20 @@
 
 import Foundation
 
-
 struct NotificationModel {
+    
     var content: String
+    
 }
-
 
 class NotificationManager {
     
     
     var timer: Timer?
     
-    var randomNotification: [NotificationModel]?
+    var queue: [NotificationModel]?
     
+    var randomNotification: [NotificationModel]?
     
     
     func showRandom(content: [NotificationModel]) {

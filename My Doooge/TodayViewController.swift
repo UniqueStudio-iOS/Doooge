@@ -270,9 +270,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 4.0)
 
         
-        
-
-        
     }
 
  
@@ -280,7 +277,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBAction func openContainerApp(_ sender: AnyObject) {
         self.extensionContext?.open(URL(string:"Doooge://")!, completionHandler: { (finished) in
             print("\(finished)")
-            
         })
 
     }
@@ -376,12 +372,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         
         
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(2.9)){
-            self.defaultState()
-        }
-        */
-        
+
     }
     
     func randomMovement() {
