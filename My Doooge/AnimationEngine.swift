@@ -25,6 +25,9 @@ enum DooogeAnimationType: Int {
 
 class AnimationEngine {
 
+    var animationView: AnimationView!
+
+    
     struct FileManager {
         var bundle: Bundle!
         
@@ -45,6 +48,8 @@ class AnimationEngine {
         }
     }
     
+    
+    
     static let shared: AnimationEngine = {
         let instance = AnimationEngine()
         
@@ -52,10 +57,18 @@ class AnimationEngine {
         return instance
     }()
     
+    // 初始化动画View
+    func initView(_ frame: CGRect) -> Self {
+        self.animationView = AnimationView()
+        return self
+    }
+    
     
     public func switchAnimation(_ mode: DooogeAnimationType) {
         
     
+        
+        
         
         
         

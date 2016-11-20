@@ -40,6 +40,7 @@
 		2EA930A81DC43B910065B905 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA930A71DC43B910065B905 /* NotificationCenter.framework */; };
 		2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930AA1DC43B910065B905 /* TodayViewController.swift */; };
 		2EA930B21DC43B910065B905 /* My Doooge.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EA930A51DC43B910065B905 /* My Doooge.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2ED836D71DE1D41B009DE983 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED836D61DE1D41B009DE983 /* AnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		2EA930A71DC43B910065B905 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2EA930AA1DC43B910065B905 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		2EA930AF1DC43B910065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED836D61DE1D41B009DE983 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		6F6735FDC46C53FC5F58932E /* Pods-Doooge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,6 +319,7 @@
 				2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */,
 				2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */,
 				2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */,
+				2ED836D61DE1D41B009DE983 /* AnimationView.swift */,
 			);
 			path = "My Doooge";
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */,
+				2ED836D71DE1D41B009DE983 /* AnimationView.swift in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
 				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
 				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,

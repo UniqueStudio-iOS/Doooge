@@ -29,6 +29,8 @@ class ScoreManager {
     
     var ceiling = 300
     
+    
+    
     static let manager: ScoreManager = {
         let instance = ScoreManager()
         let tuple = instance.load()
