@@ -10,13 +10,15 @@
 
 @interface HowToPlayViewController ()
 @property (nonatomic, strong) UIImageView * dragDownImageView;
+
+@property (nonatomic, strong) UIBarButtonItem * backButton;
 @end
 
 @implementation HowToPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self loadBarButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -29,8 +31,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)configureDragDownImage {
-//    self.navigationController.navigationItem.titleView
+- (void)loadBarButton {
+    self.navigationItem.leftBarButtonItem = self.backButton;
+}
+
+- (UIBarButtonItem *)backButton {
+    if (!_backButton) {
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:17.0];
+        [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 0);
+        [button sizeToFit];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        _backButton = [[UIBarButtonItem alloc]initWithCustomView:button];
+    }
+    return _backButton;
+}
+
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

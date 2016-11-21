@@ -16,17 +16,43 @@ typedef NS_OPTIONS(NSInteger, CustomHabitWeek) {
     Tuesday     = 1 << 1,
     Wednesday   = 1 << 2,
     Thursday    = 1 << 3,
-    Fridfay     = 1 << 4,
+    Friday      = 1 << 4,
     Saturday    = 1 << 5,
     Sunday      = 1 << 6
 };
 
-#define kIconSideLength 120.0
+#define kWindowWidth [UIScreen mainScreen].bounds.size.width
+#define kWindowHeight [UIScreen mainScrenn].bounds.size.height
+
+#define kIconSideLength 60.0
+
+#define kMainButtonBorderWidth 2.5
+#define kMainButtonBorderLength 229.0
+#define kMainButtonBorderHeight 31.5
+#define kMainButtonBackgroundXOffset 5.5
+#define kMainButtonBackgroundYOffset 4.5
+#define kMainButtonBackgroundWidth 228.5
+#define kMainButtonBackgroundHeight 32.5
+
+#define kCustomHabitButtonCornerRadius 12.25
+#define kCustomHabitButtonBorderWidth 0.5
+#define kNewHabitMaxCellNumber 4
+
+#define kDailyRoutineSectionHeaderViewHeight 56.0
+#define kCustomHabitSectionHeaderViewHeight 61.0
+#define kDailyRoutineCellHeight 59.0
+#define kCustomHabitCellHeight 85.0
 
 #define kNotificationBadgeNumber 1
 
 #define mainColor [UIColor colorWithRed:0 green:0.722 blue:0.714 alpha:1]
+#define defaultGrayColor1 [UIColor colorWithWhite:0.765 alpha:1]
+#define defaultGrayColor2 [UIColor colorWithWhite:0.278 alpha:1]
+#define defaultWhiteColor1 [UIColor colorWithWhite:1 alpha:1]
+#define defaultBlackColor1 [UIColor colorWithWhite:0.157 alpha:1]
+#define defaultDatePickerBackgroundColor [UIColor colorWithWhite:0 alpha:0.3]
 
+#define defaultClearColor [UIColor clearColor]
 
 
 #endif /* PrefixHeader_pch */

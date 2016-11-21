@@ -10,7 +10,10 @@
 
 @interface CustomHabit : RLMObject
 @property NSString * ID;
+@property NSInteger persistDays;
 @property NSInteger hour;
 @property NSInteger minute;
 @property NSInteger week;
+@property BOOL hasRemind;
+@property NSDate * lastClocked;
 @end

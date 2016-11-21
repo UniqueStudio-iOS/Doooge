@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "未打卡的icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "back.png",
       "scale" : "2x"
     },
     {

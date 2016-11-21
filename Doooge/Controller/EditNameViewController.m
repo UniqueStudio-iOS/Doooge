@@ -8,10 +8,10 @@
 
 #import "EditNameViewController.h"
 
-@interface EditNameViewController ()
+@interface EditNameViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) UIBarButtonItem * completeButton;
 @property (nonatomic, strong) UIBarButtonItem * backButton;
-@property (nonatomic, strong) IBOutlet UITextField * editText;
+@property (nonatomic, strong) UITextField * editText;
 @end
 
 @implementation EditNameViewController
@@ -35,11 +35,13 @@
 
 - (void)basicConfiguration {
     self.tableView.tableFooterView = [[UIView alloc]init];
+    self.editText.delegate = self;
+    [self gestureConfiguration];
 }
 
 - (void)loadBarButton {
     self.navigationItem.rightBarButtonItem = self.completeButton;
-//    self.navigationItem.leftBarButtonItem = self.backButton;
+    self.navigationItem.leftBarButtonItem = self.backButton;
 }
 #pragma mark Lazy Load
 - (UIBarButtonItem *)completeButton {
@@ -50,14 +52,19 @@
     return _completeButton;
 }
 
-//- (UIBarButtonItem *)backButton {
-//    if (!_backButton) {
-//        UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//        [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-//        [button setTitle:@"返回" forState:UIControlStateNormal];
-//    }
-//    return _backButton;
-//}
+- (UIBarButtonItem *)backButton {
+    if (!_backButton) {
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:17.0];
+        [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 0);
+        [button sizeToFit];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        _backButton = [[UIBarButtonItem alloc]initWithCustomView:button];
+    }
+    return _backButton;
+}
 #pragma mark Interact
 - (void)completeEdit {
     self.nameEditedHandler(self.editText.text);
@@ -68,4 +75,16 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)gestureConfiguration {
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.tableView addGestureRecognizer:tap];
+}
+
+- (void)dismissKeyboard{
+    [self.editText resignFirstResponder];
+}
+#pragma mark TextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return [textField resignFirstResponder];
+}
 @end

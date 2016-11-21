@@ -11,5 +11,7 @@
 @interface HabitCell : UITableViewCell
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic) NSInteger persist;
-@property (nonatomic, strong) NSDateComponents * time;
+@property (nonatomic) NSInteger hour;
+@property (nonatomic) NSInteger minute;
+- (void)setTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute;
 @end

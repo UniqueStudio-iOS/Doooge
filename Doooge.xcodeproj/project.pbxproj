@@ -12,6 +12,15 @@
 		1075EECF1DD9494E00793813 /* CustomHabit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EECE1DD9494E00793813 /* CustomHabit.m */; };
 		1075EED41DD94B7A00793813 /* AppDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EED31DD94B7A00793813 /* AppDatabase.m */; };
 		1075EEDB1DD964AA00793813 /* AppNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEDA1DD964AA00793813 /* AppNotificationCenter.m */; };
+		1075EEE71DDD833600793813 /* DailyRoutineSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEE61DDD833600793813 /* DailyRoutineSectionHeaderView.m */; };
+		1075EEE91DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEE81DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib */; };
+		1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEEA1DDE115300793813 /* Assets.xcassets */; };
+		1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */; };
+		1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */; };
+		108C2F801DE0117D002C4202 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108C2F7F1DE0117D002C4202 /* DatePickerView.xib */; };
+		108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F821DE0D05B002C4202 /* DatePickerView.m */; };
+		108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F851DE115AF002C4202 /* HabitCell2.m */; };
+		108C2F8B1DE1185D002C4202 /* AppTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F8A1DE1185D002C4202 /* AppTime.m */; };
 		2E1829891DC4BA5B0072722C /* doge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E1829881DC4BA5B0072722C /* doge1.gif */; };
 		2E18298D1DC4C5250072722C /* doge3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E18298C1DC4C5250072722C /* doge3.gif */; };
 		2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18298E1DC4C8D10072722C /* GifImageView.swift */; };
@@ -74,14 +83,12 @@
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
 		2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */; };
 		2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */; };
-		2E9C1F1A1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */; };
 		2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */; };
 		2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */; };
 		2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F121DC5673A00E02A3F /* MainViewController.m */; };
 		2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */; };
 		2EA930701DC438BC0065B905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA9306F1DC438BC0065B905 /* main.m */; };
 		2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930721DC438BC0065B905 /* AppDelegate.m */; };
-		2EA9307B1DC438BC0065B905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9307A1DC438BC0065B905 /* Assets.xcassets */; };
 		2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */; };
 		2EA930891DC438BD0065B905 /* DooogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930881DC438BD0065B905 /* DooogeTests.m */; };
 		2EA930941DC438BD0065B905 /* DooogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930931DC438BD0065B905 /* DooogeUITests.m */; };
@@ -142,6 +149,20 @@
 		1075EED31DD94B7A00793813 /* AppDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDatabase.m; sourceTree = "<group>"; };
 		1075EED91DD964AA00793813 /* AppNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppNotificationCenter.h; sourceTree = "<group>"; };
 		1075EEDA1DD964AA00793813 /* AppNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppNotificationCenter.m; sourceTree = "<group>"; };
+		1075EEE51DDD833600793813 /* DailyRoutineSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyRoutineSectionHeaderView.h; path = Controller/DailyRoutineSectionHeaderView.h; sourceTree = "<group>"; };
+		1075EEE61DDD833600793813 /* DailyRoutineSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyRoutineSectionHeaderView.m; path = Controller/DailyRoutineSectionHeaderView.m; sourceTree = "<group>"; };
+		1075EEE81DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyRoutineSectionHeaderView.xib; sourceTree = "<group>"; };
+		1075EEEA1DDE115300793813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1075EEEF1DDE1BBA00793813 /* CustomHabitSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomHabitSectionHeaderView.h; path = Controller/CustomHabitSectionHeaderView.h; sourceTree = "<group>"; };
+		1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomHabitSectionHeaderView.m; path = Controller/CustomHabitSectionHeaderView.m; sourceTree = "<group>"; };
+		1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHabitSectionHeaderView.xib; sourceTree = "<group>"; };
+		108C2F7F1DE0117D002C4202 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		108C2F811DE0D05B002C4202 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		108C2F821DE0D05B002C4202 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		108C2F841DE115AF002C4202 /* HabitCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitCell2.h; path = Controller/HabitCell2.h; sourceTree = "<group>"; };
+		108C2F851DE115AF002C4202 /* HabitCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitCell2.m; path = Controller/HabitCell2.m; sourceTree = "<group>"; };
+		108C2F891DE1185D002C4202 /* AppTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTime.h; sourceTree = "<group>"; };
+		108C2F8A1DE1185D002C4202 /* AppTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTime.m; sourceTree = "<group>"; };
 		2E1829881DC4BA5B0072722C /* doge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = doge1.gif; sourceTree = "<group>"; };
 		2E18298C1DC4C5250072722C /* doge3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = doge3.gif; sourceTree = "<group>"; };
 		2E18298E1DC4C8D10072722C /* GifImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
@@ -208,8 +229,6 @@
 		2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditNameViewController.m; path = Controller/EditNameViewController.m; sourceTree = "<group>"; };
 		2E9C1F091DC5673A00E02A3F /* HabitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitCell.h; path = Controller/HabitCell.h; sourceTree = "<group>"; };
 		2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitCell.m; path = Controller/HabitCell.m; sourceTree = "<group>"; };
-		2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitDevelopSectionHeaderView.h; path = Controller/HabitDevelopSectionHeaderView.h; sourceTree = "<group>"; };
-		2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitDevelopSectionHeaderView.m; path = Controller/HabitDevelopSectionHeaderView.m; sourceTree = "<group>"; };
 		2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitDevelopViewController.h; path = Controller/HabitDevelopViewController.h; sourceTree = "<group>"; };
 		2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitDevelopViewController.m; path = Controller/HabitDevelopViewController.m; sourceTree = "<group>"; };
 		2E9C1F0F1DC5673A00E02A3F /* HowToPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HowToPlayViewController.h; path = Controller/HowToPlayViewController.h; sourceTree = "<group>"; };
@@ -222,7 +241,6 @@
 		2EA9306F1DC438BC0065B905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2EA930711DC438BC0065B905 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EA930721DC438BC0065B905 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2EA9307A1DC438BC0065B905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA9307D1DC438BC0065B905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA9307F1DC438BC0065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EA930841DC438BD0065B905 /* DooogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DooogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +370,33 @@
 			name = Singleton;
 			sourceTree = "<group>";
 		};
+		108C2F7E1DE00A1E002C4202 /* Assist */ = {
+			isa = PBXGroup;
+			children = (
+				108C2F7F1DE0117D002C4202 /* DatePickerView.xib */,
+				108C2F811DE0D05B002C4202 /* DatePickerView.h */,
+				108C2F821DE0D05B002C4202 /* DatePickerView.m */,
+			);
+			name = Assist;
+			sourceTree = "<group>";
+		};
+		108C2F871DE11838002C4202 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				108C2F881DE11849002C4202 /* Singleton */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		108C2F881DE11849002C4202 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				108C2F891DE1185D002C4202 /* AppTime.h */,
+				108C2F8A1DE1185D002C4202 /* AppTime.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		10C668081DC9890D0099C379 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,8 +428,14 @@
 			children = (
 				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
 				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
-				2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */,
-				2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */,
+				108C2F841DE115AF002C4202 /* HabitCell2.h */,
+				108C2F851DE115AF002C4202 /* HabitCell2.m */,
+				1075EEE51DDD833600793813 /* DailyRoutineSectionHeaderView.h */,
+				1075EEE61DDD833600793813 /* DailyRoutineSectionHeaderView.m */,
+				1075EEE81DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib */,
+				1075EEEF1DDE1BBA00793813 /* CustomHabitSectionHeaderView.h */,
+				1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */,
+				1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */,
 				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
 				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
 			);
@@ -403,6 +454,7 @@
 		10C6680D1DC98F0A0099C379 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				108C2F7E1DE00A1E002C4202 /* Assist */,
 				101E8D1B1DC8BAFB0034390E /* Main */,
 				101E8D1E1DC8C0650034390E /* EditName */,
 				10C6680C1DC98E720099C379 /* NewHabit */,
@@ -561,12 +613,13 @@
 				2EA930721DC438BC0065B905 /* AppDelegate.m */,
 				1075EEDF1DD9724F00793813 /* StaticData */,
 				101E8D1C1DC8BC6C0034390E /* PCH */,
+				108C2F871DE11838002C4202 /* Time */,
 				1075EED51DD95F8300793813 /* Settings */,
 				10C668081DC9890D0099C379 /* Notification */,
 				10C668091DC98A940099C379 /* Database */,
 				10C6680D1DC98F0A0099C379 /* UI */,
 				2E7A47F41DC459D6007832E5 /* Doooge.entitlements */,
-				2EA9307A1DC438BC0065B905 /* Assets.xcassets */,
+				1075EEEA1DDE115300793813 /* Assets.xcassets */,
 				2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */,
 				2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */,
 				2EA9307F1DC438BC0065B905 /* Info.plist */,
@@ -783,9 +836,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108C2F801DE0117D002C4202 /* DatePickerView.xib in Resources */,
+				1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */,
+				1075EEE91DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib in Resources */,
 				2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */,
+				1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */,
 				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
-				2EA9307B1DC438BC0065B905 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,14 +977,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108C2F8B1DE1185D002C4202 /* AppTime.m in Sources */,
 				2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */,
+				1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */,
+				108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */,
 				2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */,
 				2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */,
 				2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */,
 				1075EEC91DD9086600793813 /* DailyRoutine.m in Sources */,
-				2E9C1F1A1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m in Sources */,
 				2EA930701DC438BC0065B905 /* main.m in Sources */,
+				1075EEE71DDD833600793813 /* DailyRoutineSectionHeaderView.m in Sources */,
 				2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */,
+				108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */,
 				1075EECF1DD9494E00793813 /* CustomHabit.m in Sources */,
 				1075EEDB1DD964AA00793813 /* AppNotificationCenter.m in Sources */,
 				2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */,

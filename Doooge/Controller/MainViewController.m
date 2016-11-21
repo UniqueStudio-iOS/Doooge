@@ -14,13 +14,16 @@
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSString * petName;
-@property (nonatomic) NSInteger growthPoint;
+@property (nonatomic) NSInteger growthPoints;
+@property (nonatomic) NSInteger goldCoins;
+@property (nonatomic) NSInteger petLevel;
 
 @property (nonatomic, strong) IBOutlet UIImageView * imageView;
 @property (nonatomic, strong) IBOutlet UILabel * petNameLabel;
 
-@property (nonatomic, strong) IBOutlet UILabel * growthPointLabel;
+@property (nonatomic, strong) IBOutlet UILabel * growthPointsLabel;
 @property (nonatomic, strong) IBOutlet UIButton * editNameButton;
+
 @property (nonatomic, strong) IBOutlet UIButton * howToPlayButton;
 @property (nonatomic, strong) IBOutlet UIButton * habitDevelopButton;
 @property (nonatomic, strong) IBOutlet UIButton * dressUpButton;
@@ -47,39 +50,69 @@
 #pragma mark UI
 - (void)advancedUIConfiguration {
     //ImageView
-    self.imageView.layer.cornerRadius = kIconSideLength/2;
+    self.imageView.layer.cornerRadius = kIconSideLength;
     self.imageView.layer.masksToBounds = YES;
     //Buttons
-    self.howToPlayButton.layer.borderWidth = 2.5;
-    self.howToPlayButton.layer.borderColor = [UIColor colorWithWhite:0.278 alpha:1].CGColor;
-    [self.howToPlayButton.layer addSublayer:[self backgroundLayer]];
-    self.habitDevelopButton.layer.borderWidth = 2.5;
-    self.habitDevelopButton.layer.borderColor = [UIColor colorWithWhite:0.278 alpha:1].CGColor;
-    [self.habitDevelopButton.layer addSublayer:[self backgroundLayer]];
-    self.dressUpButton.layer.borderWidth = 2.5;
-    self.dressUpButton.layer.borderColor = [UIColor colorWithWhite:0.278 alpha:1].CGColor;
-    [self.dressUpButton.layer addSublayer:[self backgroundLayer]];
+    [self configureButton:self.howToPlayButton];
+    [self configureButton:self.habitDevelopButton];
+    [self configureButton:self.dressUpButton];
 }
 
-- (void)configureStyleWithButton:(UIButton *)button {
-    [button.layer addSublayer:[self backgroundLayer]];
+- (void)configureButton:(UIButton *)button {
+    [self configureBackgroundWithButton:button];
+    [self configureBorderWithButton:button];
 }
 
-- (CAShapeLayer *)backgroundLayer {
+- (void)configureBorderWithButton:(UIButton *)button {
+    CGRect topRect = CGRectMake(0, -kMainButtonBorderWidth, kMainButtonBorderLength, kMainButtonBorderWidth);
+    CGRect rightRect = CGRectMake(kMainButtonBorderLength, 0, kMainButtonBorderWidth, kMainButtonBorderHeight);
+    CGRect bottomRect = CGRectMake(0, kMainButtonBorderHeight, kMainButtonBorderLength, kMainButtonBorderWidth);
+    CGRect leftRect = CGRectMake(-kMainButtonBorderWidth, 0, kMainButtonBorderWidth, kMainButtonBorderHeight);
+    CAShapeLayer * topLayer = [CAShapeLayer layer];
+    CAShapeLayer * rightLayer = [CAShapeLayer layer];
+    CAShapeLayer * bottomLayer = [CAShapeLayer layer];
+    CAShapeLayer * leftLayer = [CAShapeLayer layer];
+    [self configureLayer:topLayer inRect:topRect];
+    [self configureLayer:rightLayer inRect:rightRect];
+    [self configureLayer:bottomLayer inRect:bottomRect];
+    [self configureLayer:leftLayer inRect:leftRect];
+    [button.layer addSublayer:topLayer];
+    [button.layer addSublayer:rightLayer];
+    [button.layer addSublayer:bottomLayer];
+    [button.layer addSublayer:leftLayer];
+}
+
+- (void)configureLayer:(CAShapeLayer *)layer inRect:(CGRect)rect{
+    layer.lineWidth = 0;
+    layer.strokeColor = defaultClearColor.CGColor;
+    layer.fillColor = defaultGrayColor2.CGColor;
+    
+    CGMutablePathRef layerPath = CGPathCreateMutable();
+    CGPathAddRect(layerPath, NULL, rect);
+    layer.path = layerPath;
+    
+    CGPathRelease(layerPath);
+}
+
+- (void)configureBackgroundWithButton:(UIButton *)button {
     CAShapeLayer * backgroundLayer = [CAShapeLayer layer];
     CGMutablePathRef backgroundPath = CGPathCreateMutable();
-    [backgroundLayer setFillColor:[UIColor colorWithRed:0 green:0.722 blue:0.714 alpha:1].CGColor];
-    [backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
+    
+    [backgroundLayer setFillColor:mainColor.CGColor];
+    [backgroundLayer setStrokeColor:defaultClearColor.CGColor];
     backgroundLayer.lineWidth = 0;
-    CGPathAddRect(backgroundPath, NULL, CGRectMake(8, 7, 229, 32.5));
+    
+    CGPathAddRect(backgroundPath, NULL, CGRectMake(kMainButtonBackgroundXOffset, kMainButtonBackgroundYOffset, kMainButtonBackgroundWidth, kMainButtonBackgroundHeight));
     backgroundLayer.path = backgroundPath;
+    
     CGPathRelease(backgroundPath);
-    return backgroundLayer;
+    
+    [button.layer addSublayer:backgroundLayer];
 }
+
 #pragma mark Data
 - (void)refreshData {
-    self.petName = [AppSettings sharedSettings].petName;
-    self.growthPoint = [AppSettings sharedSettings].growthPoints;
+    self.growthPoints = [AppSettings sharedSettings].growthPoints;
 }
 
 #pragma mark Methods of Setter
@@ -89,8 +122,8 @@
 }
 
 - (void)setGrowthPoint:(NSInteger)growthPoint {
-    _growthPoint = growthPoint;
-    [self.growthPointLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoint]];
+    _growthPoints = growthPoint;
+    [self.growthPointsLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoints]];
 }
 #pragma mark Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
