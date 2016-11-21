@@ -12,9 +12,6 @@ class MessageView: UIView {
 
     @IBOutlet weak var textLabel: UILabel!
     
-    
-    
-    
 
     open var isShow: Bool = false
     

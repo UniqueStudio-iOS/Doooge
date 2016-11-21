@@ -13,6 +13,7 @@ import AVFoundation
 
 
 
+
 extension CGRect {
     init(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) {
         self.init(x: x, y: y, width: width, height: height)
@@ -132,7 +133,7 @@ extension UIView {
 
 
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerTransitioningDelegate {
     
     
     
@@ -275,10 +276,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
  
     
     @IBAction func openContainerApp(_ sender: AnyObject) {
+  /*
         self.extensionContext?.open(URL(string:"Doooge://")!, completionHandler: { (finished) in
             print("\(finished)")
         })
-
+*/
     }
     
     private func increment(type: IncrementType) {
@@ -338,13 +340,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         Bubble.show(score: 20, superView: self.view)
         saveGrowth(value: 20)
 
-        
-        
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(4.8)){
-            self.keepSleep()
-        }
-        */
         self.perform(#selector(TodayViewController.keepSleep), with: nil, afterDelay: 4.8)
       
         
@@ -455,6 +450,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         }
     }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+    }
+    
+
  
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

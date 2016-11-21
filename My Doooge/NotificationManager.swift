@@ -16,7 +16,6 @@ struct NotificationModel {
 
 class NotificationManager {
     
-    
     var timer: Timer?
     
     var queue: [NotificationModel]?

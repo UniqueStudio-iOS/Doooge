@@ -76,6 +76,13 @@ class AnimationEngine {
     }
     
     
+    public func defaultAnimation() {
+    
+    
+    
+    }
+    
+    
     
     
     

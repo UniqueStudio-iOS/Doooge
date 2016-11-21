@@ -46,6 +46,11 @@ class ScoreManager {
     
     }
     
+    // MARK: 加分
+    func incrementScore(rule: ScoreRule) {
+        growthValue += rule.rawValue
+    }
+    
     // 加载数据
     func load() -> (level: Int, growth: Int, coin: Int) {
         return (2,250,50)

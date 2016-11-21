@@ -20,6 +20,7 @@
 		2E2AC1C81DDF6D1300FA5126 /* sleep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C41DDF6D1300FA5126 /* sleep.wav */; };
 		2E2AC1C91DDF6D1300FA5126 /* touchdog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C51DDF6D1300FA5126 /* touchdog.mp3 */; };
 		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
+		2E94C3071DE353C60075C6EB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E94C3061DE353C60075C6EB /* Transition.swift */; };
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
 		2E9C1F151DC5673A00E02A3F /* DailyRoutineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */; };
 		2E9C1F161DC5673A00E02A3F /* DooogeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */; };
@@ -99,6 +100,7 @@
 		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
 		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
 		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2E94C3061DE353C60075C6EB /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2E9C1F011DC5673A00E02A3F /* DailyRoutineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyRoutineModel.h; path = Controller/DailyRoutineModel.h; sourceTree = "<group>"; };
 		2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyRoutineModel.m; path = Controller/DailyRoutineModel.m; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */,
 				2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */,
 				2ED836D61DE1D41B009DE983 /* AnimationView.swift */,
+				2E94C3061DE353C60075C6EB /* Transition.swift */,
 			);
 			path = "My Doooge";
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E94C3071DE353C60075C6EB /* Transition.swift in Sources */,
 				2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */,
 				2ED836D71DE1D41B009DE983 /* AnimationView.swift in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
