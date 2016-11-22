@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGN-GL-kLx">
+                    <rect key="frame" x="0.0" y="667" width="375" height="246"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zhB-3v-hBh">
+                            <rect key="frame" x="0.0" y="30" width="375" height="216"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="216" id="VeY-bq-ihe"/>
+                            </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="501223998.69058597">
+                                <!--2016-11-19 04:53:18 +0000-->
+                            </date>
+                            <locale key="locale" localeIdentifier="zh"/>
+                        </datePicker>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7Q-qd-ehc">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-bU-nAi">
+                                    <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="IFI-KH-Gal"/>
+                                    </constraints>
+                                    <state key="normal" title="移除">
+                                        <color key="titleColor" white="0.76000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didPressCancelButton" destination="iN0-l3-epB" eventType="touchUpInside" id="4PS-Tu-Z8Q"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHJ-uB-NNl">
+                                    <rect key="frame" x="313" y="0.0" width="62" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="K9e-EC-fsz"/>
+                                    </constraints>
+                                    <state key="normal" title="设置提醒">
+                                        <color key="titleColor" red="0.0" green="0.72156862745098038" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didPressSetTimeButton" destination="iN0-l3-epB" eventType="touchUpInside" id="lQY-Db-6Dt"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ZHJ-uB-NNl" secondAttribute="trailing" id="7Ah-eK-i8c"/>
+                                <constraint firstAttribute="height" constant="30" id="Dq0-74-sW0"/>
+                                <constraint firstItem="sSk-bU-nAi" firstAttribute="centerY" secondItem="H7Q-qd-ehc" secondAttribute="centerY" id="Nam-kT-Oyw"/>
+                                <constraint firstItem="sSk-bU-nAi" firstAttribute="leading" secondItem="H7Q-qd-ehc" secondAttribute="leading" id="PS3-OK-HVZ"/>
+                                <constraint firstItem="ZHJ-uB-NNl" firstAttribute="centerY" secondItem="sSk-bU-nAi" secondAttribute="centerY" id="lYf-H2-hiv"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="246" id="A3i-ay-z5U"/>
+                        <constraint firstItem="H7Q-qd-ehc" firstAttribute="leading" secondItem="HGN-GL-kLx" secondAttribute="leading" id="FjB-no-VLW"/>
+                        <constraint firstItem="H7Q-qd-ehc" firstAttribute="top" secondItem="HGN-GL-kLx" secondAttribute="top" id="RSa-4E-Wzy"/>
+                        <constraint firstItem="H7Q-qd-ehc" firstAttribute="width" secondItem="HGN-GL-kLx" secondAttribute="width" id="gdi-Mh-itq"/>
+                        <constraint firstItem="zhB-3v-hBh" firstAttribute="leading" secondItem="HGN-GL-kLx" secondAttribute="leading" id="hHK-6g-Xwd"/>
+                        <constraint firstItem="zhB-3v-hBh" firstAttribute="width" secondItem="HGN-GL-kLx" secondAttribute="width" id="rr1-vy-bXy"/>
+                        <constraint firstItem="zhB-3v-hBh" firstAttribute="top" secondItem="H7Q-qd-ehc" secondAttribute="bottom" id="vV6-jH-YAf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oue-p9-yxt">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Oue-p9-yxt" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Qr6-Zl-BXf"/>
+                <constraint firstItem="Oue-p9-yxt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R46-fz-B1h"/>
+                <constraint firstItem="HGN-GL-kLx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" id="UE4-jX-gvY"/>
+                <constraint firstItem="HGN-GL-kLx" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="cT9-Ux-WR7"/>
+                <constraint firstItem="Oue-p9-yxt" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="p7K-qN-UFd"/>
+                <constraint firstItem="HGN-GL-kLx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qQE-Ay-G5I"/>
+                <constraint firstItem="Oue-p9-yxt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zeg-Ra-SlH"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="Oue-p9-yxt" id="DSg-7G-NMr"/>
+                <outlet property="cancelButton" destination="sSk-bU-nAi" id="KTN-UD-YxD"/>
+                <outlet property="datePicker" destination="zhB-3v-hBh" id="Y4y-CO-Cbk"/>
+                <outlet property="mainView" destination="HGN-GL-kLx" id="4Ha-rS-OTw"/>
+                <outlet property="setButton" destination="ZHJ-uB-NNl" id="L0U-IV-rz5"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

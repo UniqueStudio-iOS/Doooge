@@ -2,8 +2,8 @@
 //  HabitDevelopSectionHeaderView.m
 //  Doooge
 //
-//  Created by 陈志浩 on 2016/10/29.
-//  Copyright © 2016年 placeholder. All rights reserved.
+//  Created by BlackDragon on 2016/10/29.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #import "HabitDevelopSectionHeaderView.h"
