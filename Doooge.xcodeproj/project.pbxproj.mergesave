@@ -1,0 +1,923 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18298E1DC4C8D10072722C /* GifImageView.swift */; };
+		2E1829A21DC4D7030072722C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1829A11DC4D7030072722C /* MessageView.swift */; };
+		2E1829E11DC5000E0072722C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1829E01DC5000E0072722C /* Bubble.swift */; };
+		2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */; };
+		2E2AC1BA1DDF61BF00FA5126 /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */; };
+		2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */; };
+		2E2AC1BE1DDF643100FA5126 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */; };
+		2E2AC1C01DDF6D0100FA5126 /* Movements.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1BF1DDF6D0100FA5126 /* Movements.bundle */; };
+		2E2AC1C61DDF6D1300FA5126 /* eat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C21DDF6D1300FA5126 /* eat.mp3 */; };
+		2E2AC1C71DDF6D1300FA5126 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C31DDF6D1300FA5126 /* play.mp3 */; };
+		2E2AC1C81DDF6D1300FA5126 /* sleep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C41DDF6D1300FA5126 /* sleep.wav */; };
+		2E2AC1C91DDF6D1300FA5126 /* touchdog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E2AC1C51DDF6D1300FA5126 /* touchdog.mp3 */; };
+		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
+		2E94C3071DE353C60075C6EB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E94C3061DE353C60075C6EB /* Transition.swift */; };
+		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
+		2E9C1F151DC5673A00E02A3F /* DailyRoutineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */; };
+		2E9C1F161DC5673A00E02A3F /* DooogeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */; };
+		2E9C1F171DC5673A00E02A3F /* DooogeUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F061DC5673A00E02A3F /* DooogeUserDefaults.m */; };
+		2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */; };
+		2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */; };
+		2E9C1F1A1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */; };
+		2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */; };
+		2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */; };
+		2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F121DC5673A00E02A3F /* MainViewController.m */; };
+		2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */; };
+		2EA930701DC438BC0065B905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA9306F1DC438BC0065B905 /* main.m */; };
+		2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930721DC438BC0065B905 /* AppDelegate.m */; };
+		2EA9307B1DC438BC0065B905 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9307A1DC438BC0065B905 /* Assets.xcassets */; };
+		2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */; };
+		2EA930891DC438BD0065B905 /* DooogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930881DC438BD0065B905 /* DooogeTests.m */; };
+		2EA930941DC438BD0065B905 /* DooogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930931DC438BD0065B905 /* DooogeUITests.m */; };
+		2EA930A81DC43B910065B905 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA930A71DC43B910065B905 /* NotificationCenter.framework */; };
+		2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930AA1DC43B910065B905 /* TodayViewController.swift */; };
+		2EA930B21DC43B910065B905 /* My Doooge.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EA930A51DC43B910065B905 /* My Doooge.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2ED836D71DE1D41B009DE983 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED836D61DE1D41B009DE983 /* AnimationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EA930851DC438BD0065B905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EA930631DC438BB0065B905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA9306A1DC438BC0065B905;
+			remoteInfo = Doooge;
+		};
+		2EA930901DC438BD0065B905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EA930631DC438BB0065B905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA9306A1DC438BC0065B905;
+			remoteInfo = Doooge;
+		};
+		2EA930B01DC43B910065B905 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EA930631DC438BB0065B905 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EA930A41DC43B910065B905;
+			remoteInfo = "My Doooge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2EA930B61DC43B910065B905 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2EA930B21DC43B910065B905 /* My Doooge.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.debug.xcconfig"; sourceTree = "<group>"; };
+		101E8D1D1DC8BC870034390E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2E18298E1DC4C8D10072722C /* GifImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
+		2E1829A11DC4D7030072722C /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		2E1829E01DC5000E0072722C /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
+		2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		2E2AC1BF1DDF6D0100FA5126 /* Movements.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Movements.bundle; sourceTree = "<group>"; };
+		2E2AC1C21DDF6D1300FA5126 /* eat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = eat.mp3; sourceTree = "<group>"; };
+		2E2AC1C31DDF6D1300FA5126 /* play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = play.mp3; sourceTree = "<group>"; };
+		2E2AC1C41DDF6D1300FA5126 /* sleep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleep.wav; sourceTree = "<group>"; };
+		2E2AC1C51DDF6D1300FA5126 /* touchdog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touchdog.mp3; sourceTree = "<group>"; };
+		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
+		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
+		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2E94C3061DE353C60075C6EB /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2E9C1F011DC5673A00E02A3F /* DailyRoutineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyRoutineModel.h; path = Controller/DailyRoutineModel.h; sourceTree = "<group>"; };
+		2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyRoutineModel.m; path = Controller/DailyRoutineModel.m; sourceTree = "<group>"; };
+		2E9C1F031DC5673A00E02A3F /* DooogeNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DooogeNotificationCenter.h; path = Controller/DooogeNotificationCenter.h; sourceTree = "<group>"; };
+		2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DooogeNotificationCenter.m; path = Controller/DooogeNotificationCenter.m; sourceTree = "<group>"; };
+		2E9C1F051DC5673A00E02A3F /* DooogeUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DooogeUserDefaults.h; path = Controller/DooogeUserDefaults.h; sourceTree = "<group>"; };
+		2E9C1F061DC5673A00E02A3F /* DooogeUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DooogeUserDefaults.m; path = Controller/DooogeUserDefaults.m; sourceTree = "<group>"; };
+		2E9C1F071DC5673A00E02A3F /* EditNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditNameViewController.h; path = Controller/EditNameViewController.h; sourceTree = "<group>"; };
+		2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditNameViewController.m; path = Controller/EditNameViewController.m; sourceTree = "<group>"; };
+		2E9C1F091DC5673A00E02A3F /* HabitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitCell.h; path = Controller/HabitCell.h; sourceTree = "<group>"; };
+		2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitCell.m; path = Controller/HabitCell.m; sourceTree = "<group>"; };
+		2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitDevelopSectionHeaderView.h; path = Controller/HabitDevelopSectionHeaderView.h; sourceTree = "<group>"; };
+		2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitDevelopSectionHeaderView.m; path = Controller/HabitDevelopSectionHeaderView.m; sourceTree = "<group>"; };
+		2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HabitDevelopViewController.h; path = Controller/HabitDevelopViewController.h; sourceTree = "<group>"; };
+		2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitDevelopViewController.m; path = Controller/HabitDevelopViewController.m; sourceTree = "<group>"; };
+		2E9C1F0F1DC5673A00E02A3F /* HowToPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HowToPlayViewController.h; path = Controller/HowToPlayViewController.h; sourceTree = "<group>"; };
+		2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HowToPlayViewController.m; path = Controller/HowToPlayViewController.m; sourceTree = "<group>"; };
+		2E9C1F111DC5673A00E02A3F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controller/MainViewController.h; sourceTree = "<group>"; };
+		2E9C1F121DC5673A00E02A3F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controller/MainViewController.m; sourceTree = "<group>"; };
+		2E9C1F131DC5673A00E02A3F /* NewHabitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewHabitViewController.h; path = Controller/NewHabitViewController.h; sourceTree = "<group>"; };
+		2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewHabitViewController.m; path = Controller/NewHabitViewController.m; sourceTree = "<group>"; };
+		2EA9306B1DC438BC0065B905 /* Doooge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doooge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA9306F1DC438BC0065B905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EA930711DC438BC0065B905 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2EA930721DC438BC0065B905 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2EA9307A1DC438BC0065B905 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EA9307D1DC438BC0065B905 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EA9307F1DC438BC0065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA930841DC438BD0065B905 /* DooogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DooogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA930881DC438BD0065B905 /* DooogeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DooogeTests.m; sourceTree = "<group>"; };
+		2EA9308A1DC438BD0065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA9308F1DC438BD0065B905 /* DooogeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DooogeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA930931DC438BD0065B905 /* DooogeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DooogeUITests.m; sourceTree = "<group>"; };
+		2EA930951DC438BD0065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA930A51DC43B910065B905 /* My Doooge.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "My Doooge.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA930A71DC43B910065B905 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		2EA930AA1DC43B910065B905 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		2EA930AF1DC43B910065B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED836D61DE1D41B009DE983 /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		6F6735FDC46C53FC5F58932E /* Pods-Doooge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EA930681DC438BC0065B905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930811DC438BD0065B905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA9308C1DC438BD0065B905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930A21DC43B910065B905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA930A81DC43B910065B905 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		101E8D1B1DC8BAFB0034390E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F111DC5673A00E02A3F /* MainViewController.h */,
+				2E9C1F121DC5673A00E02A3F /* MainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		101E8D1C1DC8BC6C0034390E /* PCH */ = {
+			isa = PBXGroup;
+			children = (
+				101E8D1D1DC8BC870034390E /* PrefixHeader.pch */,
+			);
+			name = PCH;
+			sourceTree = "<group>";
+		};
+		101E8D1E1DC8C0650034390E /* EditName */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F071DC5673A00E02A3F /* EditNameViewController.h */,
+				2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */,
+			);
+			name = EditName;
+			sourceTree = "<group>";
+		};
+		2E2AC1C11DDF6D1300FA5126 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				2E2AC1C21DDF6D1300FA5126 /* eat.mp3 */,
+				2E2AC1C31DDF6D1300FA5126 /* play.mp3 */,
+				2E2AC1C41DDF6D1300FA5126 /* sleep.wav */,
+				2E2AC1C51DDF6D1300FA5126 /* touchdog.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		2EA930621DC438BB0065B905 = {
+			isa = PBXGroup;
+			children = (
+				2EA9306D1DC438BC0065B905 /* Doooge */,
+				2EA930871DC438BD0065B905 /* DooogeTests */,
+				2EA930921DC438BD0065B905 /* DooogeUITests */,
+				2EA930A91DC43B910065B905 /* My Doooge */,
+				2EA930A61DC43B910065B905 /* Frameworks */,
+				2EA9306C1DC438BC0065B905 /* Products */,
+				F7CCD268CADBDC2581BF8DBE /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		2EA9306C1DC438BC0065B905 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EA9306B1DC438BC0065B905 /* Doooge.app */,
+				2EA930841DC438BD0065B905 /* DooogeTests.xctest */,
+				2EA9308F1DC438BD0065B905 /* DooogeUITests.xctest */,
+				2EA930A51DC43B910065B905 /* My Doooge.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EA9306D1DC438BC0065B905 /* Doooge */ = {
+			isa = PBXGroup;
+			children = (
+				101E8D1C1DC8BC6C0034390E /* PCH */,
+				101E8D1B1DC8BAFB0034390E /* Main */,
+				101E8D1E1DC8C0650034390E /* EditName */,
+				2E9C1F011DC5673A00E02A3F /* DailyRoutineModel.h */,
+				2E9C1F021DC5673A00E02A3F /* DailyRoutineModel.m */,
+				2E9C1F031DC5673A00E02A3F /* DooogeNotificationCenter.h */,
+				2E9C1F041DC5673A00E02A3F /* DooogeNotificationCenter.m */,
+				2E9C1F051DC5673A00E02A3F /* DooogeUserDefaults.h */,
+				2E9C1F061DC5673A00E02A3F /* DooogeUserDefaults.m */,
+				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
+				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
+				2E9C1F0B1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.h */,
+				2E9C1F0C1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m */,
+				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
+				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
+				2E9C1F0F1DC5673A00E02A3F /* HowToPlayViewController.h */,
+				2E9C1F101DC5673A00E02A3F /* HowToPlayViewController.m */,
+				2E9C1F131DC5673A00E02A3F /* NewHabitViewController.h */,
+				2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */,
+				2E7A47F41DC459D6007832E5 /* Doooge.entitlements */,
+				2EA930711DC438BC0065B905 /* AppDelegate.h */,
+				2EA930721DC438BC0065B905 /* AppDelegate.m */,
+				2EA9307A1DC438BC0065B905 /* Assets.xcassets */,
+				2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */,
+				2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */,
+				2EA9307F1DC438BC0065B905 /* Info.plist */,
+				2EA9306E1DC438BC0065B905 /* Supporting Files */,
+			);
+			path = Doooge;
+			sourceTree = "<group>";
+		};
+		2EA9306E1DC438BC0065B905 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EA9306F1DC438BC0065B905 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EA930871DC438BD0065B905 /* DooogeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA930881DC438BD0065B905 /* DooogeTests.m */,
+				2EA9308A1DC438BD0065B905 /* Info.plist */,
+			);
+			path = DooogeTests;
+			sourceTree = "<group>";
+		};
+		2EA930921DC438BD0065B905 /* DooogeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA930931DC438BD0065B905 /* DooogeUITests.m */,
+				2EA930951DC438BD0065B905 /* Info.plist */,
+			);
+			path = DooogeUITests;
+			sourceTree = "<group>";
+		};
+		2EA930A61DC43B910065B905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EA930A71DC43B910065B905 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EA930A91DC43B910065B905 /* My Doooge */ = {
+			isa = PBXGroup;
+			children = (
+				2E2AC1C11DDF6D1300FA5126 /* Sound */,
+				2E2AC1BF1DDF6D0100FA5126 /* Movements.bundle */,
+				2E7EED721DC46119000AC993 /* My Doooge.entitlements */,
+				2EA930AA1DC43B910065B905 /* TodayViewController.swift */,
+				2E2AC1BD1DDF643100FA5126 /* NotificationManager.swift */,
+				2EA930AF1DC43B910065B905 /* Info.plist */,
+				2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */,
+				2E18298E1DC4C8D10072722C /* GifImageView.swift */,
+				2E1829A11DC4D7030072722C /* MessageView.swift */,
+				2E1829E01DC5000E0072722C /* Bubble.swift */,
+				2E2AC1B91DDF61BF00FA5126 /* AnimationEngine.swift */,
+				2E2AC1BB1DDF622500FA5126 /* ScoreManager.swift */,
+				2E2AC1B51DDF5BA700FA5126 /* Images.xcassets */,
+				2ED836D61DE1D41B009DE983 /* AnimationView.swift */,
+				2E94C3061DE353C60075C6EB /* Transition.swift */,
+			);
+			path = "My Doooge";
+			sourceTree = "<group>";
+		};
+		F7CCD268CADBDC2581BF8DBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */,
+				6F6735FDC46C53FC5F58932E /* Pods-Doooge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EA9306A1DC438BC0065B905 /* Doooge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA930981DC438BD0065B905 /* Build configuration list for PBXNativeTarget "Doooge" */;
+			buildPhases = (
+				78F40B81EAC85A9D572EAD80 /* [CP] Check Pods Manifest.lock */,
+				2EA930671DC438BC0065B905 /* Sources */,
+				2EA930681DC438BC0065B905 /* Frameworks */,
+				2EA930691DC438BC0065B905 /* Resources */,
+				2EA930B61DC43B910065B905 /* Embed App Extensions */,
+				A1389E53FBB71874BF5B8D1A /* [CP] Embed Pods Frameworks */,
+				B97B1688EF12BD0958CEB042 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA930B11DC43B910065B905 /* PBXTargetDependency */,
+			);
+			name = Doooge;
+			productName = Doooge;
+			productReference = 2EA9306B1DC438BC0065B905 /* Doooge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EA930831DC438BD0065B905 /* DooogeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA9309B1DC438BD0065B905 /* Build configuration list for PBXNativeTarget "DooogeTests" */;
+			buildPhases = (
+				2EA930801DC438BD0065B905 /* Sources */,
+				2EA930811DC438BD0065B905 /* Frameworks */,
+				2EA930821DC438BD0065B905 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA930861DC438BD0065B905 /* PBXTargetDependency */,
+			);
+			name = DooogeTests;
+			productName = DooogeTests;
+			productReference = 2EA930841DC438BD0065B905 /* DooogeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2EA9308E1DC438BD0065B905 /* DooogeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA9309E1DC438BD0065B905 /* Build configuration list for PBXNativeTarget "DooogeUITests" */;
+			buildPhases = (
+				2EA9308B1DC438BD0065B905 /* Sources */,
+				2EA9308C1DC438BD0065B905 /* Frameworks */,
+				2EA9308D1DC438BD0065B905 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA930911DC438BD0065B905 /* PBXTargetDependency */,
+			);
+			name = DooogeUITests;
+			productName = DooogeUITests;
+			productReference = 2EA9308F1DC438BD0065B905 /* DooogeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2EA930A41DC43B910065B905 /* My Doooge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EA930B31DC43B910065B905 /* Build configuration list for PBXNativeTarget "My Doooge" */;
+			buildPhases = (
+				2EA930A11DC43B910065B905 /* Sources */,
+				2EA930A21DC43B910065B905 /* Frameworks */,
+				2EA930A31DC43B910065B905 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "My Doooge";
+			productName = "My Doooge";
+			productReference = 2EA930A51DC43B910065B905 /* My Doooge.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EA930631DC438BB0065B905 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = VicChan;
+				TargetAttributes = {
+					2EA9306A1DC438BC0065B905 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T97FFXXX75;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					2EA930831DC438BD0065B905 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T97FFXXX75;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2EA9306A1DC438BC0065B905;
+					};
+					2EA9308E1DC438BD0065B905 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T97FFXXX75;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2EA9306A1DC438BC0065B905;
+					};
+					2EA930A41DC43B910065B905 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = T97FFXXX75;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2EA930661DC438BB0065B905 /* Build configuration list for PBXProject "Doooge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EA930621DC438BB0065B905;
+			productRefGroup = 2EA9306C1DC438BC0065B905 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EA9306A1DC438BC0065B905 /* Doooge */,
+				2EA930831DC438BD0065B905 /* DooogeTests */,
+				2EA9308E1DC438BD0065B905 /* DooogeUITests */,
+				2EA930A41DC43B910065B905 /* My Doooge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EA930691DC438BC0065B905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */,
+				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
+				2EA9307B1DC438BC0065B905 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930821DC438BD0065B905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA9308D1DC438BD0065B905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930A31DC43B910065B905 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2AC1C91DDF6D1300FA5126 /* touchdog.mp3 in Resources */,
+				2E2AC1B61DDF5BA700FA5126 /* Images.xcassets in Resources */,
+				2E2AC1C71DDF6D1300FA5126 /* play.mp3 in Resources */,
+				2E2AC1C01DDF6D0100FA5126 /* Movements.bundle in Resources */,
+				2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */,
+				2E2AC1C81DDF6D1300FA5126 /* sleep.wav in Resources */,
+				2E2AC1C61DDF6D1300FA5126 /* eat.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78F40B81EAC85A9D572EAD80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1389E53FBB71874BF5B8D1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doooge/Pods-Doooge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B97B1688EF12BD0958CEB042 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doooge/Pods-Doooge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EA930671DC438BC0065B905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */,
+				2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */,
+				2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */,
+				2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */,
+				2E9C1F1A1DC5673A00E02A3F /* HabitDevelopSectionHeaderView.m in Sources */,
+				2E9C1F151DC5673A00E02A3F /* DailyRoutineModel.m in Sources */,
+				2E9C1F161DC5673A00E02A3F /* DooogeNotificationCenter.m in Sources */,
+				2E9C1F171DC5673A00E02A3F /* DooogeUserDefaults.m in Sources */,
+				2EA930701DC438BC0065B905 /* main.m in Sources */,
+				2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */,
+				2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */,
+				2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930801DC438BD0065B905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA930891DC438BD0065B905 /* DooogeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA9308B1DC438BD0065B905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA930941DC438BD0065B905 /* DooogeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA930A11DC43B910065B905 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E94C3071DE353C60075C6EB /* Transition.swift in Sources */,
+				2E2AC1BC1DDF622500FA5126 /* ScoreManager.swift in Sources */,
+				2ED836D71DE1D41B009DE983 /* AnimationView.swift in Sources */,
+				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
+				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
+				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,
+				2E2AC1BE1DDF643100FA5126 /* NotificationManager.swift in Sources */,
+				2E2AC1BA1DDF61BF00FA5126 /* AnimationEngine.swift in Sources */,
+				2E1829E11DC5000E0072722C /* Bubble.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EA930861DC438BD0065B905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA9306A1DC438BC0065B905 /* Doooge */;
+			targetProxy = 2EA930851DC438BD0065B905 /* PBXContainerItemProxy */;
+		};
+		2EA930911DC438BD0065B905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA9306A1DC438BC0065B905 /* Doooge */;
+			targetProxy = 2EA930901DC438BD0065B905 /* PBXContainerItemProxy */;
+		};
+		2EA930B11DC43B910065B905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EA930A41DC43B910065B905 /* My Doooge */;
+			targetProxy = 2EA930B01DC43B910065B905 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E7EEDC71DC486CC000AC993 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EA9307D1DC438BC0065B905 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2EA930961DC438BD0065B905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2EA930971DC438BD0065B905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EA930991DC438BD0065B905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Doooge/Doooge.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Doooge/PrefixHeader.pch";
+				INFOPLIST_FILE = Doooge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.Doooge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2EA9309A1DC438BD0065B905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F6735FDC46C53FC5F58932E /* Pods-Doooge.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Doooge/Doooge.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Doooge/PrefixHeader.pch";
+				INFOPLIST_FILE = Doooge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.Doooge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2EA9309C1DC438BD0065B905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = DooogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.DooogeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doooge.app/Doooge";
+			};
+			name = Debug;
+		};
+		2EA9309D1DC438BD0065B905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = DooogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.DooogeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doooge.app/Doooge";
+			};
+			name = Release;
+		};
+		2EA9309F1DC438BD0065B905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = DooogeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.DooogeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Doooge;
+			};
+			name = Debug;
+		};
+		2EA930A01DC438BD0065B905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = DooogeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Victor.DooogeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Doooge;
+			};
+			name = Release;
+		};
+		2EA930B41DC43B910065B905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "My Doooge/My Doooge.entitlements";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = "My Doooge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Victor.Doooge.My-Doooge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2EA930B51DC43B910065B905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "My Doooge/My Doooge.entitlements";
+				DEVELOPMENT_TEAM = T97FFXXX75;
+				INFOPLIST_FILE = "My Doooge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Victor.Doooge.My-Doooge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EA930661DC438BB0065B905 /* Build configuration list for PBXProject "Doooge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA930961DC438BD0065B905 /* Debug */,
+				2EA930971DC438BD0065B905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA930981DC438BD0065B905 /* Build configuration list for PBXNativeTarget "Doooge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA930991DC438BD0065B905 /* Debug */,
+				2EA9309A1DC438BD0065B905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA9309B1DC438BD0065B905 /* Build configuration list for PBXNativeTarget "DooogeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA9309C1DC438BD0065B905 /* Debug */,
+				2EA9309D1DC438BD0065B905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA9309E1DC438BD0065B905 /* Build configuration list for PBXNativeTarget "DooogeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA9309F1DC438BD0065B905 /* Debug */,
+				2EA930A01DC438BD0065B905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EA930B31DC43B910065B905 /* Build configuration list for PBXNativeTarget "My Doooge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EA930B41DC43B910065B905 /* Debug */,
+				2EA930B51DC43B910065B905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EA930631DC438BB0065B905 /* Project object */;
+}
