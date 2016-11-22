@@ -77,6 +77,7 @@
 
 - (void)gestureConfiguration {
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:tap];
 }
 

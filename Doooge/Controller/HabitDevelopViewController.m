@@ -153,6 +153,7 @@
         currentCustomHabitRow = indexPath.row;
         [self performSegueWithIdentifier:@"modifyCustomHabit" sender:nil];
     }
+    [self deselectCellForCurrentIndexPath];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -253,12 +254,10 @@
         [self.view addSubview:_timePicker];
         HabitDevelopViewController * __weak weakSelf = self;
         _timePicker.cancelHandler = ^(){
-            [weakSelf deselectCellForCurrentIndexPath];
         };
         _timePicker.setTimeHandler = ^(NSInteger hour, NSInteger minute) {
             [weakSelf updateTimeWithHour:hour andMinute:minute];
             [weakSelf updateDailyRoutineNotification];
-            [weakSelf deselectCellForCurrentIndexPath];
         };
     }
     return _timePicker;

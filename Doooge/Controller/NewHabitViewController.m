@@ -14,7 +14,7 @@
 #import "AppTime.h"
 #import "CustomHabit.h"
 
-@interface NewHabitViewController () {
+@interface NewHabitViewController ()<UITextFieldDelegate> {
     CustomHabitWeek weekStatus;
     NSInteger _hour;
     NSInteger _minute;
@@ -76,7 +76,8 @@
         _minute = 0;
     }
     [self initDateWithHour:_hour andMinute:_minute];
-//    [self gestureConfiguration];
+    _nameText.delegate = self;
+    [self gestureConfiguration];
 }
 
 - (void)advancedUIConfiguration {
@@ -258,11 +259,16 @@
 
 - (void)gestureConfiguration {
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:tap];
 }
 
 - (void)dismissKeyboard{
     [self.nameText resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return [textField resignFirstResponder];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
