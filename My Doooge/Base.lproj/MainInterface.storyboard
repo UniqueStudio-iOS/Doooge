@@ -40,7 +40,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="1a0-KA-NLY"/>
                                                     <constraint firstAttribute="width" secondItem="RbM-uw-aT1" secondAttribute="height" multiplier="7:4" id="oYi-fZ-DYm"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="feedBtn.png"/>
+                                                <state key="normal" backgroundImage="feedBtn"/>
                                                 <connections>
                                                     <action selector="feed:" destination="tay-7Z-Dka" eventType="touchUpInside" id="Vbi-Zd-KrI"/>
                                                 </connections>
@@ -51,7 +51,7 @@
                                                     <constraint firstAttribute="width" secondItem="hqP-hO-E7a" secondAttribute="height" multiplier="7:4" id="MIt-Tl-zzw"/>
                                                     <constraint firstAttribute="height" constant="35" id="caE-BJ-Tux"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="playBtn.png"/>
+                                                <state key="normal" backgroundImage="playBtn"/>
                                                 <connections>
                                                     <action selector="move:" destination="tay-7Z-Dka" eventType="touchUpInside" id="tud-UJ-YVl"/>
                                                 </connections>
@@ -62,7 +62,7 @@
                                                     <constraint firstAttribute="width" secondItem="MlP-b5-GMl" secondAttribute="height" multiplier="7:4" id="DXd-yH-rJF"/>
                                                     <constraint firstAttribute="height" constant="35" id="zDo-z5-IAu"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="sleepBtn.png"/>
+                                                <state key="normal" backgroundImage="sleepBtn"/>
                                                 <connections>
                                                     <action selector="sleep:" destination="tay-7Z-Dka" eventType="touchUpInside" id="L7a-ij-ZzA"/>
                                                 </connections>
@@ -73,9 +73,10 @@
                                                     <constraint firstAttribute="height" constant="35" id="RJg-O2-o3b"/>
                                                     <constraint firstAttribute="width" secondItem="y07-GC-Jbw" secondAttribute="height" multiplier="7:4" id="Vqz-F7-bSZ"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="backapp.png"/>
+                                                <state key="normal" backgroundImage="backapp"/>
                                                 <connections>
                                                     <action selector="openContainerApp:" destination="tay-7Z-Dka" eventType="touchUpInside" id="ONo-sY-EZZ"/>
+                                                    <segue destination="vZ5-Gh-Ycd" kind="show" id="wVz-ir-ql9"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-0q-sHK">
@@ -188,7 +189,7 @@
                                             <constraint firstAttribute="height" constant="18" id="C2H-5P-L6z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <state key="normal" backgroundImage="AssistorOn.png">
+                                        <state key="normal" backgroundImage="AssistorOn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -239,16 +240,37 @@
             </objects>
             <point key="canvasLocation" x="-327.19999999999999" y="-822.18890554722645"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yof-bN-c5E">
+            <objects>
+                <viewController id="vZ5-Gh-Ycd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="foc-g2-jWq"/>
+                        <viewControllerLayoutGuide type="bottom" id="NsZ-lf-11Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VYv-hz-WJE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="VYv-hz-WJE" id="uZo-R6-YcN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WG4-rq-XXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="-810"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="AssistorOn.png" width="16" height="18"/>
-        <image name="backapp.png" width="68" height="40"/>
+        <image name="AssistorOn" width="16" height="18"/>
+        <image name="backapp" width="68" height="40"/>
         <image name="background" width="376" height="200"/>
         <image name="coin" width="24" height="18"/>
         <image name="diag.png" width="194" height="45"/>
-        <image name="feedBtn.png" width="68" height="40"/>
+        <image name="feedBtn" width="68" height="40"/>
         <image name="level" width="84" height="9"/>
-        <image name="playBtn.png" width="68" height="40"/>
-        <image name="sleepBtn.png" width="68" height="40"/>
+        <image name="playBtn" width="68" height="40"/>
+        <image name="sleepBtn" width="68" height="40"/>
     </resources>
 </document>

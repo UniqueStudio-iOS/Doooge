@@ -6,33 +6,87 @@
 //  Copyright © 2016年 VicChan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 /// 动做处理处理引擎
+
+enum DooogeAnimationType: Int {
+    
+    case normal = 0
+    case sleep  = 1
+    case eat    = 2
+    case play   = 3
+    case touch  = 4
+    
+}
 
 
 
 class AnimationEngine {
 
-
-
-}
-
-
-/*
-extension AnimationEngine {
+    var animationView: AnimationView!
 
     
-    // 轮播 提醒
-    func showRandomNotification(content: []) {
+    struct FileManager {
+        var bundle: Bundle!
         
-    
+        static let manager: FileManager = {
+            var instance = FileManager()
+            let path = Bundle.main.path(forResource: "Movements", ofType: "bundle")
+            instance.bundle = Bundle.init(path: path!)
+            return instance
+        }()
         
-        
-        
+        func image(_ name: String) -> UIImage? {
+            let path = self.bundle.path(forResource: name, ofType: "png")
+            if let imagePath = path {
+                return UIImage(contentsOfFile: imagePath)
+            } else {
+                return nil
+            }
+        }
     }
+    
+    
+    
+    static let shared: AnimationEngine = {
+        let instance = AnimationEngine()
+        
+        
+        return instance
+    }()
+    
+    // 初始化动画View
+    func initView(_ frame: CGRect) -> Self {
+        self.animationView = AnimationView()
+        return self
+    }
+    
+    
+    public func switchAnimation(_ mode: DooogeAnimationType) {
+        
+    
+        
+        
+        
+        
+        
+    
+    }
+    
+    
+    public func defaultAnimation() {
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
 
 }
 
-*/

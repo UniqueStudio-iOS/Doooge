@@ -13,6 +13,7 @@ import AVFoundation
 
 
 
+
 extension CGRect {
     init(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) {
         self.init(x: x, y: y, width: width, height: height)
@@ -132,7 +133,7 @@ extension UIView {
 
 
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerTransitioningDelegate {
     
     
     
@@ -270,19 +271,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 4.0)
 
         
-        
-
-        
     }
 
  
     
     @IBAction func openContainerApp(_ sender: AnyObject) {
+  /*
         self.extensionContext?.open(URL(string:"Doooge://")!, completionHandler: { (finished) in
             print("\(finished)")
-            
         })
-
+*/
     }
     
     private func increment(type: IncrementType) {
@@ -342,13 +340,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         Bubble.show(score: 20, superView: self.view)
         saveGrowth(value: 20)
 
-        
-        
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(4.8)){
-            self.keepSleep()
-        }
-        */
         self.perform(#selector(TodayViewController.keepSleep), with: nil, afterDelay: 4.8)
       
         
@@ -376,12 +367,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
         
         
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(2.9)){
-            self.defaultState()
-        }
-        */
-        
+
     }
     
     func randomMovement() {
@@ -463,8 +449,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case .wear: return ["wear1","wear2","wear3","wear4","wear5","wear6"]
 
         }
-        return []
     }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+    }
+    
+
  
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
