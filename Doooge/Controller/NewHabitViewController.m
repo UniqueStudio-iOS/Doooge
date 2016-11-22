@@ -76,7 +76,7 @@
         _minute = 0;
     }
     [self initDateWithHour:_hour andMinute:_minute];
-    
+//    [self gestureConfiguration];
 }
 
 - (void)advancedUIConfiguration {
@@ -205,6 +205,7 @@
 #pragma mark TableView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
+        [self.nameText resignFirstResponder];
         self.timePicker.viewHidden = NO;
     }
 }
@@ -253,6 +254,15 @@
     }
     NSString * time = [NSString stringWithFormat:@"%@:%@", hourString, minuteString];
     [self.timeLabel setText:time];
+}
+
+- (void)gestureConfiguration {
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.tableView addGestureRecognizer:tap];
+}
+
+- (void)dismissKeyboard{
+    [self.nameText resignFirstResponder];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

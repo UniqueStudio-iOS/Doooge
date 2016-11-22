@@ -18,12 +18,15 @@
 @property (nonatomic, strong) IBOutlet UIView * backgroundView;
 
 @property (nonatomic, readwrite) NSDate * date;
+
+@property (nonatomic, strong)  UITapGestureRecognizer * tap;
 @end
 
 @implementation DatePickerView
 @synthesize viewHidden = _viewHidden;
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self gestureConfiguration];
     [self insertSubview:self.mainView aboveSubview:self.backgroundView];
     [self setViewHidden:YES];
 }
@@ -87,5 +90,10 @@
         
     }];
     
+}
+
+- (void)gestureConfiguration {
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenViews)];
+    [self.backgroundView addGestureRecognizer:tap];
 }
 @end

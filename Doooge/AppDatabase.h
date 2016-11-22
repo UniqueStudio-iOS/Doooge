@@ -22,9 +22,6 @@
 - (NSArray *)allDailyRoutine;
 - (NSArray *)allCustomHabit;
 
-- (void)beginWriteTransaction;
-- (void)commitWriteTransaction;
-
 - (void)updateLastClocked:(NSDate *)date withCustomHabit:(CustomHabit *)customHabit;
 - (void)updateHour:(NSInteger)hour
             minute:(NSInteger)minute

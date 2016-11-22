@@ -35,6 +35,7 @@
 - (void)dataCheck {
     if ([AppSettings sharedSettings].isPrimary == YES) {
         [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
+        [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
         [AppSettings sharedSettings].primary = NO;
     }
 }

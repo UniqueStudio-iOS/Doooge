@@ -12,7 +12,7 @@
 
 #import "AppDatabase.h"
 #import "AppTime.h"
-//#import "DooogeNotificationCenter.h"
+#import "AppNotificationCenter.h"
 
 #import "DailyRoutine.h"
 #import "CustomHabit.h"
@@ -168,6 +168,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
+        [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[indexPath.row]];
         [[AppDatabase sharedDatabase]deleteCustomHabit:customHabits[indexPath.row]];
         [self updateData];
     }
@@ -256,6 +257,7 @@
         };
         _timePicker.setTimeHandler = ^(NSInteger hour, NSInteger minute) {
             [weakSelf updateTimeWithHour:hour andMinute:minute];
+            [weakSelf updateDailyRoutineNotification];
             [weakSelf deselectCellForCurrentIndexPath];
         };
     }
@@ -285,6 +287,10 @@
     [self updateData];
 }
 
+- (void)updateDailyRoutineNotification {
+    [[AppNotificationCenter sharedNotificationCenter]registerDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
+}
+
 - (void)deselectCellForCurrentIndexPath {
     NSIndexPath * targetIndex = [NSIndexPath indexPathForRow:currentDailyRoutineRow inSection:0];
     [self.tableView deselectRowAtIndexPath:targetIndex animated:YES];
@@ -297,11 +303,13 @@
         [targetVC existedCustomHabit:customHabits[currentCustomHabitRow]];
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
         };
     } else if ([[segue identifier]isEqualToString:@"addCustomHabit"]) {
         NewHabitViewController * targetVC = segue.destinationViewController;
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
         };
     }
 }
