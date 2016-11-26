@@ -451,10 +451,12 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         }
     }
     
+    /*
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
     }
     
+    */
 
  
     

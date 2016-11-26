@@ -14,15 +14,30 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3B39B5F412BE235CB08C5EF8610D37C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>64ED1573F9E3C2CEBE05D0B2837DB730</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>900288C3C661AFD04330CF47DCAC8C91</key>
 		<dict>
 			<key>primary</key>
 			<true/>
