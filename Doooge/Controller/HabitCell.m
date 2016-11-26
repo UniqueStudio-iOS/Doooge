@@ -2,8 +2,8 @@
 //  HabitCell.m
 //  Doooge
 //
-//  Created by 陈志浩 on 2016/10/29.
-//  Copyright © 2016年 placeholder. All rights reserved.
+//  Created by BlackDragon on 2016/10/29.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #import "HabitCell.h"
@@ -32,26 +32,43 @@
 
 - (void)setPersist:(NSInteger)persist {
     _persist = persist;
-    [self.persistLabel setText:[NSString stringWithFormat:@"已坚持%ld天", (long)_persist]];
+    NSString * plainText = [NSString stringWithFormat:@"已坚持%ld天", (long)_persist];
+    NSMutableAttributedString * attributedText = [[NSMutableAttributedString alloc]initWithString:plainText];
+    [attributedText addAttribute:NSForegroundColorAttributeName value:mainColor range:NSMakeRange(3, plainText.length - 4)];
+    [self.persistLabel setAttributedText:attributedText];
 }
 
-- (void)setTime:(NSDateComponents *)time {
-    NSArray * weekArray = @[@"周日 ", @"周一 ",@"周二 ", @"周三 ",@"周四 ",@"周五 ",@"周六 "];
-    _time = time;
-    NSString * timeString = [NSString string];
-    if (_time.weekday != NSIntegerMax) {
-        timeString = [timeString stringByAppendingString:weekArray[_time.weekday-1]];
+- (void)setHour:(NSInteger)hour {
+    _hour = hour;
+    [self updateTimeLabel];
+}
+
+- (void)setMinute:(NSInteger)minute {
+    _minute = minute;
+    [self updateTimeLabel];
+}
+
+- (void)setTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
+    _hour = hour;
+    _minute = minute;
+    [self updateTimeLabel];
+}
+
+- (void)updateTimeLabel {
+    NSString * hour;
+    NSString * minute;
+    if (_hour < 10) {
+        hour = [NSString stringWithFormat:@" %ld", _hour];
+    } else {
+        hour = [NSString stringWithFormat:@"%ld", _hour];
     }
-    if (_time.hour != NSIntegerMax && _time.minute != NSIntegerMax) {
-        timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)_time.hour]];
-        timeString = [timeString stringByAppendingString:@":"];
-        if (_time.minute < 10) {
-            timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"0%ld", (long)_time.minute]];
-        } else {
-            timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%ld", (long)_time.minute]];
-        }
+    if (_minute < 10) {
+        minute = [NSString stringWithFormat:@"0%ld", _minute];
+    } else {
+        minute = [NSString stringWithFormat:@"%ld", _minute];
     }
-    [self.timeLabel setText:timeString];
+    NSString * time = [NSString stringWithFormat:@"%@:%@", hour, minute];
+    [self.timeLabel setText:time];
 }
 
 @end

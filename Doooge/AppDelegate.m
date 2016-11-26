@@ -2,13 +2,15 @@
 //  AppDelegate.m
 //  Doooge
 //
-//  Created by VicChan on 2016/10/29.
-//  Copyright © 2016年 VicChan. All rights reserved.
+//  Created by BlackDragon on 2016/10/29.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "DooogeUserDefaults.h"
-#import "DooogeNotificationCenter.h"
+#import "AppSettings.h"
+#import "AppDatabase.h"
+#import "AppNotificationCenter.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,60 +20,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
-    [[DooogeNotificationCenter currentNotificationCenter]requestAuthorization];
-    [self initializeCheck];
-    [[DooogeNotificationCenter currentNotificationCenter]requestAllHealthyRoutines];
-    
-    // Override point for customization after application launch.
+    [AppSettings sharedSettings];
+    [self authorizationCheck];
+    [self dataCheck];
     return YES;
 }
 
-
-- (void)initializeCheck {
-    if (![[DooogeUserDefaults dooogeUserDefaults]growthPointForPet]) {
-        [[DooogeUserDefaults dooogeUserDefaults]setGrowthPointForPet:1000];
+- (void)authorizationCheck {
+    if ([AppSettings sharedSettings].isAuthorized == NO) {
+        [[AppNotificationCenter sharedNotificationCenter]requestNotificationAuthorization];
     }
-    if (![[DooogeUserDefaults dooogeUserDefaults]nameForPet]) {
-        [[DooogeUserDefaults dooogeUserDefaults]setNameForPet:@"Doooge"];
-    }
-        if (![[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"breakfast"]) {
-    NSDateComponents * breakfastTime = [[NSDateComponents alloc]init];
-    breakfastTime.hour = 2;
-    breakfastTime.minute = 31;
-    NSDictionary * breakfastDict = [NSDictionary dictionaryWithObjectsAndKeys:@1, @"ID", @0, @"persist", [NSKeyedArchiver archivedDataWithRootObject:breakfastTime], @"time", nil];
-    [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:breakfastDict forKey:@"breakfast"];
-        }
-    if (![[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"lunch"]) {
-        NSDateComponents * lunchTime = [[NSDateComponents alloc]init];
-        lunchTime.hour = 12;
-        lunchTime.minute = 0;
-        NSDictionary * lunchDict = [NSDictionary dictionaryWithObjectsAndKeys:@2, @"ID", @0, @"persist",  [NSKeyedArchiver archivedDataWithRootObject:lunchTime], @"time", nil];
-        [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:lunchDict forKey:@"lunch"];
-    }
-    if (![[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"dinner"]) {
-        NSDateComponents * dinnerTime = [[NSDateComponents alloc]init];
-        dinnerTime.hour = 18;
-        dinnerTime.minute = 0;
-        NSDictionary * dinnerDict = [NSDictionary dictionaryWithObjectsAndKeys:@3, @"ID", @0, @"persist",  [NSKeyedArchiver archivedDataWithRootObject:dinnerTime], @"time", nil];
-        [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dinnerDict forKey:@"dinner"];
-    }
-    if (![[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"sport"]) {
-        NSDateComponents * sportTime = [[NSDateComponents alloc]init];
-        sportTime.hour = 6;
-        sportTime.minute = 0;
-        NSDictionary * sportDict = [NSDictionary dictionaryWithObjectsAndKeys:@4, @"ID", @0, @"persist",  [NSKeyedArchiver archivedDataWithRootObject:sportTime], @"time", nil];
-        [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:sportDict forKey:@"sport"];
-    }
-    if (![[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"sleep"]) {
-        NSDateComponents * sleepTime = [[NSDateComponents alloc]init];
-        sleepTime.hour = 23;
-        sleepTime.minute = 0;
-        NSDictionary * sleepDict = [NSDictionary dictionaryWithObjectsAndKeys:@5, @"ID", @0, @"persist",  [NSKeyedArchiver archivedDataWithRootObject:sleepTime], @"time", nil];
-        [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:sleepDict forKey:@"sleep"];
-    }
-    [[DooogeUserDefaults dooogeUserDefaults]synchronize];
 }
 
+- (void)dataCheck {
+    if ([AppSettings sharedSettings].isPrimary == YES) {
+        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
+        [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
+        [AppSettings sharedSettings].primary = NO;
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

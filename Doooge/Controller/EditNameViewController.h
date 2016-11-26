@@ -2,14 +2,14 @@
 //  EditNameViewController.h
 //  Doooge
 //
-//  Created by 陈志浩 on 2016/10/29.
-//  Copyright © 2016年 placeholder. All rights reserved.
+//  Created by BlackDragon on 2016/10/29.
+//  Copyright © 2016年 BlackDragon. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-typedef void(^EditedBlock)(NSString *);
+typedef void(^NameEditedHandler)(NSString * petName);
 
 @interface EditNameViewController : UITableViewController
-@property (nonatomic, copy) EditedBlock editedBlock;
+@property (nonatomic, copy) NameEditedHandler nameEditedHandler;
 @end
