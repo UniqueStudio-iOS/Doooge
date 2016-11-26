@@ -224,6 +224,17 @@
 			name = EditName;
 			sourceTree = "<group>";
 		};
+		1075EED01DD94B4900793813 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1075EEC71DD9086600793813 /* DailyRoutine.h */,
+				1075EEC81DD9086600793813 /* DailyRoutine.m */,
+				1075EECD1DD9494E00793813 /* CustomHabit.h */,
+				1075EECE1DD9494E00793813 /* CustomHabit.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1075EED11DD94B5500793813 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				1075EED11DD94B5500793813 /* Singleton */,
+				1075EED01DD94B4900793813 /* Model */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -763,7 +775,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ED836D71DE1D41B009DE983 /* (null) in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
 				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
 				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,
