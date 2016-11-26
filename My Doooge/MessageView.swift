@@ -29,7 +29,6 @@ class MessageView: UIView {
         
     }
     
-    
     func disappear() {
         UIView.animate(withDuration: 0.4, animations: {
             self.alpha = 0.0001
@@ -38,13 +37,25 @@ class MessageView: UIView {
     }
     
     
+    // 单例模式
+    static let shared: MessageView = {
+        let instance = MessageView()
+        
+        
+        return instance
+    }()
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    static func appear(_ content: String) {
+        
     }
-    */
-
+    
+    
+    
+    
+    static func disappear(_ content: String) {
+        
+    
+    }
+    
+    
 }

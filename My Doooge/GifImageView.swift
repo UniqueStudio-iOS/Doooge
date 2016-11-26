@@ -18,7 +18,7 @@ class GifImageView: UIImageView {
         var images = [UIImage]()
         images = [UIImage]()
         images = imageNames.map { (name) -> UIImage in
-            UIImage(named: name)!
+            AnimationEngine.FileManager.manager.image(name)!
         }
         print("\(count)")
         self.animationImages = images
