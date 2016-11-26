@@ -39,14 +39,13 @@
 		2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F141DC5673A00E02A3F /* NewHabitViewController.m */; };
 		2EA930701DC438BC0065B905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA9306F1DC438BC0065B905 /* main.m */; };
 		2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930721DC438BC0065B905 /* AppDelegate.m */; };
-		2EA9307B1DC438BC0065B905 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9307C1DC438BC0065B905 /* LaunchScreen.storyboard */; };
 		2EA930891DC438BD0065B905 /* DooogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930881DC438BD0065B905 /* DooogeTests.m */; };
 		2EA930941DC438BD0065B905 /* DooogeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930931DC438BD0065B905 /* DooogeUITests.m */; };
 		2EA930A81DC43B910065B905 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA930A71DC43B910065B905 /* NotificationCenter.framework */; };
 		2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA930AA1DC43B910065B905 /* TodayViewController.swift */; };
 		2EA930B21DC43B910065B905 /* My Doooge.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2EA930A51DC43B910065B905 /* My Doooge.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2ED836D71DE1D41B009DE983 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E2DF866C961085ED03C972B1 /* libPods-Doooge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8017E11AEAC9E4F1B86031 /* libPods-Doooge.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,9 @@
 		1063D70B1DE3390400FC1146 /* NotificationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationData.m; sourceTree = "<group>"; };
 		1075EEC41DD8F60E00793813 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
 		1075EEC51DD8F60E00793813 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
+		1075EEC71DD9086600793813 /* DailyRoutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DailyRoutine.h; path = Controller/DailyRoutine.h; sourceTree = "<group>"; };
 		1075EEC81DD9086600793813 /* DailyRoutine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DailyRoutine.m; path = Controller/DailyRoutine.m; sourceTree = "<group>"; };
+		1075EECD1DD9494E00793813 /* CustomHabit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomHabit.h; path = Controller/CustomHabit.h; sourceTree = "<group>"; };
 		1075EECE1DD9494E00793813 /* CustomHabit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomHabit.m; path = Controller/CustomHabit.m; sourceTree = "<group>"; };
 		1075EED21DD94B7A00793813 /* AppDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDatabase.h; sourceTree = "<group>"; };
 		1075EED31DD94B7A00793813 /* AppDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDatabase.m; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2DF866C961085ED03C972B1 /* libPods-Doooge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +637,6 @@
 				2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */,
 				1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */,
 				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
-				2EA9307B1DC438BC0065B905 /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
