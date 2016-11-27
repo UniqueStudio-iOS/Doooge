@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10294EFF1DE98912009480C5 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10294EFE1DE98912009480C5 /* ShopViewController.m */; };
+		10294F041DE990FF009480C5 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10294F031DE990FF009480C5 /* ItemView.xib */; };
+		10294F071DE9A13E009480C5 /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10294F061DE9A13E009480C5 /* ItemView.m */; };
 		1063D70C1DE3390400FC1146 /* NotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063D70B1DE3390400FC1146 /* NotificationData.m */; };
 		1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEC51DD8F60E00793813 /* AppSettings.m */; };
 		1075EEC91DD9086600793813 /* DailyRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEC81DD9086600793813 /* DailyRoutine.m */; };
@@ -140,6 +143,11 @@
 /* Begin PBXFileReference section */
 		05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.debug.xcconfig"; sourceTree = "<group>"; };
 		101E8D1D1DC8BC870034390E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		10294EFD1DE98912009480C5 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = Controller/ShopViewController.h; sourceTree = "<group>"; };
+		10294EFE1DE98912009480C5 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = Controller/ShopViewController.m; sourceTree = "<group>"; };
+		10294F031DE990FF009480C5 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView.xib; sourceTree = "<group>"; };
+		10294F051DE9A13E009480C5 /* ItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemView.h; path = Controller/ItemView.h; sourceTree = "<group>"; };
+		10294F061DE9A13E009480C5 /* ItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemView.m; path = Controller/ItemView.m; sourceTree = "<group>"; };
 		1063D70A1DE3390400FC1146 /* NotificationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationData.h; sourceTree = "<group>"; };
 		1063D70B1DE3390400FC1146 /* NotificationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationData.m; sourceTree = "<group>"; };
 		1075EEC41DD8F60E00793813 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
@@ -320,6 +328,18 @@
 			name = EditName;
 			sourceTree = "<group>";
 		};
+		10294EFC1DE988DE009480C5 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				10294EFD1DE98912009480C5 /* ShopViewController.h */,
+				10294EFE1DE98912009480C5 /* ShopViewController.m */,
+				10294F031DE990FF009480C5 /* ItemView.xib */,
+				10294F051DE9A13E009480C5 /* ItemView.h */,
+				10294F061DE9A13E009480C5 /* ItemView.m */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
 		1075EED01DD94B4900793813 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +485,7 @@
 				101E8D1E1DC8C0650034390E /* EditName */,
 				10C6680C1DC98E720099C379 /* NewHabit */,
 				10C6680B1DC98E4D0099C379 /* HabitDevelop */,
+				10294EFC1DE988DE009480C5 /* Shop */,
 				10C6680A1DC98E370099C379 /* HowToPlay */,
 			);
 			name = UI;
@@ -845,6 +866,7 @@
 				1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */,
 				1075EEE91DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib in Resources */,
 				2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */,
+				10294F041DE990FF009480C5 /* ItemView.xib in Resources */,
 				1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */,
 				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -990,12 +1012,14 @@
 				2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */,
 				2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */,
 				1075EEC91DD9086600793813 /* DailyRoutine.m in Sources */,
+				10294EFF1DE98912009480C5 /* ShopViewController.m in Sources */,
 				2EA930701DC438BC0065B905 /* main.m in Sources */,
 				1075EEE71DDD833600793813 /* DailyRoutineSectionHeaderView.m in Sources */,
 				1063D70C1DE3390400FC1146 /* NotificationData.m in Sources */,
 				2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */,
 				108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */,
 				1075EECF1DD9494E00793813 /* CustomHabit.m in Sources */,
+				10294F071DE9A13E009480C5 /* ItemView.m in Sources */,
 				1075EEDB1DD964AA00793813 /* AppNotificationCenter.m in Sources */,
 				2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */,
 				1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */,

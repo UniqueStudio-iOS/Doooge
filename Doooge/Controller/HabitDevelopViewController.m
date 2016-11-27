@@ -169,7 +169,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[indexPath.row]];
+        [[AppNotificationCenter sharedNotificationCenter]removeCustomHabit:customHabits[indexPath.row]];
         [[AppDatabase sharedDatabase]deleteCustomHabit:customHabits[indexPath.row]];
         [self updateData];
     }
@@ -309,6 +309,7 @@
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
             [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabitCategory:((CustomHabit *)(customHabits[currentCustomHabitRow])).ID];
         };
     }
 }
