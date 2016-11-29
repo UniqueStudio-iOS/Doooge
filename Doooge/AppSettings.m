@@ -8,6 +8,8 @@
 
 #import "AppSettings.h"
 
+#import "ShopData.h"
+
 static NSString * const kGrowthPointsKey = @"growthPoints";
 static NSString * const kGoldCoinsKey = @"goldCoins";
 static NSString * const kPetLevelKey = @"petLevel";
@@ -114,5 +116,34 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 - (BOOL)isAuthorized {
     return _authorized;
 }
+#pragma mark Register Methods
+- (void)registerShopItems {
+    ShopData * data = [[ShopData alloc]init];
+    
+    NSMutableDictionary * foodItems = [NSMutableDictionary dictionary];
+    for (NSDictionary * foodItem in data.foodData) {
+        [foodItems setObject:@0 forKey:foodItem[@"name"]];
+    }
+    [self.userDefaults registerDefaults:foodItems];
+    
+    NSMutableDictionary * toyItems = [NSMutableDictionary dictionary];
+    for (NSDictionary * toyItem in data.toyData) {
+        [toyItems setObject:@NO forKey:toyItem[@"name"]];
+    }
+    [self.userDefaults registerDefaults:toyItems];
+}
+#pragma mark Shop
+- (BOOL)canAffordItemWithPrice:(NSInteger)price {
+    return (self.goldCoins - price) >= 0;
+}
+- (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price{
+    self.goldCoins -= price;
+    NSInteger foodNumber = [self.userDefaults integerForKey:name];
+    foodNumber += 1;
+    [self.userDefaults setInteger:foodNumber forKey:name];
+}
 
+- (NSInteger)foodWithName:(NSString *)name {
+    return [self.userDefaults integerForKey:name];
+}
 @end

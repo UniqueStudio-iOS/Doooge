@@ -17,4 +17,9 @@
 @property (nonatomic) NSString * petName;
 @property (nonatomic, getter=isPrimary) BOOL primary;
 @property (nonatomic, getter=isAuthorized) BOOL authorized;
+
+- (void)registerShopItems;
+- (BOOL)canAffordItemWithPrice:(NSInteger)price;
+- (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price;
+- (NSInteger)foodWithName:(NSString *)name;
 @end

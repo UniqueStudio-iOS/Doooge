@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
+#warning remove later
+    [AppSettings sharedSettings].primary = YES;
     [AppSettings sharedSettings];
     [self authorizationCheck];
     [self dataCheck];
@@ -34,7 +36,9 @@
 
 - (void)dataCheck {
     if ([AppSettings sharedSettings].isPrimary == YES) {
-        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
+        [[AppSettings sharedSettings]registerShopItems];
+#warning add later
+//        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
         [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
         [AppSettings sharedSettings].primary = NO;
     }

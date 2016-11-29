@@ -21,6 +21,12 @@ typedef NS_OPTIONS(NSInteger, CustomHabitWeek) {
     Sunday      = 1 << 6
 };
 
+typedef NS_OPTIONS(NSInteger, ItemCellStyle) {
+    ItemCellFoodStyle,
+    ItemCellToyStyle,
+    ItemCellDecorateStyle
+};
+
 #define kWindowWidth [UIScreen mainScreen].bounds.size.width
 #define kWindowHeight [UIScreen mainScrenn].bounds.size.height
 
