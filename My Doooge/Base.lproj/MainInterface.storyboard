@@ -42,7 +42,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="feedBtn"/>
                                                 <connections>
-                                                    <action selector="feed:" destination="tay-7Z-Dka" eventType="touchUpInside" id="Vbi-Zd-KrI"/>
+                                                    <action selector="eat:" destination="tay-7Z-Dka" eventType="touchUpInside" id="rkH-Df-SWj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqP-hO-E7a">
@@ -53,7 +53,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="playBtn"/>
                                                 <connections>
-                                                    <action selector="move:" destination="tay-7Z-Dka" eventType="touchUpInside" id="tud-UJ-YVl"/>
+                                                    <action selector="play:" destination="tay-7Z-Dka" eventType="touchUpInside" id="k52-vX-CKe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlP-b5-GMl">
@@ -64,7 +64,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="sleepBtn"/>
                                                 <connections>
-                                                    <action selector="sleep:" destination="tay-7Z-Dka" eventType="touchUpInside" id="L7a-ij-ZzA"/>
+                                                    <action selector="sleep:" destination="tay-7Z-Dka" eventType="touchUpInside" id="4pc-AH-VPR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y07-GC-Jbw">
@@ -105,13 +105,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-rK-DcN">
                                         <rect key="frame" x="0.0" y="15" width="375" height="110"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-pS-ls4" customClass="GifImageView" customModule="My_Doooge" customModuleProvider="target">
-                                                <rect key="frame" x="117.5" y="10" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="gpC-RU-k2d"/>
-                                                    <constraint firstAttribute="width" constant="100" id="sYK-VH-1aZ"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-Us-Zly" customClass="MessageView" customModule="My_Doooge" customModuleProvider="target">
                                                 <rect key="frame" x="198" y="25" width="160" height="40"/>
                                                 <subviews>
@@ -145,11 +138,7 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="dZU-pS-ls4" firstAttribute="top" secondItem="PqQ-rK-DcN" secondAttribute="top" constant="10" id="EEk-b0-Y8W"/>
-                                            <constraint firstItem="EKw-Us-Zly" firstAttribute="leading" secondItem="dZU-pS-ls4" secondAttribute="leading" constant="80" id="WAL-4H-LO7"/>
-                                            <constraint firstItem="dZU-pS-ls4" firstAttribute="centerX" secondItem="PqQ-rK-DcN" secondAttribute="centerX" constant="-20" id="adF-CR-QdI"/>
                                             <constraint firstAttribute="height" constant="110" id="rvM-mz-t7v"/>
-                                            <constraint firstItem="EKw-Us-Zly" firstAttribute="centerY" secondItem="dZU-pS-ls4" secondAttribute="centerY" constant="-10" id="yyE-qo-uuk"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -222,7 +211,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="200"/>
                     <connections>
-                        <outlet property="imageView" destination="dZU-pS-ls4" id="fah-sO-pei"/>
                         <outlet property="messageView" destination="EKw-Us-Zly" id="RHM-tz-3as"/>
                         <outlet property="verticalConstraint" destination="fQJ-6k-frV" id="ht3-Au-Arj"/>
                         <segue destination="vZ5-Gh-Ycd" kind="show" identifier="showFood" id="u5I-d6-DnZ"/>

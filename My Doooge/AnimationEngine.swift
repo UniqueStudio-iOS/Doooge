@@ -22,11 +22,13 @@ enum DooogeAnimationType: Int {
 }
 
 
-class AnimationEngine {
+class AnimationEngine: NSObject {
 
     var animationView: AnimationView!
     var state: DooogeAnimationType = .normal
     var timer: Timer?
+    
+
     
     struct FileManager {
         var bundle: Bundle!
@@ -50,13 +52,8 @@ class AnimationEngine {
     
     static let shared: AnimationEngine = {
         let instance = AnimationEngine()
-        
-        
         return instance
     }()
-    
-
-    
     
     
     // 初始化动画View
@@ -66,23 +63,28 @@ class AnimationEngine {
     }
     
     public func switchAnimation(_ mode: DooogeAnimationType) {
-        if let valid = timer?.isValid {
-            if valid {
-                timer?.invalidate()
-            }
-        }
+
+        timer?.invalidate()
+        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
+
         let animationArray = Movement.move.type(mode)
         state = mode
         animationView.play(animationArray, false)
+        
         if mode == .sleep {
+            self.perform(#selector(AnimationEngine.sleepState), with: nil, afterDelay:Double(animationArray.count) * 0.3)
             // 进入持续睡眠状态
             state = .sleeping
+        } else {
+            self.perform(#selector(AnimationEngine.defaultAnimation), with: nil, afterDelay: Double(animationArray.count) * 0.3-0.2)
         }
-        
     }
+    
     
     public func defaultAnimation() {
         state = .normal
+        let animationArr = Movement.move.type(.normal)
+        self.animationView.play(animationArr, true)
         timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: {[unowned self] (timer) in
             let animationArr = Movement.move.type(.normal)
             self.animationView.play(animationArr, true)

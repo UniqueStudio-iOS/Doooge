@@ -136,12 +136,9 @@ extension UIView {
 class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerTransitioningDelegate {
     
     
+    let animation = AnimationEngine.shared
     
-    var ttView: UIView?
-    
-    @IBOutlet weak var webView: UIWebView!
-    
-    @IBOutlet weak var imageView: GifImageView!
+    var animationView: AnimationView!
 
     @IBOutlet weak var growthLabel: UILabel!
     
@@ -150,7 +147,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
     var tapGesture: UITapGestureRecognizer!
     
-    var timer: Timer?
 
     @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
     
@@ -189,7 +185,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 
         super.viewWillAppear(animated)
 
-        
+        /*
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(TodayViewController.touchAnimal))
         tapGesture.numberOfTapsRequired = 1
@@ -206,8 +202,9 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
                    NotificationModel(content: "WWWWWW"),
                    NotificationModel(content: "SSSSSS"),
                    NotificationModel(content: "FFFFFF")]
+        */
         
-        NotificationManager().showRandom(content: arr)
+        // NotificationManager().showRandom(content: arr)
     
     }
     
@@ -224,10 +221,11 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tag += 1
-        lifeValue = UserDefaults.doooge().object(forKey: "growthPoint") as! Int
+        //lifeValue = UserDefaults.doooge().object(forKey: "growthPoint") as! Int
         
         //growthLabel.text = "\(lifeValue)"
         let width = UIScreen.main.bounds.width
@@ -238,7 +236,11 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         if self.extensionContext?.widgetActiveDisplayMode == .compact {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
-
+        animationView = AnimationView(frame: CGRect(width/2.0-45,40,90,90))
+        self.view.addSubview(animationView)
+        AnimationEngine.shared.initView(animationView)
+        animation.defaultAnimation()
+        
         // messageView.appear()
         
         
@@ -248,6 +250,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
     
     
+    /*
     func saveGrowth(value: Int) {
         lifeValue += value
         // growthLabel.text = "\(lifeValue)"
@@ -396,6 +399,27 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(TodayViewController.randomMovement), userInfo: nil, repeats: true)
     }
+    */
+    
+    
+    @IBAction func play(_ sender: AnyObject) {
+        // play
+        
+        animation.switchAnimation(.play)
+    }
+    
+    @IBAction func eat(_ sender: AnyObject) {
+        animation.switchAnimation(.eat)
+        
+    }
+    
+    @IBAction func sleep(_ sender: Any) {
+        animation.switchAnimation(.sleep)
+    
+    }
+    
+    
+    
     
     
     
@@ -435,6 +459,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
             })
         }
     }
+    /*
     
     func movement(type: MovementType)->[String] {
         switch type {
@@ -454,6 +479,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 
         }
     }
+    */
     
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

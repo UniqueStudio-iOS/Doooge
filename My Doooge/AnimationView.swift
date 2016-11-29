@@ -15,12 +15,22 @@ protocol AnimationViewDelegete {
 class AnimationView: UIImageView {
 
     typealias ImageName = String
-    
+    var tapGesture: UITapGestureRecognizer!
     var delegate: AnimationViewDelegete?
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating), options: .new, context: nil)
+        
+        self.addObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating), options: [.old,.new], context: nil)
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(AnimationView.tap(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(tapGesture)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,14 +52,25 @@ class AnimationView: UIImageView {
         startAnimating()
         
     }
+    
+    /*
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
         if keyPath == #keyPath(AnimationView.isAnimating) {
             let value = change?[.newKey] as! Bool
             if !value {
+                debugPrint("Finished")
                 delegate?.didStopAnimating()
             }
         }
     }
+    */
+    func tap(_ sender: UITapGestureRecognizer) {
+    
+        debugPrint("Tapped")
+        // Tapped!
+    }
+    
     
     func stop() {
         if isAnimating {
@@ -58,7 +79,7 @@ class AnimationView: UIImageView {
     }
     
     deinit {
-        self.removeObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating))
+       //  self.removeObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating))
     }
 
 }
