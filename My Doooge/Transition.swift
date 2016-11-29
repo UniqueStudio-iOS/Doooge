@@ -8,21 +8,18 @@
 
 import UIKit
 
-class Transition: NSObject, UIViewControllerAnimatedTransitioning {
-
-    
+class Transition: NSObject, UIViewControllerAnimatedTransitioning {    
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.6
     }
-    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         let destView = transitionContext.view(forKey: .to)!
         let fromView = transitionContext.view(forKey: .from)!
         
         let bounds = fromView.bounds
-        let startFrame = bounds.offsetBy(dx: -bounds.width, dy: 0)
+        let startFrame = bounds.offsetBy(dx: 2 * bounds.width, dy: 0)
         destView.frame = startFrame
         transitionContext.containerView.addSubview(destView)
         
@@ -35,10 +32,5 @@ class Transition: NSObject, UIViewControllerAnimatedTransitioning {
         }
         
     }
-    
-    
-    
-    
-    
-    
+
 }

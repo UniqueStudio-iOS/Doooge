@@ -76,7 +76,6 @@
                                                 <state key="normal" backgroundImage="backapp"/>
                                                 <connections>
                                                     <action selector="openContainerApp:" destination="tay-7Z-Dka" eventType="touchUpInside" id="ONo-sY-EZZ"/>
-                                                    <segue destination="vZ5-Gh-Ycd" kind="show" id="wVz-ir-ql9"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-0q-sHK">
@@ -175,13 +174,6 @@
                                             <constraint firstAttribute="height" constant="18" id="YDy-8j-vX8"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level" translatesAutoresizingMaskIntoConstraints="NO" id="ok3-Eu-cVX">
-                                        <rect key="frame" x="283" y="4" width="84" height="9"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="7zv-y0-mHg"/>
-                                            <constraint firstAttribute="height" constant="9" id="unE-pt-6sS"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWo-Ng-fZD">
                                         <rect key="frame" x="5" y="3" width="23" height="18"/>
                                         <constraints>
@@ -204,7 +196,6 @@
                                     <constraint firstAttribute="height" constant="200" id="HGB-eQ-WGe"/>
                                     <constraint firstItem="PqQ-rK-DcN" firstAttribute="leading" secondItem="g8U-qy-ZwI" secondAttribute="leading" id="JEH-wL-viA"/>
                                     <constraint firstItem="teb-Zq-nmz" firstAttribute="leading" secondItem="g8U-qy-ZwI" secondAttribute="leading" id="Lm4-9R-hNG"/>
-                                    <constraint firstAttribute="trailing" secondItem="ok3-Eu-cVX" secondAttribute="trailing" constant="8" id="MCT-sa-wdK"/>
                                     <constraint firstItem="bWo-Ng-fZD" firstAttribute="leading" secondItem="g8U-qy-ZwI" secondAttribute="leading" constant="5" id="MGV-1D-EvZ"/>
                                     <constraint firstItem="rEf-Dv-sEW" firstAttribute="centerX" secondItem="g8U-qy-ZwI" secondAttribute="centerX" id="OHK-hq-YrH"/>
                                     <constraint firstItem="bWo-Ng-fZD" firstAttribute="top" secondItem="g8U-qy-ZwI" secondAttribute="top" constant="3" id="Uic-x4-q1R"/>
@@ -216,7 +207,6 @@
                                     <constraint firstItem="rEf-Dv-sEW" firstAttribute="width" secondItem="g8U-qy-ZwI" secondAttribute="width" id="kFX-ik-uN7"/>
                                     <constraint firstItem="EnN-dT-1pM" firstAttribute="top" secondItem="g8U-qy-ZwI" secondAttribute="top" constant="3" id="nzp-aX-Zx2"/>
                                     <constraint firstAttribute="bottom" secondItem="rEf-Dv-sEW" secondAttribute="bottom" constant="5" id="oPb-q0-bm0"/>
-                                    <constraint firstItem="ok3-Eu-cVX" firstAttribute="top" secondItem="g8U-qy-ZwI" secondAttribute="top" constant="4" id="oaR-Ay-anb"/>
                                     <constraint firstItem="teb-Zq-nmz" firstAttribute="top" secondItem="g8U-qy-ZwI" secondAttribute="top" id="uxx-9y-mUp"/>
                                 </constraints>
                             </view>
@@ -228,12 +218,14 @@
                             <constraint firstItem="g8U-qy-ZwI" firstAttribute="top" secondItem="FiT-Qo-fi0" secondAttribute="top" id="zZn-j6-kFk"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="200"/>
                     <connections>
                         <outlet property="imageView" destination="dZU-pS-ls4" id="fah-sO-pei"/>
                         <outlet property="messageView" destination="EKw-Us-Zly" id="RHM-tz-3as"/>
                         <outlet property="verticalConstraint" destination="fQJ-6k-frV" id="ht3-Au-Arj"/>
+                        <segue destination="vZ5-Gh-Ycd" kind="show" identifier="showFood" id="u5I-d6-DnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9k-QM-ASu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WG4-rq-XXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-810"/>
+            <point key="canvasLocation" x="511" y="-822"/>
         </scene>
     </scenes>
     <resources>
@@ -269,7 +261,6 @@
         <image name="coin" width="24" height="18"/>
         <image name="diag.png" width="194" height="45"/>
         <image name="feedBtn" width="68" height="40"/>
-        <image name="level" width="84" height="9"/>
         <image name="playBtn" width="68" height="40"/>
         <image name="sleepBtn" width="68" height="40"/>
     </resources>

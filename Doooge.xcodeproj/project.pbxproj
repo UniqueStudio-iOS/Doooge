@@ -36,6 +36,8 @@
 		2E1CAC481DE9B7B30046F06C /* sleep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CAC3C1DE9B7B30046F06C /* sleep.wav */; };
 		2E1CAC491DE9B7B30046F06C /* touchdog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E1CAC3D1DE9B7B30046F06C /* touchdog.mp3 */; };
 		2E1CAC4A1DE9B7B30046F06C /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC3E1DE9B7B30046F06C /* Transition.swift */; };
+		2E1CAC4C1DE9BE630046F06C /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */; };
+		2E1CAC4E1DE9BEA60046F06C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */; };
 		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
 		2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */; };
@@ -136,6 +138,8 @@
 		2E1CAC3C1DE9B7B30046F06C /* sleep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sleep.wav; sourceTree = "<group>"; };
 		2E1CAC3D1DE9B7B30046F06C /* touchdog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = touchdog.mp3; sourceTree = "<group>"; };
 		2E1CAC3E1DE9B7B30046F06C /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
 		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
 		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -491,6 +495,8 @@
 				2E18298E1DC4C8D10072722C /* GifImageView.swift */,
 				2E1829A11DC4D7030072722C /* MessageView.swift */,
 				2E1829E01DC5000E0072722C /* Bubble.swift */,
+				2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */,
+				2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */,
 			);
 			path = "My Doooge";
 			sourceTree = "<group>";
@@ -787,11 +793,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1CAC4A1DE9B7B30046F06C /* Transition.swift in Sources */,
+				2E1CAC4E1DE9BEA60046F06C /* ProgressBar.swift in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
 				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
 				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,
 				2E1CAC401DE9B7B30046F06C /* AnimationView.swift in Sources */,
 				2E1CAC451DE9B7B30046F06C /* ScoreManager.swift in Sources */,
+				2E1CAC4C1DE9BE630046F06C /* FoodViewController.swift in Sources */,
 				2E1CAC441DE9B7B30046F06C /* NotificationManager.swift in Sources */,
 				2E1CAC3F1DE9B7B30046F06C /* AnimationEngine.swift in Sources */,
 				2E1829E11DC5000E0072722C /* Bubble.swift in Sources */,

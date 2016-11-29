@@ -230,8 +230,10 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         lifeValue = UserDefaults.doooge().object(forKey: "growthPoint") as! Int
         
         //growthLabel.text = "\(lifeValue)"
-
-
+        let width = UIScreen.main.bounds.width
+        
+        let progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
+        self.view.addSubview(progressBar)
         
         if self.extensionContext?.widgetActiveDisplayMode == .compact {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
@@ -276,6 +278,8 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
  
     
     @IBAction func openContainerApp(_ sender: AnyObject) {
+        
+        performSegue(withIdentifier: "showFood", sender: nil)
   /*
         self.extensionContext?.open(URL(string:"Doooge://")!, completionHandler: { (finished) in
             print("\(finished)")
@@ -451,12 +455,18 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         }
     }
     
-    /*
+    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
+        return Transition()
     }
     
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFood" {
+            let controller = segue.destination
+            controller.transitioningDelegate = self
+        }
+    }
 
  
     
