@@ -29,7 +29,7 @@ static NSString * const kSleepKey = @"睡觉";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
 #warning remove later
-    [AppSettings sharedSettings].primary = YES;
+//    [AppSettings sharedSettings].primary = YES;
     [AppSettings sharedSettings];
     [self authorizationCheck];
     [self dataCheck];
@@ -47,7 +47,7 @@ static NSString * const kSleepKey = @"睡觉";
         [[AppSettings sharedSettings]registerShopItems];
         [[AppSettings sharedSettings]registerDailyRoutines];
 #warning add later
-//        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
+        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
         [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
 
         [AppSettings sharedSettings].primary = NO;
@@ -74,6 +74,7 @@ static NSString * const kSleepKey = @"睡觉";
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     NSUserDefaults * userDefaults = [AppSettings sharedSettings].userDefaults;
     [self updateDailyRoutinesWithUserDefaults:userDefaults];
+    [self updateCustomHabitsWithUserDefaults:userDefaults];
 }
 
 - (void)updateDailyRoutinesWithUserDefaults:(NSUserDefaults *)userDefaults {
@@ -82,6 +83,13 @@ static NSString * const kSleepKey = @"睡觉";
     [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kDinnerKey fromUserDefaults:userDefaults];
     [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kSportKey fromUserDefaults:userDefaults];
     [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kSleepKey fromUserDefaults:userDefaults];
+}
+
+- (void)updateCustomHabitsWithUserDefaults:(NSUserDefaults *)userDefaults {
+    NSArray * customHabitNames = [[AppDatabase sharedDatabase]allCustomHabitName];
+    for (NSString * name in customHabitNames) {
+        [[AppDatabase sharedDatabase]updateCustomHabitWithName:name fromUserDefaults:userDefaults];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

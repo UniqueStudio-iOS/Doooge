@@ -84,6 +84,15 @@
     return [NSArray arrayWithArray:results];
 }
 
+- (NSArray *)allCustomHabitName {
+    NSArray * customHabits = [self allCustomHabit];
+    NSMutableArray * results = [NSMutableArray array];
+    for (CustomHabit * customHabit in customHabits) {
+        [results addObject:customHabit.ID];
+    }
+    return [NSArray arrayWithArray:results];
+}
+
 - (CustomHabit *)customHabitWithName:(NSString *)name {
     NSString * condition = [NSString stringWithFormat:@"ID = '%@'", name];
     RLMResults<CustomHabit *> * results = [CustomHabit objectsWhere:condition];
@@ -100,10 +109,19 @@
     DailyRoutine * dailyRoutine = [self dailyRoutineWithName:name];
     NSDictionary * dailyRoutineDictionary = [userDefaults objectForKey:name];
     [self.realm beginWriteTransaction];
-    dailyRoutine.hour = [dailyRoutineDictionary[@"hour"]integerValue];
-    dailyRoutine.minute = [dailyRoutineDictionary[@"minute"]integerValue];
     dailyRoutine.persistDays = [dailyRoutineDictionary[@"persist"]integerValue];
     [self.realm commitWriteTransaction];
+    NSLog(@"Update Daily Routine From UserDefaults.");
+}
+
+- (void)updateCustomHabitWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults {
+    CustomHabit * customHabit = [self customHabitWithName:name];
+    NSDictionary * customHabitDictionary = [userDefaults objectForKey:name];
+    [self.realm beginWriteTransaction];
+    customHabit.persistDays = [customHabitDictionary[@"persist"]integerValue];
+    customHabit.lastClocked = customHabitDictionary[@"last"];
+    [self.realm commitWriteTransaction];
+    NSLog(@"Update Custom Habit From UserDefaults.");
 }
 
 - (void)updateLastClocked:(NSDate *)date withCustomHabit:(CustomHabit *)customHabit {

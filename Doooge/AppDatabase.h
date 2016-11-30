@@ -24,15 +24,17 @@
 
 - (NSArray *)allDailyRoutine;
 - (NSArray *)allCustomHabit;
+- (NSArray *)allCustomHabitName;
 
 - (void)updateDailyRoutineWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults;
+- (void)updateHour:(NSInteger)hour andMinute:(NSInteger)minute withDailyRoutine:(DailyRoutine *)dailyRoutine;
 
+- (void)updateCustomHabitWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults;
 - (void)updateLastClocked:(NSDate *)date withCustomHabit:(CustomHabit *)customHabit;
 - (void)updateHour:(NSInteger)hour
             minute:(NSInteger)minute
          hasRemind:(BOOL)hasRemind
               week:(NSInteger)week
    withCostomHabit:(CustomHabit *)customHabit;
-- (void)updateHour:(NSInteger)hour andMinute:(NSInteger)minute withDailyRoutine:(DailyRoutine *)dailyRoutine;
 - (void)deleteCustomHabit:(CustomHabit *)customHabit;
 @end

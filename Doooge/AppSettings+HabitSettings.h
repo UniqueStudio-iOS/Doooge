@@ -10,7 +10,6 @@
 
 #import "AppSettings.h"
 
-@class DailyRoutine;
 @class CustomHabit;
 
 @interface AppSettings(HabitSettings)
@@ -19,6 +18,8 @@
 - (void)updateDailyRoutine:(NSString *)ID withHour:(NSInteger)hour andMinute:(NSInteger)minute;
 - (NSDictionary *)dailyRoutineWithName:(NSString *)name;
 
-//- (void)updateCustomHabit:(NSString *)ID
-
+- (void)registerOrUpdateCustomHabit:(CustomHabit *)customHabit;
+- (void)deleteCustomHabitWithName:(NSString *)name;
+- (void)updateCustomHabitWithName:(NSString *)name andLastClocked:(NSDate *)date;
+- (NSDictionary *)customHabitWithName:(NSString *)name;
 @end

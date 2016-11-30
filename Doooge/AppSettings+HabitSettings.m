@@ -9,6 +9,7 @@
 #import "AppSettings+HabitSettings.h"
 
 #import "DailyRoutine.h"
+#import "CustomHabit.h"
 
 @implementation AppSettings(HabitSettings)
 - (void)registerDailyRoutines {
@@ -49,16 +50,39 @@
 
 - (void)updateDailyRoutine:(NSString *)ID withHour:(NSInteger)hour andMinute:(NSInteger)minute {
     NSMutableDictionary * content = [[self.userDefaults objectForKey:ID]mutableCopy];
-    
     content[@"hour"] = [NSNumber numberWithInteger:hour];
     content[@"minute"] = [NSNumber numberWithInteger:minute];
-    
     [self.userDefaults setObject:content forKey:ID];
-    
     NSLog(@"Daily Routine Updated!");
 }
 
 - (NSDictionary *)dailyRoutineWithName:(NSString *)name {
+    return [self.userDefaults objectForKey:name];
+}
+
+- (void)registerOrUpdateCustomHabit:(CustomHabit *)customHabit {
+    NSDictionary * content = @{
+                               @"hour":[NSNumber numberWithInteger:customHabit.hour],
+                               @"minute":[NSNumber numberWithInteger:customHabit.minute],
+                               @"week":[NSNumber numberWithInteger:customHabit.week],
+                               @"persist":[NSNumber numberWithInteger:customHabit.persistDays],
+                               @"remind":[NSNumber numberWithBool:customHabit.hasRemind],
+                               @"last":customHabit.lastClocked
+                               };
+    [self.userDefaults setObject:content forKey:customHabit.ID];
+}
+
+- (void)deleteCustomHabitWithName:(NSString *)name {
+    [self.userDefaults removeObjectForKey:name];
+}
+
+- (void)updateCustomHabitWithName:(NSString *)name andLastClocked:(NSDate *)date {
+    NSMutableDictionary * content = [[self.userDefaults objectForKey:name]mutableCopy];
+    content[@"last"] = date;
+    [self.userDefaults setObject:content forKey:name];
+}
+
+- (NSDictionary *)customHabitWithName:(NSString *)name {
     return [self.userDefaults objectForKey:name];
 }
 @end
