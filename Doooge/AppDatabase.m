@@ -13,6 +13,7 @@
 #import "DailyRoutine.h"
 #import "CustomHabit.h"
 
+
 @interface AppDatabase()
 @property RLMRealm * realm;
 @end
@@ -35,13 +36,7 @@
     return self;
 }
 #pragma mark General
-- (void)beginWriteTransaction {
-    [self.realm beginWriteTransaction];
-}
 
-- (void)commitWriteTransaction {
-    [self.realm commitWriteTransaction];
-}
 #pragma mark UpdateModel
 - (void)addDailyRoutine:(DailyRoutine *)dailyRoutine {
     [self.realm beginWriteTransaction];
@@ -93,6 +88,22 @@
     NSString * condition = [NSString stringWithFormat:@"ID = '%@'", name];
     RLMResults<CustomHabit *> * results = [CustomHabit objectsWhere:condition];
     return [results firstObject];
+}
+
+- (DailyRoutine *)dailyRoutineWithName:(NSString *)name {
+    NSString * condition = [NSString stringWithFormat:@"ID = '%@'", name];
+    RLMResults<DailyRoutine *> * results = [DailyRoutine objectsWhere:condition];
+    return [results firstObject];
+}
+
+- (void)updateDailyRoutineWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults {
+    DailyRoutine * dailyRoutine = [self dailyRoutineWithName:name];
+    NSDictionary * dailyRoutineDictionary = [userDefaults objectForKey:name];
+    [self.realm beginWriteTransaction];
+    dailyRoutine.hour = [dailyRoutineDictionary[@"hour"]integerValue];
+    dailyRoutine.minute = [dailyRoutineDictionary[@"minute"]integerValue];
+    dailyRoutine.persistDays = [dailyRoutineDictionary[@"persist"]integerValue];
+    [self.realm commitWriteTransaction];
 }
 
 - (void)updateLastClocked:(NSDate *)date withCustomHabit:(CustomHabit *)customHabit {

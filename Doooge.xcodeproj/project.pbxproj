@@ -21,6 +21,7 @@
 		1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */; };
 		1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */; };
 		107A0E881DEAEB8B003535B2 /* ShopData.m in Sources */ = {isa = PBXBuildFile; fileRef = 107A0E871DEAEB8B003535B2 /* ShopData.m */; };
+		108289501DEEC986001C3AD4 /* AppSettings+HabitSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1082894F1DEEC986001C3AD4 /* AppSettings+HabitSettings.m */; };
 		108C2F801DE0117D002C4202 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108C2F7F1DE0117D002C4202 /* DatePickerView.xib */; };
 		108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F821DE0D05B002C4202 /* DatePickerView.m */; };
 		108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F851DE115AF002C4202 /* HabitCell2.m */; };
@@ -170,6 +171,8 @@
 		1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHabitSectionHeaderView.xib; sourceTree = "<group>"; };
 		107A0E861DEAEB8B003535B2 /* ShopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopData.h; sourceTree = "<group>"; };
 		107A0E871DEAEB8B003535B2 /* ShopData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopData.m; sourceTree = "<group>"; };
+		1082894E1DEEC986001C3AD4 /* AppSettings+HabitSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppSettings+HabitSettings.h"; sourceTree = "<group>"; };
+		1082894F1DEEC986001C3AD4 /* AppSettings+HabitSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppSettings+HabitSettings.m"; sourceTree = "<group>"; };
 		108C2F7F1DE0117D002C4202 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		108C2F811DE0D05B002C4202 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		108C2F821DE0D05B002C4202 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
@@ -438,10 +441,12 @@
 		1075EEE11DD9734400793813 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				10000D5E1DEE72CE005F64ED /* AppSettings+ShopSettings.h */,
-				10000D5F1DEE72CE005F64ED /* AppSettings+ShopSettings.m */,
 				1075EEC41DD8F60E00793813 /* AppSettings.h */,
 				1075EEC51DD8F60E00793813 /* AppSettings.m */,
+				10000D5E1DEE72CE005F64ED /* AppSettings+ShopSettings.h */,
+				10000D5F1DEE72CE005F64ED /* AppSettings+ShopSettings.m */,
+				1082894E1DEEC986001C3AD4 /* AppSettings+HabitSettings.h */,
+				1082894F1DEEC986001C3AD4 /* AppSettings+HabitSettings.m */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -1074,6 +1079,7 @@
 				1075EECF1DD9494E00793813 /* CustomHabit.m in Sources */,
 				1075EEDB1DD964AA00793813 /* AppNotificationCenter.m in Sources */,
 				2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */,
+				108289501DEEC986001C3AD4 /* AppSettings+HabitSettings.m in Sources */,
 				1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */,
 				1075EED41DD94B7A00793813 /* AppDatabase.m in Sources */,
 				2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */,

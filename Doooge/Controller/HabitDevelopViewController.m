@@ -10,6 +10,7 @@
 #import "HabitCell.h"
 #import "HabitCell2.h"
 
+#import "AppSettings+HabitSettings.h"
 #import "AppDatabase.h"
 #import "AppTime.h"
 #import "AppNotificationCenter.h"
@@ -283,6 +284,7 @@
 
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
     [[AppDatabase sharedDatabase]updateHour:hour andMinute:minute withDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
+    [[AppSettings sharedSettings]updateDailyRoutine:[(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID] withHour:hour andMinute:minute];
     [self updateData];
 }
 

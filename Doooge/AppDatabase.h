@@ -16,11 +16,16 @@
 
 - (void)addDailyRoutine:(DailyRoutine *)dailyRoutine;
 - (void)addCustomHabit:(CustomHabit *)customHabit;
+
 - (void)createDefaultDailyRoutines;
+
+- (DailyRoutine *)dailyRoutineWithName:(NSString *)name;
 - (CustomHabit *)customHabitWithName:(NSString *)name;
 
 - (NSArray *)allDailyRoutine;
 - (NSArray *)allCustomHabit;
+
+- (void)updateDailyRoutineWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults;
 
 - (void)updateLastClocked:(NSDate *)date withCustomHabit:(CustomHabit *)customHabit;
 - (void)updateHour:(NSInteger)hour
@@ -29,7 +34,5 @@
               week:(NSInteger)week
    withCostomHabit:(CustomHabit *)customHabit;
 - (void)updateHour:(NSInteger)hour andMinute:(NSInteger)minute withDailyRoutine:(DailyRoutine *)dailyRoutine;
-
 - (void)deleteCustomHabit:(CustomHabit *)customHabit;
-
 @end
