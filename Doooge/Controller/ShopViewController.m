@@ -21,6 +21,8 @@
 @property (nonatomic, strong) IBOutlet UICollectionView * toyView;
 @property (nonatomic, strong) IBOutlet UICollectionView * decorateView;
 
+@property (nonatomic, strong) UIBarButtonItem * backButton;
+
 @property (nonatomic, strong) ShopData * shopData;
 @end
 
@@ -29,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self basicConfiguration];
+    [self loadBarButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,7 +56,8 @@
     self.foodView.dataSource = self.shopData;
     [self.foodView registerClass:[ItemCell class] forCellWithReuseIdentifier:@"ItemCell"];
     self.toyView.delegate = self;
-    self.foodView.dataSource = self.shopData;
+    self.toyView.dataSource = self.shopData;
+    [self.toyView registerClass:[ItemCell class] forCellWithReuseIdentifier:@"ItemCell"];
     self.decorateView.delegate = self;
     self.decorateView.dataSource = self.shopData;
 }
@@ -71,6 +75,28 @@
         };
     }
     return _shopData;
+}
+
+- (void)loadBarButton {
+    self.navigationItem.leftBarButtonItem = self.backButton;
+}
+
+- (UIBarButtonItem *)backButton {
+    if (!_backButton) {
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:17.0];
+        [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -3, 0, 0);
+        [button sizeToFit];
+        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        _backButton = [[UIBarButtonItem alloc]initWithCustomView:button];
+    }
+    return _backButton;
+}
+
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

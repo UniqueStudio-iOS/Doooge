@@ -11,15 +11,12 @@
 @interface AppSettings : NSObject
 + (instancetype)sharedSettings;
 
+@property (nonatomic, strong, readonly) NSUserDefaults * userDefaults;
+
 @property (nonatomic) NSInteger growthPoints;
 @property (nonatomic) NSInteger goldCoins;
 @property (nonatomic) NSInteger petLevel;
 @property (nonatomic) NSString * petName;
 @property (nonatomic, getter=isPrimary) BOOL primary;
 @property (nonatomic, getter=isAuthorized) BOOL authorized;
-
-- (void)registerShopItems;
-- (BOOL)canAffordItemWithPrice:(NSInteger)price;
-- (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price;
-- (NSInteger)foodWithName:(NSString *)name;
 @end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppSettings.h"
+#import "AppSettings+ShopSettings.h"
 #import "AppDatabase.h"
 #import "AppNotificationCenter.h"
 

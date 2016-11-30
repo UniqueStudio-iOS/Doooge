@@ -8,7 +8,7 @@
 
 #import "ShopData.h"
 
-#import "AppSettings.h"
+#import "AppSettings+ShopSettings.h"
 
 #import "ItemCell.h"
 
@@ -125,7 +125,9 @@
         itemCell.image = [UIImage imageNamed:self.toyData[indexPath.row][@"image"]];
         itemCell.price = [self.toyData[indexPath.row][@"price"]integerValue];
         itemCell.style = ItemCellToyStyle;
+        itemCell.hasPurchased = [[AppSettings sharedSettings]toyStatusWithName:itemCell.name];
     }
+    ItemCell * __weak weakItemCell = itemCell;
     itemCell.purchaseHandler = ^(ItemCellStyle style, NSString * name, NSInteger price) {
         switch (style) {
             case ItemCellFoodStyle:
@@ -134,7 +136,11 @@
                     NSLog(@"%ld", [[AppSettings sharedSettings]foodWithName:name]);
                 }
                 break;
-            default:
+            case ItemCellToyStyle:
+                if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
+                    [[AppSettings sharedSettings]gainToyWithName:name andPrice:price];
+                    weakItemCell.hasPurchased = YES;
+                }
                 break;
         }
         self.refreshGoinCoinsHandler();

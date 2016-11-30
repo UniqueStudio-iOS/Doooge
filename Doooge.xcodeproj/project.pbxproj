@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10000D601DEE72CE005F64ED /* AppSettings+ShopSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 10000D5F1DEE72CE005F64ED /* AppSettings+ShopSettings.m */; };
 		10294EFF1DE98912009480C5 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10294EFE1DE98912009480C5 /* ShopViewController.m */; };
 		1063D70C1DE3390400FC1146 /* NotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063D70B1DE3390400FC1146 /* NotificationData.m */; };
 		1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEC51DD8F60E00793813 /* AppSettings.m */; };
@@ -143,6 +144,8 @@
 
 /* Begin PBXFileReference section */
 		05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.debug.xcconfig"; sourceTree = "<group>"; };
+		10000D5E1DEE72CE005F64ED /* AppSettings+ShopSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppSettings+ShopSettings.h"; path = "Controller/AppSettings+ShopSettings.h"; sourceTree = "<group>"; };
+		10000D5F1DEE72CE005F64ED /* AppSettings+ShopSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AppSettings+ShopSettings.m"; path = "Controller/AppSettings+ShopSettings.m"; sourceTree = "<group>"; };
 		101E8D1D1DC8BC870034390E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		10294EFD1DE98912009480C5 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = Controller/ShopViewController.h; sourceTree = "<group>"; };
 		10294EFE1DE98912009480C5 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = Controller/ShopViewController.m; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 		1075EEE11DD9734400793813 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				10000D5E1DEE72CE005F64ED /* AppSettings+ShopSettings.h */,
+				10000D5F1DEE72CE005F64ED /* AppSettings+ShopSettings.m */,
 				1075EEC41DD8F60E00793813 /* AppSettings.h */,
 				1075EEC51DD8F60E00793813 /* AppSettings.m */,
 			);
@@ -1052,6 +1057,7 @@
 				108C2F8B1DE1185D002C4202 /* AppTime.m in Sources */,
 				2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */,
 				1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */,
+				10000D601DEE72CE005F64ED /* AppSettings+ShopSettings.m in Sources */,
 				107A0E881DEAEB8B003535B2 /* ShopData.m in Sources */,
 				108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */,
 				2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */,

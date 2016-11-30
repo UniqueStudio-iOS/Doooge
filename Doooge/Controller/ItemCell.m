@@ -28,7 +28,7 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    [self.purchaseButton removeTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
+    self.hasPurchased = NO;
 }
 
 - (void)awakeFromNib {
@@ -56,11 +56,26 @@
 
 - (void)setStyle:(ItemCellStyle)style {
     _style = style;
-    switch (_style) {
-        case ItemCellFoodStyle:
-            break;
-        default:
-            break;
+}
+
+- (void)setHasPurchased:(BOOL)hasPurchased {
+    _hasPurchased = hasPurchased;
+    if (self.style == ItemCellToyStyle) {
+        if (_hasPurchased) {
+            [self.purchaseButton setTitle:@"已购买" forState:UIControlStateNormal];
+            [self.purchaseButton setBackgroundColor:defaultTransparentGrayColor1];
+            self.purchaseButton.userInteractionEnabled = NO;
+            [self.backView setBackgroundColor:defaultTransparentGrayColor1];
+            [self.contentView insertSubview:self.imageView belowSubview:self.backView];
+            [self.containerView setHidden:YES];
+        } else {
+            [self.purchaseButton setTitle:@"购买" forState:UIControlStateNormal];
+            [self.purchaseButton setBackgroundColor:defaultOrangeColor];
+            self.purchaseButton.userInteractionEnabled = YES;
+            [self.backView setBackgroundColor:mainColor];
+            [self.contentView insertSubview:self.imageView aboveSubview:self.backView];
+            [self.contentView setHidden:NO];
+        }
     }
 }
 @end
