@@ -156,6 +156,10 @@ class AnimationEngine: NSObject {
 
 
 extension AnimationEngine: AnimationViewDelegete {
+    func touchedImage() {
+        print("Touched")
+    }
+
     func didStopAnimating() {
         if state == .sleeping {
             sleepState()

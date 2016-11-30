@@ -10,6 +10,7 @@ import UIKit
 
 protocol AnimationViewDelegete {
     func didStopAnimating()
+    func touchedImage()
 }
 
 class AnimationView: UIImageView {
@@ -52,22 +53,9 @@ class AnimationView: UIImageView {
         
     }
     
-    /*
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
-        if keyPath == #keyPath(AnimationView.isAnimating) {
-            let value = change?[.newKey] as! Bool
-            if !value {
-                debugPrint("Finished")
-                delegate?.didStopAnimating()
-            }
-        }
-    }
-    */
     func tap(_ sender: UITapGestureRecognizer) {
-    
-        debugPrint("Tapped")
-        // Tapped!
+        delegate?.touchedImage()
     }
     
     

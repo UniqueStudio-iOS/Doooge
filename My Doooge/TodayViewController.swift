@@ -53,8 +53,6 @@ enum MovementType: Int {
 
 
 class Sound {
-    
-    
     static var isOn: Bool = true
     
     static func sleep() {
@@ -143,7 +141,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     @IBOutlet weak var growthLabel: UILabel!
     
     
-    @IBOutlet weak var messageView: MessageView!
+    var messageView: MessageView!
     
     var tapGesture: UITapGestureRecognizer!
     
@@ -183,28 +181,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-
-        /*
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(TodayViewController.touchAnimal))
-        tapGesture.numberOfTapsRequired = 1
-        tapGesture.numberOfTouchesRequired = 1
-        imageView.addGestureRecognizer(tapGesture)
-        imageView.isUserInteractionEnabled = true
-        
-
-        let list = movement(type: .static2)
-        self.imageView.play(imageNames: list,repeated: true)
-
-        
-        let arr = [NotificationModel(content: "HHHHHH"),
-                   NotificationModel(content: "WWWWWW"),
-                   NotificationModel(content: "SSSSSS"),
-                   NotificationModel(content: "FFFFFF")]
-        */
-        
-        // NotificationManager().showRandom(content: arr)
-    
     }
     
     
@@ -240,11 +217,10 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         self.view.addSubview(animationView)
         AnimationEngine.shared.initView(animationView)
         animation.defaultAnimation()
-
         
-        
-        
-        // Do any additional setup after loading the view from its nib.
+        messageView = MessageView(frame: CGRect(width/2.0+30,60,97,22.5))
+        self.view.addSubview(messageView)
+        messageView.appear("Hello Worldello Worldello Worldello Worldello World")
     }
     
     

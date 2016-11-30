@@ -10,8 +10,8 @@ import UIKit
 
 class MessageView: UIView {
 
-    @IBOutlet weak var textLabel: UILabel!
-    
+    var textLabel: UILabel!
+    var imageView: UIImageView!
 
     open var isShow: Bool = false
     
@@ -19,14 +19,36 @@ class MessageView: UIView {
         textLabel.text = text
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        imageView = UIImageView(frame:CGRect(0,0,97,22.5))
+        textLabel = UILabel(frame: CGRect(1,1,95,20))
+        imageView.image = UIImage(named: "diag")
+        textLabel.numberOfLines = 0
+        textLabel.font = UIFont.systemFont(ofSize: 10)
+        addSubview(imageView)
+        addSubview(textLabel)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
-    func appear() {
+    
+    
+    func appear(_ content: String) {
+        textLabel.text = content
         UIView.animate(withDuration: 0.4, animations: {
             self.alpha = 1.0
-        
+            
         }, completion: nil)
         isShow = true
         
+    }
+    
+    
+    func update(_ text: String) {
+        textLabel.text = text
     }
     
     func disappear() {
@@ -35,27 +57,7 @@ class MessageView: UIView {
         })
         isShow = false
     }
-    
-    
-    // 单例模式
-    static let shared: MessageView = {
-        let instance = MessageView()
-        
-        
-        return instance
-    }()
-    
-    static func appear(_ content: String) {
-        
-    }
-    
-    
-    
-    
-    static func disappear(_ content: String) {
-        
-    
-    }
+
     
     
 }

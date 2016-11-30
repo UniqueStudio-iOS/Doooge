@@ -45,8 +45,6 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         
 
-        
-
         // Do any additional setup after loading the view.
     }
 
