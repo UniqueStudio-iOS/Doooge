@@ -22,7 +22,6 @@
 		108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F821DE0D05B002C4202 /* DatePickerView.m */; };
 		108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F851DE115AF002C4202 /* HabitCell2.m */; };
 		108C2F8B1DE1185D002C4202 /* AppTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F8A1DE1185D002C4202 /* AppTime.m */; };
-		2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18298E1DC4C8D10072722C /* GifImageView.swift */; };
 		2E1829A21DC4D7030072722C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1829A11DC4D7030072722C /* MessageView.swift */; };
 		2E1829E11DC5000E0072722C /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1829E01DC5000E0072722C /* Bubble.swift */; };
 		2E1CAC3F1DE9B7B30046F06C /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC301DE9B7B20046F06C /* AnimationEngine.swift */; };
@@ -39,6 +38,8 @@
 		2E1CAC4C1DE9BE630046F06C /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */; };
 		2E1CAC4E1DE9BEA60046F06C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */; };
 		2E7EEDC81DC486CC000AC993 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */; };
+		2E959F6A1DEDB3AE00E92016 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E959F681DEDB3AE00E92016 /* FoodCell.swift */; };
+		2E959F6B1DEDB3AE00E92016 /* FoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E959F691DEDB3AE00E92016 /* FoodCell.xib */; };
 		2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */; };
 		2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */; };
 		2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */; };
@@ -124,7 +125,6 @@
 		108C2F851DE115AF002C4202 /* HabitCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HabitCell2.m; path = Controller/HabitCell2.m; sourceTree = "<group>"; };
 		108C2F891DE1185D002C4202 /* AppTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTime.h; sourceTree = "<group>"; };
 		108C2F8A1DE1185D002C4202 /* AppTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTime.m; sourceTree = "<group>"; };
-		2E18298E1DC4C8D10072722C /* GifImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		2E1829A11DC4D7030072722C /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		2E1829E01DC5000E0072722C /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		2E1CAC301DE9B7B20046F06C /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
@@ -143,6 +143,8 @@
 		2E7A47F41DC459D6007832E5 /* Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doooge.entitlements; sourceTree = "<group>"; };
 		2E7EED721DC46119000AC993 /* My Doooge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Doooge.entitlements"; sourceTree = "<group>"; };
 		2E7EEDC71DC486CC000AC993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2E959F681DEDB3AE00E92016 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodCell.swift; path = Views/FoodCell.swift; sourceTree = "<group>"; };
+		2E959F691DEDB3AE00E92016 /* FoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FoodCell.xib; path = Views/FoodCell.xib; sourceTree = "<group>"; };
 		2E9C1EFF1DC5660B00E02A3F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2E9C1F071DC5673A00E02A3F /* EditNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditNameViewController.h; path = Controller/EditNameViewController.h; sourceTree = "<group>"; };
 		2E9C1F081DC5673A00E02A3F /* EditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditNameViewController.m; path = Controller/EditNameViewController.m; sourceTree = "<group>"; };
@@ -397,6 +399,38 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		2E959F651DEDB34D00E92016 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EA930AA1DC43B910065B905 /* TodayViewController.swift */,
+				2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2E959F661DEDB35400E92016 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E1CAC311DE9B7B20046F06C /* AnimationView.swift */,
+				2E1829A11DC4D7030072722C /* MessageView.swift */,
+				2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */,
+				2E1829E01DC5000E0072722C /* Bubble.swift */,
+				2E959F681DEDB3AE00E92016 /* FoodCell.swift */,
+				2E959F691DEDB3AE00E92016 /* FoodCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2E959F671DEDB35900E92016 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E1CAC301DE9B7B20046F06C /* AnimationEngine.swift */,
+				2E1CAC371DE9B7B20046F06C /* NotificationManager.swift */,
+				2E1CAC381DE9B7B20046F06C /* ScoreManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2EA930621DC438BB0065B905 = {
 			isa = PBXGroup;
 			children = (
@@ -480,23 +514,16 @@
 		2EA930A91DC43B910065B905 /* My Doooge */ = {
 			isa = PBXGroup;
 			children = (
+				2E959F671DEDB35900E92016 /* Model */,
+				2E959F661DEDB35400E92016 /* View */,
+				2E959F651DEDB34D00E92016 /* Controller */,
 				2E1CAC391DE9B7B20046F06C /* Sound */,
-				2E1CAC301DE9B7B20046F06C /* AnimationEngine.swift */,
-				2E1CAC311DE9B7B20046F06C /* AnimationView.swift */,
 				2E1CAC351DE9B7B20046F06C /* Images.xcassets */,
 				2E1CAC361DE9B7B20046F06C /* Movements.bundle */,
-				2E1CAC371DE9B7B20046F06C /* NotificationManager.swift */,
-				2E1CAC381DE9B7B20046F06C /* ScoreManager.swift */,
-				2E1CAC3E1DE9B7B30046F06C /* Transition.swift */,
 				2E7EED721DC46119000AC993 /* My Doooge.entitlements */,
-				2EA930AA1DC43B910065B905 /* TodayViewController.swift */,
 				2EA930AF1DC43B910065B905 /* Info.plist */,
+				2E1CAC3E1DE9B7B30046F06C /* Transition.swift */,
 				2E7EEDC61DC486CC000AC993 /* MainInterface.storyboard */,
-				2E18298E1DC4C8D10072722C /* GifImageView.swift */,
-				2E1829A11DC4D7030072722C /* MessageView.swift */,
-				2E1829E01DC5000E0072722C /* Bubble.swift */,
-				2E1CAC4B1DE9BE630046F06C /* FoodViewController.swift */,
-				2E1CAC4D1DE9BEA60046F06C /* ProgressBar.swift */,
 			);
 			path = "My Doooge";
 			sourceTree = "<group>";
@@ -690,6 +717,7 @@
 				2E1CAC471DE9B7B30046F06C /* play.mp3 in Resources */,
 				2E1CAC461DE9B7B30046F06C /* eat.mp3 in Resources */,
 				2E1CAC431DE9B7B30046F06C /* Movements.bundle in Resources */,
+				2E959F6B1DEDB3AE00E92016 /* FoodCell.xib in Resources */,
 				2E1CAC481DE9B7B30046F06C /* sleep.wav in Resources */,
 				2E1CAC491DE9B7B30046F06C /* touchdog.mp3 in Resources */,
 			);
@@ -793,10 +821,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1CAC4A1DE9B7B30046F06C /* Transition.swift in Sources */,
+				2E959F6A1DEDB3AE00E92016 /* FoodCell.swift in Sources */,
 				2E1CAC4E1DE9BEA60046F06C /* ProgressBar.swift in Sources */,
 				2E1829A21DC4D7030072722C /* MessageView.swift in Sources */,
 				2EA930AB1DC43B910065B905 /* TodayViewController.swift in Sources */,
-				2E18298F1DC4C8D10072722C /* GifImageView.swift in Sources */,
 				2E1CAC401DE9B7B30046F06C /* AnimationView.swift in Sources */,
 				2E1CAC451DE9B7B30046F06C /* ScoreManager.swift in Sources */,
 				2E1CAC4C1DE9BE630046F06C /* FoodViewController.swift in Sources */,

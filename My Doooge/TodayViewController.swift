@@ -180,7 +180,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
@@ -231,17 +230,17 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         let width = UIScreen.main.bounds.width
         
         let progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
+        progressBar.levelLabel.text = "Lv35"
         self.view.addSubview(progressBar)
         
         if self.extensionContext?.widgetActiveDisplayMode == .compact {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
-        animationView = AnimationView(frame: CGRect(width/2.0-45,40,90,90))
+        animationView = AnimationView(frame: CGRect(width/2.0-60,40,90,90))
         self.view.addSubview(animationView)
         AnimationEngine.shared.initView(animationView)
         animation.defaultAnimation()
-        
-        // messageView.appear()
+
         
         
         
@@ -250,166 +249,15 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
     
     
-    /*
-    func saveGrowth(value: Int) {
-        lifeValue += value
-        // growthLabel.text = "\(lifeValue)"
-        let doooge = UserDefaults.doooge()
-        doooge.set(lifeValue, forKey: "growthPoint")
-        doooge.synchronize()
-    }
-    
-    
-    func touchAnimal() {
 
-        timer?.invalidate()
-        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
-
-        let list = movement(type: .touch)
-        imageView.play(imageNames: list,repeated: true)
-    
-        Sound.touch()
-        //increment(type: .play)
-        Bubble.show(score: 30, superView: self.view)
-        saveGrowth(value: 30)
-        
-        self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 4.0)
-
-        
-    }
-
- 
-    
-    @IBAction func openContainerApp(_ sender: AnyObject) {
-        
-        performSegue(withIdentifier: "showFood", sender: nil)
-  /*
-        self.extensionContext?.open(URL(string:"Doooge://")!, completionHandler: { (finished) in
-            print("\(finished)")
-        })
-*/
-    }
-    
-    private func increment(type: IncrementType) {
-        switch type {
-        case .ontime: lifeValue += 50
-        case .overdue:lifeValue += 20
-        case .play: lifeValue += 30
-        case .undo: lifeValue -= 10
-        case .sleep: lifeValue += 20
-        }
-        
-        
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if messageView.isShow {
-            messageView.disappear()
-        } else {
-            messageView.appear()
-        }
-    }
-    
-    // MARK: 喂食
-    @IBAction func feed(_ sender: AnyObject) {
-        
-        timer?.invalidate()
-        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
-        let list: [String] = movement(type: .eat)
-        
-        imageView.play(imageNames: list,repeated: false)
-        
-        Sound.eat()
-
-
-        
-        
-        Bubble.show(score: 50, superView: self.view)
-        saveGrowth(value: 50)
-
-        
-        
-        self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 3.0)
-
-        
-    }
-    
-    
-    @IBAction func sleep(_ sender: AnyObject) {
-
-        timer?.invalidate()
-        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
-
-        let list: [String] = movement(type: .sleep1)
-        imageView.play(imageNames: list,repeated: false)
-        Sound.sleep()
-        //increment(type: .sleep)
-        Bubble.show(score: 20, superView: self.view)
-        saveGrowth(value: 20)
-
-        self.perform(#selector(TodayViewController.keepSleep), with: nil, afterDelay: 4.8)
-      
-        
-    }
-    
-    
-    func keepSleep() {
-        imageView.play(imageNames: ["sleep5","sleep6"], repeated: true)
-    }
-    
-    @IBAction func move(_ sender: AnyObject) {
-        timer?.invalidate()
-        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
-
-        let list: [String] = movement(type: .move)
-        imageView.play(imageNames: list,repeated: true)
-        Sound.play()
-        
-        
-        self.perform(#selector(TodayViewController.defaultState), with: nil, afterDelay: 2.9)
-        //increment(type: .play)
-        
-        Bubble.show(score: 30, superView: self.view)
-        saveGrowth(value: 30)
-
-        
-        
-
-    }
-    
-    func randomMovement() {
-        
-        let imageID = arc4random()%3
-        var list = [String]()
-        if imageID == 0 {
-            list = movement(type: .static1)
-        } else if imageID == 1 {
-            list = movement(type: .static2)
-        } else if imageID == 2 {
-            list = movement(type: .wear)
-        }
-        imageView.play(imageNames: list,repeated: true)
-    }
-    
-    
-    func defaultState() {
-        DispatchQueue.cancelPreviousPerformRequests(withTarget: self)
-
-        randomMovement()
-
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(TodayViewController.randomMovement), userInfo: nil, repeats: true)
-    }
-    */
-    
     
     @IBAction func play(_ sender: AnyObject) {
-        // play
-        
-        animation.switchAnimation(.play)
+
     }
     
     @IBAction func eat(_ sender: AnyObject) {
-        animation.switchAnimation(.eat)
+        self.performSegue(withIdentifier: "showFood", sender: nil)
+        //animation.switchAnimation(.eat)
         
     }
     
@@ -417,9 +265,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         animation.switchAnimation(.sleep)
     
     }
-    
-    
-    
     
     
     
@@ -459,27 +304,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
             })
         }
     }
-    /*
-    
-    func movement(type: MovementType)->[String] {
-        switch type {
-        case .eat: return ["eat11","eat12","eat13","eat14","eat15","eat16","eat17","eat18","eat19","eat110","eat18","eat19","eat110","eat18","eat19","eat110"]
-            
-        case .sleep1: return ["sleep1","sleep2","sleep3","sleep4","sleep5","sleep4","sleep5","sleep4","sleep5","sleep4","sleep4","sleep5","sleep4","sleep5","sleep4","sleep5","sleep6"]
-        case .sleep2: return ["sleep4","sleep5"]
-            
-        case .static1: return  ["random1","random2"]
-            
-        case .static2: return  ["doge11","eyes"]
-            
-        case .touch: return  ["touch1","touch2","touch3","touch4"]
-            
-        case .move:return ["play1","play2","play3","play4","play5","play6","play7","play8","play9","play10"]
-        case .wear: return ["wear1","wear2","wear3","wear4","wear5","wear6"]
 
-        }
-    }
-    */
     
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -497,11 +322,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
  
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
+
         
         completionHandler(NCUpdateResult.newData)
     }

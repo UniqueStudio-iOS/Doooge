@@ -18,8 +18,7 @@ class AnimationView: UIImageView {
     var tapGesture: UITapGestureRecognizer!
     var delegate: AnimationViewDelegete?
     
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
