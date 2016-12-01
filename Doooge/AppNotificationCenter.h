@@ -20,4 +20,6 @@
 - (void)registerDailyRoutine:(DailyRoutine *)dailyRoutine;
 - (void)registerCustomHabit:(CustomHabit *)customHabit;
 - (void)removeCustomHabit:(CustomHabit *)customHabit;
+
+- (void)registerCustomHabitCategory:(NSString *)name;
 @end

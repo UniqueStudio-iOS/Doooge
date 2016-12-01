@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="U8v-ph-5Zw" customClass="ItemCell">
+            <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="98" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFU-9j-Y9m">
+                        <rect key="frame" x="0.0" y="0.0" width="98" height="70"/>
+                        <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="8qp-La-sBS"/>
+                            <constraint firstAttribute="width" constant="98" id="bVD-Kj-2Vf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oim-jl-StR">
+                        <rect key="frame" x="16" y="77" width="65" height="19"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.73333333333333328" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64.5" id="Hkf-o9-ETH"/>
+                            <constraint firstAttribute="height" constant="19" id="rcp-qb-jhO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <state key="normal" title="购买">
+                            <color key="titleColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ham-m5-cLu">
+                        <rect key="frame" x="0.0" y="0.0" width="98" height="70"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-NA-d5q">
+                        <rect key="frame" x="0.0" y="52" width="98" height="18"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-mD-7KF">
+                                <rect key="frame" x="59" y="1" width="29" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UW6-mD-7KF" secondAttribute="trailing" constant="10" id="YlJ-Rt-OV8"/>
+                            <constraint firstAttribute="height" constant="18.5" id="r5G-mR-f1G"/>
+                            <constraint firstItem="UW6-mD-7KF" firstAttribute="centerY" secondItem="EJe-NA-d5q" secondAttribute="centerY" id="xuw-IX-BWm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="EJe-NA-d5q" firstAttribute="bottom" secondItem="GFU-9j-Y9m" secondAttribute="bottom" id="2kl-1R-mZA"/>
+                <constraint firstItem="ham-m5-cLu" firstAttribute="width" secondItem="GFU-9j-Y9m" secondAttribute="width" id="JmF-UW-F3C"/>
+                <constraint firstItem="EJe-NA-d5q" firstAttribute="width" secondItem="GFU-9j-Y9m" secondAttribute="width" id="Q5t-Do-TMs"/>
+                <constraint firstItem="GFU-9j-Y9m" firstAttribute="top" secondItem="U8v-ph-5Zw" secondAttribute="top" id="XBc-Kg-uAi"/>
+                <constraint firstItem="ham-m5-cLu" firstAttribute="leading" secondItem="GFU-9j-Y9m" secondAttribute="leading" id="YVj-W0-btt"/>
+                <constraint firstItem="oim-jl-StR" firstAttribute="centerX" secondItem="GFU-9j-Y9m" secondAttribute="centerX" id="djX-xc-7xd"/>
+                <constraint firstItem="GFU-9j-Y9m" firstAttribute="centerX" secondItem="U8v-ph-5Zw" secondAttribute="centerX" id="fMW-Tn-qca"/>
+                <constraint firstItem="ham-m5-cLu" firstAttribute="height" secondItem="GFU-9j-Y9m" secondAttribute="height" id="fjF-PH-8qq"/>
+                <constraint firstItem="EJe-NA-d5q" firstAttribute="leading" secondItem="GFU-9j-Y9m" secondAttribute="leading" id="mL1-sW-sXi"/>
+                <constraint firstItem="oim-jl-StR" firstAttribute="top" secondItem="GFU-9j-Y9m" secondAttribute="bottom" constant="7" id="nZr-nM-YU4"/>
+                <constraint firstItem="ham-m5-cLu" firstAttribute="top" secondItem="GFU-9j-Y9m" secondAttribute="top" id="trB-Pa-rEz"/>
+                <constraint firstItem="GFU-9j-Y9m" firstAttribute="leading" secondItem="U8v-ph-5Zw" secondAttribute="leading" id="wMw-qJ-hyG"/>
+            </constraints>
+            <connections>
+                <outlet property="backView" destination="GFU-9j-Y9m" id="UYD-7y-4Rh"/>
+                <outlet property="containerView" destination="EJe-NA-d5q" id="UgK-be-vQw"/>
+                <outlet property="imageView" destination="ham-m5-cLu" id="MnV-Gr-Gba"/>
+                <outlet property="priceLabel" destination="UW6-mD-7KF" id="80s-9C-CQi"/>
+                <outlet property="purchaseButton" destination="oim-jl-StR" id="R5A-xo-hzs"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

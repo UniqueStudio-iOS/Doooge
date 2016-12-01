@@ -21,6 +21,11 @@ typedef NS_OPTIONS(NSInteger, CustomHabitWeek) {
     Sunday      = 1 << 6
 };
 
+typedef NS_OPTIONS(NSInteger, ItemCellStyle) {
+    ItemCellFoodStyle,
+    ItemCellToyStyle
+};
+
 #define kWindowWidth [UIScreen mainScreen].bounds.size.width
 #define kWindowHeight [UIScreen mainScrenn].bounds.size.height
 
@@ -48,9 +53,12 @@ typedef NS_OPTIONS(NSInteger, CustomHabitWeek) {
 #define mainColor [UIColor colorWithRed:0 green:0.722 blue:0.714 alpha:1]
 #define defaultGrayColor1 [UIColor colorWithWhite:0.765 alpha:1]
 #define defaultGrayColor2 [UIColor colorWithWhite:0.278 alpha:1]
+#define defaultGrayColor3 [UIColor colorWithWhite:0.753 alpha:1]
+#define defaultTransparentGrayColor1 [UIColor colorWithWhite:0.753 alpha:0.50]
 #define defaultWhiteColor1 [UIColor colorWithWhite:1 alpha:1]
 #define defaultBlackColor1 [UIColor colorWithWhite:0.157 alpha:1]
-#define defaultDatePickerBackgroundColor [UIColor colorWithWhite:0 alpha:0.3]
+#define defaultOrangeColor [UIColor colorWithRed:0.953 green:0.733 blue:0.318 alpha:1]
+#define defaultDatePickerBackgroundColor [UIColor colorWithWhite:0 alpha:0.30]
 
 #define defaultClearColor [UIColor clearColor]
 

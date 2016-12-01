@@ -8,8 +8,16 @@
 
 #import "AppDelegate.h"
 #import "AppSettings.h"
+#import "AppSettings+ShopSettings.h"
+#import "AppSettings+HabitSettings.h"
 #import "AppDatabase.h"
 #import "AppNotificationCenter.h"
+
+static NSString * const kBreakfastKey = @"早饭";
+static NSString * const kLunchKey = @"午饭";
+static NSString * const kDinnerKey = @"晚饭";
+static NSString * const kSportKey = @"运动";
+static NSString * const kSleepKey = @"睡觉";
 
 @interface AppDelegate ()
 
@@ -34,8 +42,11 @@
 
 - (void)dataCheck {
     if ([AppSettings sharedSettings].isPrimary == YES) {
+        [[AppSettings sharedSettings]registerShopItems];
+        [[AppSettings sharedSettings]registerDailyRoutines];
         [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
         [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
+
         [AppSettings sharedSettings].primary = NO;
     }
 }
@@ -58,9 +69,25 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSUserDefaults * userDefaults = [AppSettings sharedSettings].userDefaults;
+    [self updateDailyRoutinesWithUserDefaults:userDefaults];
+    [self updateCustomHabitsWithUserDefaults:userDefaults];
 }
 
+- (void)updateDailyRoutinesWithUserDefaults:(NSUserDefaults *)userDefaults {
+    [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kBreakfastKey fromUserDefaults:userDefaults];
+    [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kLunchKey fromUserDefaults:userDefaults];
+    [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kDinnerKey fromUserDefaults:userDefaults];
+    [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kSportKey fromUserDefaults:userDefaults];
+    [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kSleepKey fromUserDefaults:userDefaults];
+}
+
+- (void)updateCustomHabitsWithUserDefaults:(NSUserDefaults *)userDefaults {
+    NSArray * customHabitNames = [[AppDatabase sharedDatabase]allCustomHabitName];
+    for (NSString * name in customHabitNames) {
+        [[AppDatabase sharedDatabase]updateCustomHabitWithName:name fromUserDefaults:userDefaults];
+    }
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

@@ -57,4 +57,15 @@
         return NO;
     }
 }
+
+- (BOOL)isMoreThanOneDayWithDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
+    NSCalendarUnit units = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
+    NSDateComponents * components1 = [self.calender components:units fromDate:date1];
+    NSDateComponents * components2 = [self.calender components:units fromDate:date2];
+    if ((labs(components1.day - components2.day) > 1) && (components1.month == components2.month) && (components1.year == components2.year)) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 @end

@@ -10,6 +10,7 @@
 #import "HabitCell.h"
 #import "HabitCell2.h"
 
+#import "AppSettings+HabitSettings.h"
 #import "AppDatabase.h"
 #import "AppTime.h"
 #import "AppNotificationCenter.h"
@@ -138,6 +139,7 @@
         cell.clockHandler = ^(NSString * name) {
             CustomHabit * targetCustomHabit = [[AppDatabase sharedDatabase]customHabitWithName:name];
             [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:targetCustomHabit];
+            [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID andLastClocked:targetCustomHabit.lastClocked];
             [weakSelf updateData];
         };
         return cell;
@@ -169,7 +171,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[indexPath.row]];
+        [[AppSettings sharedSettings]deleteCustomHabitWithName:[(CustomHabit *)customHabits[indexPath.row]ID]];
+        [[AppNotificationCenter sharedNotificationCenter]removeCustomHabit:customHabits[indexPath.row]];
         [[AppDatabase sharedDatabase]deleteCustomHabit:customHabits[indexPath.row]];
         [self updateData];
     }
@@ -283,6 +286,7 @@
 
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
     [[AppDatabase sharedDatabase]updateHour:hour andMinute:minute withDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
+    [[AppSettings sharedSettings]updateDailyRoutine:[(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID] withHour:hour andMinute:minute];
     [self updateData];
 }
 
@@ -302,13 +306,16 @@
         [targetVC existedCustomHabit:customHabits[currentCustomHabitRow]];
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
+            [[AppSettings sharedSettings]registerOrUpdateCustomHabit:customHabits[currentCustomHabitRow]];
             [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
         };
     } else if ([[segue identifier]isEqualToString:@"addCustomHabit"]) {
         NewHabitViewController * targetVC = segue.destinationViewController;
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
+            [[AppSettings sharedSettings]registerOrUpdateCustomHabit:customHabits[currentCustomHabitRow]];
             [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabitCategory:((CustomHabit *)(customHabits[currentCustomHabitRow])).ID];
         };
     }
 }

@@ -113,6 +113,7 @@
 #pragma mark Data
 - (void)refreshData {
     self.growthPoints = [AppSettings sharedSettings].growthPoints;
+    self.petName = [AppSettings sharedSettings].petName;
 }
 
 #pragma mark Methods of Setter

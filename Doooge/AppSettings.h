@@ -11,6 +11,8 @@
 @interface AppSettings : NSObject
 + (instancetype)sharedSettings;
 
+@property (nonatomic, strong, readonly) NSUserDefaults * userDefaults;
+
 @property (nonatomic) NSInteger growthPoints;
 @property (nonatomic) NSInteger goldCoins;
 @property (nonatomic) NSInteger petLevel;

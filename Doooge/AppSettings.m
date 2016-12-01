@@ -18,7 +18,7 @@ static NSString * const kAuthorizedKey = @"authorized";
 static NSString * kSuiteName = @"group.com.vic.Doooge";
 
 @interface AppSettings()
-@property (nonatomic, strong) NSUserDefaults * userDefaults;
+@property (nonatomic, strong, readwrite) NSUserDefaults * userDefaults;
 @end
 
 @implementation AppSettings

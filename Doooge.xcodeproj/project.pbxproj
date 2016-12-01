@@ -18,6 +18,12 @@
 		1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEEA1DDE115300793813 /* Assets.xcassets */; };
 		1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */; };
 		1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */; };
+		107995A51DEFF0A200267218 /* AppSettings+ShopSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995A41DEFF0A200267218 /* AppSettings+ShopSettings.m */; };
+		107995A81DEFF0B400267218 /* AppSettings+HabitSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995A71DEFF0B400267218 /* AppSettings+HabitSettings.m */; };
+		107995AE1DEFF12200267218 /* ShopData.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995AD1DEFF12200267218 /* ShopData.m */; };
+		107995B01DEFF13700267218 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107995AF1DEFF13700267218 /* ItemCell.xib */; };
+		107995B31DEFF14700267218 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995B21DEFF14700267218 /* ItemCell.m */; };
+		107995B61DEFF14E00267218 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 107995B51DEFF14E00267218 /* ShopViewController.m */; };
 		108C2F801DE0117D002C4202 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108C2F7F1DE0117D002C4202 /* DatePickerView.xib */; };
 		108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F821DE0D05B002C4202 /* DatePickerView.m */; };
 		108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C2F851DE115AF002C4202 /* HabitCell2.m */; };
@@ -115,6 +121,17 @@
 		1075EEEF1DDE1BBA00793813 /* CustomHabitSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomHabitSectionHeaderView.h; path = Controller/CustomHabitSectionHeaderView.h; sourceTree = "<group>"; };
 		1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomHabitSectionHeaderView.m; path = Controller/CustomHabitSectionHeaderView.m; sourceTree = "<group>"; };
 		1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHabitSectionHeaderView.xib; sourceTree = "<group>"; };
+		107995A31DEFF0A200267218 /* AppSettings+ShopSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppSettings+ShopSettings.h"; path = "Controller/AppSettings+ShopSettings.h"; sourceTree = "<group>"; };
+		107995A41DEFF0A200267218 /* AppSettings+ShopSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AppSettings+ShopSettings.m"; path = "Controller/AppSettings+ShopSettings.m"; sourceTree = "<group>"; };
+		107995A61DEFF0B400267218 /* AppSettings+HabitSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppSettings+HabitSettings.h"; sourceTree = "<group>"; };
+		107995A71DEFF0B400267218 /* AppSettings+HabitSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppSettings+HabitSettings.m"; sourceTree = "<group>"; };
+		107995AC1DEFF12200267218 /* ShopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopData.h; sourceTree = "<group>"; };
+		107995AD1DEFF12200267218 /* ShopData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopData.m; sourceTree = "<group>"; };
+		107995AF1DEFF13700267218 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		107995B11DEFF14700267218 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = Controller/ItemCell.h; sourceTree = "<group>"; };
+		107995B21DEFF14700267218 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = Controller/ItemCell.m; sourceTree = "<group>"; };
+		107995B41DEFF14E00267218 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = Controller/ShopViewController.h; sourceTree = "<group>"; };
+		107995B51DEFF14E00267218 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = Controller/ShopViewController.m; sourceTree = "<group>"; };
 		108C2F7F1DE0117D002C4202 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		108C2F811DE0D05B002C4202 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		108C2F821DE0D05B002C4202 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
@@ -283,8 +300,76 @@
 			children = (
 				1075EEC41DD8F60E00793813 /* AppSettings.h */,
 				1075EEC51DD8F60E00793813 /* AppSettings.m */,
+				107995A61DEFF0B400267218 /* AppSettings+HabitSettings.h */,
+				107995A71DEFF0B400267218 /* AppSettings+HabitSettings.m */,
+				107995A31DEFF0A200267218 /* AppSettings+ShopSettings.h */,
+				107995A41DEFF0A200267218 /* AppSettings+ShopSettings.m */,
 			);
 			name = Singleton;
+			sourceTree = "<group>";
+		};
+		107995A91DEFF0F900267218 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				107995B91DEFF17600267218 /* Controller */,
+				107995B81DEFF16800267218 /* View */,
+				107995B71DEFF15E00267218 /* Model */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		107995AA1DEFF10300267218 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
+				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
+				108C2F841DE115AF002C4202 /* HabitCell2.h */,
+				108C2F851DE115AF002C4202 /* HabitCell2.m */,
+				1075EEE51DDD833600793813 /* DailyRoutineSectionHeaderView.h */,
+				1075EEE61DDD833600793813 /* DailyRoutineSectionHeaderView.m */,
+				1075EEE81DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib */,
+				1075EEEF1DDE1BBA00793813 /* CustomHabitSectionHeaderView.h */,
+				1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */,
+				1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		107995AB1DEFF10C00267218 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
+				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		107995B71DEFF15E00267218 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				107995AC1DEFF12200267218 /* ShopData.h */,
+				107995AD1DEFF12200267218 /* ShopData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		107995B81DEFF16800267218 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				107995B11DEFF14700267218 /* ItemCell.h */,
+				107995B21DEFF14700267218 /* ItemCell.m */,
+				107995AF1DEFF13700267218 /* ItemCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		107995B91DEFF17600267218 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				107995B41DEFF14E00267218 /* ShopViewController.h */,
+				107995B51DEFF14E00267218 /* ShopViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		108C2F7E1DE00A1E002C4202 /* Assist */ = {
@@ -344,18 +429,8 @@
 		10C6680B1DC98E4D0099C379 /* HabitDevelop */ = {
 			isa = PBXGroup;
 			children = (
-				2E9C1F091DC5673A00E02A3F /* HabitCell.h */,
-				2E9C1F0A1DC5673A00E02A3F /* HabitCell.m */,
-				108C2F841DE115AF002C4202 /* HabitCell2.h */,
-				108C2F851DE115AF002C4202 /* HabitCell2.m */,
-				1075EEE51DDD833600793813 /* DailyRoutineSectionHeaderView.h */,
-				1075EEE61DDD833600793813 /* DailyRoutineSectionHeaderView.m */,
-				1075EEE81DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib */,
-				1075EEEF1DDE1BBA00793813 /* CustomHabitSectionHeaderView.h */,
-				1075EEF01DDE1BBA00793813 /* CustomHabitSectionHeaderView.m */,
-				1075EEF21DDE1BD100793813 /* CustomHabitSectionHeaderView.xib */,
-				2E9C1F0D1DC5673A00E02A3F /* HabitDevelopViewController.h */,
-				2E9C1F0E1DC5673A00E02A3F /* HabitDevelopViewController.m */,
+				107995AB1DEFF10C00267218 /* Controller */,
+				107995AA1DEFF10300267218 /* View */,
 			);
 			name = HabitDevelop;
 			sourceTree = "<group>";
@@ -377,6 +452,7 @@
 				101E8D1E1DC8C0650034390E /* EditName */,
 				10C6680C1DC98E720099C379 /* NewHabit */,
 				10C6680B1DC98E4D0099C379 /* HabitDevelop */,
+				107995A91DEFF0F900267218 /* Shop */,
 				10C6680A1DC98E370099C379 /* HowToPlay */,
 			);
 			name = UI;
@@ -656,6 +732,7 @@
 				1075EEF31DDE1BD100793813 /* CustomHabitSectionHeaderView.xib in Resources */,
 				1075EEE91DDE0E6C00793813 /* DailyRoutineSectionHeaderView.xib in Resources */,
 				2E9C1F001DC5660B00E02A3F /* Main.storyboard in Resources */,
+				107995B01DEFF13700267218 /* ItemCell.xib in Resources */,
 				1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */,
 				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -747,22 +824,27 @@
 				108C2F8B1DE1185D002C4202 /* AppTime.m in Sources */,
 				2E9C1F1E1DC5673A00E02A3F /* NewHabitViewController.m in Sources */,
 				1075EEF11DDE1BBA00793813 /* CustomHabitSectionHeaderView.m in Sources */,
+				107995AE1DEFF12200267218 /* ShopData.m in Sources */,
 				108C2F831DE0D05B002C4202 /* DatePickerView.m in Sources */,
 				2E9C1F1D1DC5673A00E02A3F /* MainViewController.m in Sources */,
 				2EA930731DC438BC0065B905 /* AppDelegate.m in Sources */,
 				2E9C1F181DC5673A00E02A3F /* EditNameViewController.m in Sources */,
 				1075EEC91DD9086600793813 /* DailyRoutine.m in Sources */,
 				2EA930701DC438BC0065B905 /* main.m in Sources */,
+				107995A51DEFF0A200267218 /* AppSettings+ShopSettings.m in Sources */,
 				1075EEE71DDD833600793813 /* DailyRoutineSectionHeaderView.m in Sources */,
 				1063D70C1DE3390400FC1146 /* NotificationData.m in Sources */,
 				2E9C1F1B1DC5673A00E02A3F /* HabitDevelopViewController.m in Sources */,
+				107995B31DEFF14700267218 /* ItemCell.m in Sources */,
 				108C2F861DE115AF002C4202 /* HabitCell2.m in Sources */,
+				107995B61DEFF14E00267218 /* ShopViewController.m in Sources */,
 				1075EECF1DD9494E00793813 /* CustomHabit.m in Sources */,
 				1075EEDB1DD964AA00793813 /* AppNotificationCenter.m in Sources */,
 				2E9C1F1C1DC5673A00E02A3F /* HowToPlayViewController.m in Sources */,
 				1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */,
 				1075EED41DD94B7A00793813 /* AppDatabase.m in Sources */,
 				2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */,
+				107995A81DEFF0B400267218 /* AppSettings+HabitSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
