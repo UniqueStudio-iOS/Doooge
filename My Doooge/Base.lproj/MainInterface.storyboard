@@ -235,16 +235,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canteen" translatesAutoresizingMaskIntoConstraints="NO" id="AP9-NT-Fgn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-xM-aci">
-                                <rect key="frame" x="177.5" y="3" width="60" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="428-PZ-W1n"/>
-                                    <constraint firstAttribute="height" constant="20" id="giY-ZD-4m8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ru-V4-qcx">
                                 <rect key="frame" x="64" y="136" width="287" height="57"/>
                                 <subviews>
@@ -255,6 +245,9 @@
                                             <constraint firstAttribute="height" constant="30" id="OOH-Vt-lcV"/>
                                         </constraints>
                                         <state key="normal" image="goFront"/>
+                                        <connections>
+                                            <action selector="goForward:" destination="vZ5-Gh-Ycd" eventType="touchUpInside" id="Nf4-ou-TRw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-E5-vmR">
                                         <rect key="frame" x="1.5" y="13.5" width="16" height="30"/>
@@ -263,6 +256,9 @@
                                             <constraint firstAttribute="width" constant="16" id="b7J-S9-ArQ"/>
                                         </constraints>
                                         <state key="normal" image="goBack"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="vZ5-Gh-Ycd" eventType="touchUpInside" id="KOj-0b-odb"/>
+                                        </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2YC-Ox-Yqs">
                                         <rect key="frame" x="19" y="5" width="250" height="47"/>
@@ -302,19 +298,30 @@
                                     <action selector="back:" destination="vZ5-Gh-Ycd" eventType="touchUpInside" id="cSr-KO-Vek"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="2Vi-k5-ZKc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="2Vi-k5-ZKc">
                                 <rect key="frame" x="148.5" y="4" width="24" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="BCF-2W-dzP"/>
                                     <constraint firstAttribute="height" constant="18" id="wAt-6Z-8wN"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-xM-aci">
+                                <rect key="frame" x="177" y="2" width="60" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="428-PZ-W1n"/>
+                                    <constraint firstAttribute="height" constant="20" id="giY-ZD-4m8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Vi-k5-ZKc" firstAttribute="centerY" secondItem="z1h-xM-aci" secondAttribute="centerY" id="3fF-yT-LrZ"/>
                             <constraint firstItem="5Rc-Bq-uWb" firstAttribute="centerY" secondItem="4ru-V4-qcx" secondAttribute="centerY" id="70M-nH-0qO"/>
                             <constraint firstItem="AP9-NT-Fgn" firstAttribute="height" secondItem="VYv-hz-WJE" secondAttribute="height" id="BdW-aA-qv2"/>
+                            <constraint firstItem="z1h-xM-aci" firstAttribute="top" secondItem="AP9-NT-Fgn" secondAttribute="top" constant="2" id="Cj4-xS-E8w"/>
                             <constraint firstItem="4ru-V4-qcx" firstAttribute="centerX" secondItem="VYv-hz-WJE" secondAttribute="centerX" constant="20" id="LnX-aP-RD0"/>
                             <constraint firstItem="AP9-NT-Fgn" firstAttribute="centerY" secondItem="VYv-hz-WJE" secondAttribute="centerY" id="YLw-Wy-X99"/>
                             <constraint firstItem="z1h-xM-aci" firstAttribute="leading" secondItem="2Vi-k5-ZKc" secondAttribute="trailing" constant="5" id="ZWs-LZ-YjR"/>
@@ -322,7 +329,6 @@
                             <constraint firstItem="AP9-NT-Fgn" firstAttribute="centerX" secondItem="VYv-hz-WJE" secondAttribute="centerX" id="fTm-Jp-IIY"/>
                             <constraint firstItem="4ru-V4-qcx" firstAttribute="leading" secondItem="5Rc-Bq-uWb" secondAttribute="trailing" constant="10" id="gxu-aF-fdZ"/>
                             <constraint firstItem="AP9-NT-Fgn" firstAttribute="width" secondItem="VYv-hz-WJE" secondAttribute="width" id="jfY-9l-5SB"/>
-                            <constraint firstItem="z1h-xM-aci" firstAttribute="top" secondItem="foc-g2-jWq" secondAttribute="bottom" constant="3" id="nUC-cP-QyD"/>
                             <constraint firstItem="NsZ-lf-11Q" firstAttribute="top" secondItem="4ru-V4-qcx" secondAttribute="bottom" constant="7" id="wTh-Ia-flE"/>
                         </constraints>
                     </view>
@@ -336,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WG4-rq-XXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-959"/>
+            <point key="canvasLocation" x="473" y="-777"/>
         </scene>
     </scenes>
     <resources>

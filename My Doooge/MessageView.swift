@@ -25,7 +25,7 @@ class MessageView: UIView {
         textLabel = UILabel(frame: CGRect(1,1,95,20))
         imageView.image = UIImage(named: "diag")
         textLabel.numberOfLines = 0
-        textLabel.font = UIFont.systemFont(ofSize: 10)
+        textLabel.font = UIFont.systemFont(ofSize: 7)
         addSubview(imageView)
         addSubview(textLabel)
     }

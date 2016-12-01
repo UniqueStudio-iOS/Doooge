@@ -181,7 +181,9 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-        
+        self.view.addSubview(AnimationEngine.shared.animationView)
+        animation.defaultAnimation()
+
     }
     
     
@@ -214,9 +216,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
         animationView = AnimationView(frame: CGRect(width/2.0-60,40,90,90))
-        self.view.addSubview(animationView)
         AnimationEngine.shared.initView(animationView)
-        animation.defaultAnimation()
         
         messageView = MessageView(frame: CGRect(width/2.0+30,60,97,22.5))
         self.view.addSubview(messageView)

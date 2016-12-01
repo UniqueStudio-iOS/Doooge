@@ -24,27 +24,37 @@
                             <constraint firstAttribute="height" constant="45" id="OUr-Hi-wHK"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei3-4P-DSZ">
-                        <rect key="frame" x="0.0" y="37" width="10" height="10"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="5Lu-2A-ZaO">
+                        <rect key="frame" x="0.0" y="40" width="5" height="5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="10" id="QS2-Tm-VyX"/>
-                            <constraint firstAttribute="height" constant="10" id="xtX-gb-GQO"/>
+                            <constraint firstAttribute="height" constant="5" id="eoe-n2-bQK"/>
+                            <constraint firstAttribute="width" constant="5" id="vkh-YS-Xt3"/>
                         </constraints>
-                        <state key="normal" image="no"/>
-                    </button>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EW-4F-ouv">
+                        <rect key="frame" x="7" y="37" width="19.5" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="xE8-86-F00"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Ei3-4P-DSZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6wp-nr-KXV"/>
-                <constraint firstItem="ckN-I6-qOy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="9Dx-8V-iiX"/>
-                <constraint firstItem="ckN-I6-qOy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ism-Lx-bXI"/>
-                <constraint firstAttribute="bottom" secondItem="Ei3-4P-DSZ" secondAttribute="bottom" id="V6V-ta-KJB"/>
-                <constraint firstItem="ckN-I6-qOy" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" constant="-2" id="ig0-MP-zSm"/>
+                <constraint firstItem="9EW-4F-ouv" firstAttribute="leading" secondItem="5Lu-2A-ZaO" secondAttribute="trailing" constant="2" id="7Od-eX-sGo"/>
+                <constraint firstItem="5Lu-2A-ZaO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EzW-dL-yAT"/>
+                <constraint firstItem="ckN-I6-qOy" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Ne3-bG-Zkq"/>
+                <constraint firstAttribute="bottom" secondItem="9EW-4F-ouv" secondAttribute="bottom" id="SN2-3L-fEc"/>
+                <constraint firstAttribute="bottom" secondItem="5Lu-2A-ZaO" secondAttribute="bottom" constant="2" id="UXB-PI-ZHU"/>
+                <constraint firstItem="ckN-I6-qOy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="Wzu-6S-kCb"/>
+                <constraint firstItem="ckN-I6-qOy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="nKl-U0-3dm"/>
             </constraints>
             <size key="customSize" width="428" height="342"/>
             <connections>
                 <outlet property="imageView" destination="ckN-I6-qOy" id="sJW-q9-bm3"/>
-                <outlet property="noButton" destination="Ei3-4P-DSZ" id="QOW-eL-kbD"/>
+                <outlet property="numLabel" destination="9EW-4F-ouv" id="crK-D8-YUU"/>
             </connections>
             <point key="canvasLocation" x="189" y="159.5"/>
         </collectionViewCell>

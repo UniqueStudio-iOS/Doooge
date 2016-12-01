@@ -14,7 +14,7 @@ class FoodCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var numLabel: UILabel!
     
     func set(_ content: UIImage?) {
         imageView.image = content
