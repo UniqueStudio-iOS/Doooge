@@ -28,8 +28,6 @@ static NSString * const kSleepKey = @"睡觉";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
-#warning remove later
-//    [AppSettings sharedSettings].primary = YES;
     [AppSettings sharedSettings];
     [self authorizationCheck];
     [self dataCheck];
@@ -46,7 +44,6 @@ static NSString * const kSleepKey = @"睡觉";
     if ([AppSettings sharedSettings].isPrimary == YES) {
         [[AppSettings sharedSettings]registerShopItems];
         [[AppSettings sharedSettings]registerDailyRoutines];
-#warning add later
         [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
         [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
 
