@@ -61,6 +61,8 @@
 }
 
 - (void)registerOrUpdateCustomHabit:(CustomHabit *)customHabit {
+    NSMutableDictionary * container = [[self.userDefaults objectForKey:@"habits"]mutableCopy];
+    
     NSDictionary * content = @{
                                @"hour":[NSNumber numberWithInteger:customHabit.hour],
                                @"minute":[NSNumber numberWithInteger:customHabit.minute],
@@ -69,20 +71,32 @@
                                @"remind":[NSNumber numberWithBool:customHabit.hasRemind],
                                @"last":customHabit.lastClocked
                                };
-    [self.userDefaults setObject:content forKey:customHabit.ID];
+    [container setObject:content forKey:customHabit.ID];
+    
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:container] forKey:@"habits"];
+    NSLog(@"Custom Habit Updated!");
 }
 
 - (void)deleteCustomHabitWithName:(NSString *)name {
-    [self.userDefaults removeObjectForKey:name];
+    NSMutableDictionary * container = [[self.userDefaults objectForKey:@"habits"]mutableCopy];
+    
+    [container removeObjectForKey:name];
+    
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:container] forKey:@"habits"];
 }
 
-- (void)updateCustomHabitWithName:(NSString *)name andLastClocked:(NSDate *)date {
-    NSMutableDictionary * content = [[self.userDefaults objectForKey:name]mutableCopy];
+- (void)updateCustomHabitWithName:(NSString *)name lastClocked:(NSDate *)date andPersistDays:(NSInteger)persistDays{
+    NSMutableDictionary * container = [[self.userDefaults objectForKey:@"habits"]mutableCopy];
+    
+    NSMutableDictionary * content = [[container objectForKey:name]mutableCopy];
     content[@"last"] = date;
-    [self.userDefaults setObject:content forKey:name];
+    content[@"persist"] = [NSNumber numberWithInteger:persistDays];
+    [container setObject:content forKey:name];
+    
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:container] forKey:@"habits"];
 }
 
 - (NSDictionary *)customHabitWithName:(NSString *)name {
-    return [self.userDefaults objectForKey:name];
+    return [[self.userDefaults objectForKey:@"habits"]objectForKey:name];
 }
 @end

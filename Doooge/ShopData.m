@@ -11,6 +11,7 @@
 #import "AppSettings+ShopSettings.h"
 
 #import "ItemCell.h"
+#import "ItemCell2.h"
 
 @interface ShopData()
 @property (nonatomic, readwrite, strong) NSArray * foodData;
@@ -113,38 +114,45 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ItemCell * itemCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
-    itemCell.userInteractionEnabled = YES;
-    if (collectionView.tag == 1) {
-        itemCell.name = self.foodData[indexPath.row][@"name"];
-        itemCell.image = [UIImage imageNamed:self.foodData[indexPath.row][@"image"]];
-        itemCell.price = [self.foodData[indexPath.row][@"price"]integerValue];
-        itemCell.style = ItemCellFoodStyle;
-    } else {
-        itemCell.name = self.toyData[indexPath.row][@"name"];
-        itemCell.image = [UIImage imageNamed:self.toyData[indexPath.row][@"image"]];
-        itemCell.price = [self.toyData[indexPath.row][@"price"]integerValue];
-        itemCell.style = ItemCellToyStyle;
-        itemCell.hasPurchased = [[AppSettings sharedSettings]toyStatusWithName:itemCell.name];
-    }
-    ItemCell * __weak weakItemCell = itemCell;
-    itemCell.purchaseHandler = ^(ItemCellStyle style, NSString * name, NSInteger price) {
-        switch (style) {
-            case ItemCellFoodStyle:
-                if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
-                    [[AppSettings sharedSettings]increaseFoodWithName:name andPrice:price];
-                    NSLog(@"%ld", [[AppSettings sharedSettings]foodWithName:name]);
-                }
-                break;
-            case ItemCellToyStyle:
-                if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
-                    [[AppSettings sharedSettings]gainToyWithName:name andPrice:price];
-                    weakItemCell.hasPurchased = YES;
-                }
-                break;
+    if (collectionView.tag != 3) {
+        ItemCell * itemCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
+        itemCell.userInteractionEnabled = YES;
+        if (collectionView.tag == 1) {
+            itemCell.name = self.foodData[indexPath.row][@"name"];
+            itemCell.image = [UIImage imageNamed:self.foodData[indexPath.row][@"image"]];
+            itemCell.price = [self.foodData[indexPath.row][@"price"]integerValue];
+            itemCell.style = ItemCellFoodStyle;
+        } else {
+            itemCell.name = self.toyData[indexPath.row][@"name"];
+            itemCell.image = [UIImage imageNamed:self.toyData[indexPath.row][@"image"]];
+            itemCell.price = [self.toyData[indexPath.row][@"price"]integerValue];
+            itemCell.style = ItemCellToyStyle;
+            itemCell.hasPurchased = [[AppSettings sharedSettings]toyStatusWithName:itemCell.name];
         }
-        self.refreshGoinCoinsHandler();
-    };
-    return itemCell;
+        ItemCell * __weak weakItemCell = itemCell;
+        itemCell.purchaseHandler = ^(ItemCellStyle style, NSString * name, NSInteger price) {
+            switch (style) {
+                case ItemCellFoodStyle:
+                    if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
+                        [[AppSettings sharedSettings]increaseFoodWithName:name andPrice:price];
+                        NSLog(@"%ld", [[AppSettings sharedSettings]foodWithName:name]);
+                    }
+                    break;
+                case ItemCellToyStyle:
+                    if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
+                        [[AppSettings sharedSettings]gainToyWithName:name andPrice:price];
+                        weakItemCell.hasPurchased = YES;
+                    }
+                    break;
+            }
+            self.refreshGoinCoinsHandler();
+        };
+        return itemCell;
+    } else {
+        ItemCell2 * itemCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell2" forIndexPath:indexPath];
+        itemCell.userInteractionEnabled = YES;
+        return itemCell;
+    }
+
 }
 @end

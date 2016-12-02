@@ -20,6 +20,6 @@
 
 - (void)registerOrUpdateCustomHabit:(CustomHabit *)customHabit;
 - (void)deleteCustomHabitWithName:(NSString *)name;
-- (void)updateCustomHabitWithName:(NSString *)name andLastClocked:(NSDate *)date;
+- (void)updateCustomHabitWithName:(NSString *)name lastClocked:(NSDate *)date andPersistDays:(NSInteger)persistDays;
 - (NSDictionary *)customHabitWithName:(NSString *)name;
 @end
