@@ -183,7 +183,6 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         super.viewWillAppear(animated)
         self.view.addSubview(AnimationEngine.shared.animationView)
         animation.defaultAnimation()
-
     }
     
     
@@ -290,7 +289,8 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFood" {
-            let controller = segue.destination
+            let controller = segue.destination as! FoodViewController
+            controller.delegate = self
             controller.transitioningDelegate = self
         }
     }
@@ -302,5 +302,15 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         
         completionHandler(NCUpdateResult.newData)
     }
+
     
+}
+
+extension TodayViewController: PresentViewControllerDelegate {
+    
+    func dismiss() {
+        self.view.addSubview(AnimationEngine.shared.animationView)
+        animation.defaultAnimation()
+    }
+
 }

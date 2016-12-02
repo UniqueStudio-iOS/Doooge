@@ -19,6 +19,11 @@ struct Food{
     }
 }
 
+protocol PresentViewControllerDelegate {
+    func dismiss()
+}
+
+
 class FoodViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var coinLabel: UILabel!
@@ -30,6 +35,8 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet weak var foodCollection: UICollectionView!
     var currentRow = 0
     
+    var delegate: PresentViewControllerDelegate?
+    
     var foodList: [Food]!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +45,7 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
         progressBar.levelLabel.text = "Lv35"
-
+        self.view.addSubview(progressBar)
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width:60,height:47)
         flowLayout.minimumLineSpacing = 3
@@ -65,6 +72,7 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     @IBAction func back(_ sender: Any) {
+        delegate?.dismiss()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -120,7 +128,6 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         let id = food.id
         if id == 3 {
             AnimationEngine.shared.switchAnimation(.eat)
-            
         }
         
     }
@@ -157,6 +164,9 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         forwardButton.isHidden = false
         currentRow += 3
     }
+    
+    
+
     
  /*
      // MARK: - Navigation

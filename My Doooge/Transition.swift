@@ -23,7 +23,7 @@ class Transition: NSObject, UIViewControllerAnimatedTransitioning {
         destView.frame = startFrame
         transitionContext.containerView.addSubview(destView)
         
-        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2, options:.curveLinear, animations: {
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2, options:.curveLinear, animations: {
             destView.frame = bounds
         }){ (finished) in
             if finished {

@@ -72,7 +72,7 @@ class AnimationEngine: NSObject {
         animationView.play(animationArray, false)
         
         if mode == .sleep {
-            self.perform(#selector(AnimationEngine.sleepState), with: nil, afterDelay:Double(animationArray.count) * 0.3)
+            self.perform(#selector(AnimationEngine.sleepState), with: nil, afterDelay:Double(animationArray.count-2) * 0.3)
             // 进入持续睡眠状态
             state = .sleeping
         } else {
