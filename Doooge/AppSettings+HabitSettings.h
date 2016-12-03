@@ -14,6 +14,7 @@
 
 @interface AppSettings(HabitSettings)
 - (void)registerDailyRoutines;
+- (void)registerCustomHabits;
 
 - (void)updateDailyRoutine:(NSString *)ID withHour:(NSInteger)hour andMinute:(NSInteger)minute;
 - (NSDictionary *)dailyRoutineWithName:(NSString *)name;

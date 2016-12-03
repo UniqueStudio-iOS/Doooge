@@ -63,4 +63,11 @@
         return NO;
     }
 }
+
+- (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
+    NSDate * fromDate, * toDate;
+    [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:date1];
+    [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:date2];
+    return (NSInteger)[toDate timeIntervalSinceDate:fromDate]/(24*3600);
+}
 @end

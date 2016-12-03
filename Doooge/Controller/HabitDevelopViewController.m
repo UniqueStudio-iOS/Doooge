@@ -139,7 +139,11 @@
         HabitDevelopViewController __weak * weakSelf = self;
         cell.clockHandler = ^(NSString * name) {
             CustomHabit * targetCustomHabit = [[AppDatabase sharedDatabase]customHabitWithName:name];
-            
+            if ([weakSelf testCustomHabitWithHour:targetCustomHabit.hour andMinute:targetCustomHabit.minute]) {
+                [weakSelf finishCustomHabitInTime];
+            } else {
+                [weakSelf finishCustomHabitLater];
+            }
             [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:targetCustomHabit];
             [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID lastClocked:targetCustomHabit.lastClocked andPersistDays:customHabit.persistDays];
             [weakSelf updateData];
@@ -304,6 +308,16 @@
     } else {
         return NO;
     }
+}
+
+- (void)finishCustomHabitInTime {
+    [AppSettings sharedSettings].goldCoins += 5;
+    [AppSettings sharedSettings].growthPoints += 10;
+}
+
+- (void)finishCustomHabitLater {
+    [AppSettings sharedSettings].goldCoins += 3;
+    [AppSettings sharedSettings].growthPoints += 5;
 }
 #pragma mark - Navigation
 

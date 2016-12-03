@@ -122,7 +122,7 @@
     [self.petNameLabel setText:_petName];
 }
 
-- (void)setGrowthPoint:(NSInteger)growthPoint {
+- (void)setGrowthPoints:(NSInteger)growthPoint {
     _growthPoints = growthPoint;
     [self.growthPointsLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoints]];
 }

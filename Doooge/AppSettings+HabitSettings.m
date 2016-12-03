@@ -60,6 +60,10 @@
     return [self.userDefaults objectForKey:name];
 }
 
+- (void)registerCustomHabits {
+    [self.userDefaults registerDefaults:@{@"habits": [NSDictionary dictionary]}];
+}
+
 - (void)registerOrUpdateCustomHabit:(CustomHabit *)customHabit {
     NSMutableDictionary * container = [[self.userDefaults objectForKey:@"habits"]mutableCopy];
     

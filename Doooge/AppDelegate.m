@@ -44,6 +44,7 @@ static NSString * const kSleepKey = @"睡觉";
     if ([AppSettings sharedSettings].isPrimary == YES) {
         [[AppSettings sharedSettings]registerShopItems];
         [[AppSettings sharedSettings]registerDailyRoutines];
+        [[AppSettings sharedSettings]registerCustomHabits];
         [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
         [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
 
