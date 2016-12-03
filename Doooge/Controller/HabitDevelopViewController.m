@@ -139,6 +139,7 @@
         HabitDevelopViewController __weak * weakSelf = self;
         cell.clockHandler = ^(NSString * name) {
             CustomHabit * targetCustomHabit = [[AppDatabase sharedDatabase]customHabitWithName:name];
+            
             [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:targetCustomHabit];
             [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID lastClocked:targetCustomHabit.lastClocked andPersistDays:customHabit.persistDays];
             [weakSelf updateData];
@@ -294,6 +295,15 @@
 - (void)deselectCellForCurrentIndexPath {
     NSIndexPath * targetIndex = [NSIndexPath indexPathForRow:currentDailyRoutineRow inSection:0];
     [self.tableView deselectRowAtIndexPath:targetIndex animated:YES];
+}
+
+- (BOOL)testCustomHabitWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
+    NSDate * targetDate = [[AppTime sharedTime]timeFromHour:hour andMinute:minute];
+    if (([AppTime sharedTime].date.timeIntervalSince1970 - targetDate.timeIntervalSince1970) <= 3600) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 #pragma mark - Navigation
 
