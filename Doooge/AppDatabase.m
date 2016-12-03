@@ -10,6 +10,8 @@
 
 #import <Realm.h>
 
+#import "AppSettings+HabitSettings.h"
+
 #import "DailyRoutine.h"
 #import "CustomHabit.h"
 
@@ -116,7 +118,7 @@
 
 - (void)updateCustomHabitWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults {
     CustomHabit * customHabit = [self customHabitWithName:name];
-    NSDictionary * customHabitDictionary = [userDefaults objectForKey:name];
+    NSDictionary * customHabitDictionary = [[userDefaults objectForKey:@"habits"]objectForKey:name];
     [self.realm beginWriteTransaction];
     customHabit.persistDays = [customHabitDictionary[@"persist"]integerValue];
     customHabit.lastClocked = customHabitDictionary[@"last"];

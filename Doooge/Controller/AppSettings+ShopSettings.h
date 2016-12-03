@@ -18,6 +18,12 @@
 - (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price;
 - (NSInteger)foodWithName:(NSString *)name;
 
-- (void)gainToyWithName:(NSString *) name andPrice:(NSInteger)price;
+- (void)gainToyWithName:(NSString *)name andPrice:(NSInteger)price;
 - (BOOL)toyStatusWithName:(NSString *)name;
+
+- (void)gainDecorateWithName:(NSString *)name andPrice:(NSInteger)price;
+- (void)useDecorateWithName:(NSString *)name;
+- (void)unuseDecorateWithName:(NSString *)name;
+- (BOOL)decoratePurchaseStatusWithName:(NSString *)name;
+- (BOOL)decorateUseStatusWithName:(NSString *)name;
 @end

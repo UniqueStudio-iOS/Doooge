@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1028555C1DF19DB8001F2260 /* ItemCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1028555B1DF19DB8001F2260 /* ItemCell2.m */; };
+		1028555E1DF19E62001F2260 /* ItemCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1028555D1DF19E62001F2260 /* ItemCell2.xib */; };
 		1063D70C1DE3390400FC1146 /* NotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1063D70B1DE3390400FC1146 /* NotificationData.m */; };
 		1075EEC61DD8F60E00793813 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEC51DD8F60E00793813 /* AppSettings.m */; };
 		1075EEC91DD9086600793813 /* DailyRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075EEC81DD9086600793813 /* DailyRoutine.m */; };
@@ -102,6 +104,9 @@
 /* Begin PBXFileReference section */
 		05DC02C671597A690BCD3EA0 /* Pods-Doooge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doooge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doooge/Pods-Doooge.debug.xcconfig"; sourceTree = "<group>"; };
 		101E8D1D1DC8BC870034390E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1028555A1DF19DB8001F2260 /* ItemCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell2.h; sourceTree = "<group>"; };
+		1028555B1DF19DB8001F2260 /* ItemCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell2.m; sourceTree = "<group>"; };
+		1028555D1DF19E62001F2260 /* ItemCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell2.xib; sourceTree = "<group>"; };
 		1063D70A1DE3390400FC1146 /* NotificationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationData.h; sourceTree = "<group>"; };
 		1063D70B1DE3390400FC1146 /* NotificationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationData.m; sourceTree = "<group>"; };
 		1075EEC41DD8F60E00793813 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
@@ -359,6 +364,9 @@
 				107995B11DEFF14700267218 /* ItemCell.h */,
 				107995B21DEFF14700267218 /* ItemCell.m */,
 				107995AF1DEFF13700267218 /* ItemCell.xib */,
+				1028555A1DF19DB8001F2260 /* ItemCell2.h */,
+				1028555B1DF19DB8001F2260 /* ItemCell2.m */,
+				1028555D1DF19E62001F2260 /* ItemCell2.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -735,6 +743,7 @@
 				107995B01DEFF13700267218 /* ItemCell.xib in Resources */,
 				1075EEEB1DDE115300793813 /* Assets.xcassets in Resources */,
 				2EA9307E1DC438BC0065B905 /* LaunchScreen.storyboard in Resources */,
+				1028555E1DF19E62001F2260 /* ItemCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +854,7 @@
 				1075EED41DD94B7A00793813 /* AppDatabase.m in Sources */,
 				2E9C1F191DC5673A00E02A3F /* HabitCell.m in Sources */,
 				107995A81DEFF0B400267218 /* AppSettings+HabitSettings.m in Sources */,
+				1028555C1DF19DB8001F2260 /* ItemCell2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +970,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1001,7 +1011,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

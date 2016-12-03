@@ -11,6 +11,7 @@
 #import <UserNotifications/UserNotifications.h>
 
 #import "AppSettings.h"
+#import "AppSettings+HabitSettings.h"
 #import "NotificationData.h"
 
 #import "AppDatabase.h"
@@ -147,7 +148,7 @@
 
 - (void)registerCustomHabitCategory:(NSString *)name {
         [self.userNotificationCenter getNotificationCategoriesWithCompletionHandler:^(NSSet<UNNotificationCategory *> * _Nonnull categories) {
-            UNNotificationAction * action = [UNNotificationAction actionWithIdentifier:name title:@"滴！打卡" options:UNNotificationActionOptionNone];
+            UNNotificationAction * action = [UNNotificationAction actionWithIdentifier:@"clock" title:@"滴！打卡" options:UNNotificationActionOptionNone];
             UNNotificationCategory * category = [UNNotificationCategory categoryWithIdentifier:name actions:@[action] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
             [self.userNotificationCenter setNotificationCategories:[categories setByAddingObject:category]];
         }];
@@ -155,21 +156,28 @@
 
 - (void)removeCustomHabitCategory:(NSString *)name {
     [self.userNotificationCenter getNotificationCategoriesWithCompletionHandler:^(NSSet<UNNotificationCategory *> * _Nonnull categories) {
+        UNNotificationCategory * targetCategory = NULL;
         NSMutableSet * mutableCategories = [NSMutableSet setWithSet:categories];
         for (UNNotificationCategory * category in mutableCategories) {
             if ([category.identifier isEqualToString:name]) {
-                [mutableCategories removeObject:category];
+                targetCategory = category;
             }
+        }
+        if (targetCategory) {
+            [mutableCategories removeObject:targetCategory];
         }
         [self.userNotificationCenter setNotificationCategories:mutableCategories];
     }];
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-    NSString * categoryIdentifier = response.notification.request.content.categoryIdentifier;
-    CustomHabit * customHabit = [[AppDatabase sharedDatabase]customHabitWithName:categoryIdentifier];
-    if (![[AppTime sharedTime]isSameDayWithDate1:customHabit.lastClocked andDate2:[AppTime sharedTime].date]) {
-        [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:customHabit];
+    if ([response.actionIdentifier isEqualToString:@"clock"]) {
+        NSString * categoryIdentifier = response.notification.request.content.categoryIdentifier;
+        CustomHabit * customHabit = [[AppDatabase sharedDatabase]customHabitWithName:categoryIdentifier];
+        if (![[AppTime sharedTime]isSameDayWithDate1:customHabit.lastClocked andDate2:[AppTime sharedTime].date]) {
+            [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:customHabit];
+            [[AppSettings sharedSettings]updateCustomHabitWithName:customHabit.ID lastClocked:[AppTime sharedTime].date andPersistDays:customHabit.persistDays];
+        }
     }
     completionHandler();
 }

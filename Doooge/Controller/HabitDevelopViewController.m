@@ -24,6 +24,7 @@
 #import "NewHabitViewController.h"
 
 #import "DatePickerView.h"
+#import <SVProgressHUD.h>
 
 @interface HabitDevelopViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSInteger currentDailyRoutineRow;
@@ -139,7 +140,7 @@
         cell.clockHandler = ^(NSString * name) {
             CustomHabit * targetCustomHabit = [[AppDatabase sharedDatabase]customHabitWithName:name];
             [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:targetCustomHabit];
-            [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID andLastClocked:targetCustomHabit.lastClocked];
+            [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID lastClocked:targetCustomHabit.lastClocked andPersistDays:customHabit.persistDays];
             [weakSelf updateData];
         };
         return cell;
@@ -183,41 +184,6 @@
     NSDate * date = [[AppTime sharedTime]timeFromHour:dailyRoutine.hour andMinute:dailyRoutine.minute];
     [self.timePicker setDate:date];
 }
-//- (void)timeChange:(UIDatePicker *)sender {
-//    if (currentDailyRoutineRow >= 0) {
-//        NSInteger hour, minute;
-//        NSDate * date = sender.date;
-//        NSCalendar * calendar = sender.calendar;
-//        [calendar getHour:&hour minute:&minute second:NULL nanosecond:NULL fromDate:date];
-//        NSDateComponents * components = [[NSDateComponents alloc]init];
-//        components.hour = hour;
-//        components.minute = minute;
-////        NSMutableDictionary * dict;
-//        if (currentDailyRoutineRow == 0) {
-////             dict = [[[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"breakfast"]mutableCopy];
-////            [dict setObject: [NSKeyedArchiver archivedDataWithRootObject:components] forKey:@"time"];
-////            [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dict forKey:@"breakfast"];
-////        } else if (currentDailyRoutineRow == 1) {
-////            dict = [[[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"lunch"]mutableCopy];
-////            [dict setObject: [NSKeyedArchiver archivedDataWithRootObject:components] forKey:@"time"];
-////            [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dict forKey:@"lunch"];
-////        } else if (currentDailyRoutineRow == 2) {
-////            dict = [[[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"dinner"]mutableCopy];
-////            [dict setObject: [NSKeyedArchiver archivedDataWithRootObject:components] forKey:@"time"];
-////            [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dict forKey:@"dinner"];
-////        } else if (currentDailyRoutineRow == 3) {
-////            dict = [[[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"sport"]mutableCopy];
-////            [dict setObject: [NSKeyedArchiver archivedDataWithRootObject:components] forKey:@"time"];
-////            [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dict forKey:@"sport"];
-////        } else if (currentDailyRoutineRow == 4) {
-////            dict = [[[DooogeUserDefaults dooogeUserDefaults]dailyRoutineDictForKey:@"sleep"]mutableCopy];
-////            [dict setObject: [NSKeyedArchiver archivedDataWithRootObject:components] forKey:@"time"];
-////            [[DooogeUserDefaults dooogeUserDefaults]setDailyRoutineDict:dict forKey:@"sleep"];
-//        }
-////        [self.tableView reloadData];
-////        [[DooogeNotificationCenter currentNotificationCenter]requestAllHealthyRoutines];
-//    }
-//}
 
 - (DailyRoutineSectionHeaderView *)dailyRoutineSectionHeaderView {
     if (!_dailyRoutineSectionHeaderView) {
@@ -257,10 +223,18 @@
         [self.view addSubview:_timePicker];
         HabitDevelopViewController * __weak weakSelf = self;
         _timePicker.cancelHandler = ^(){
+            weakSelf.timePicker.viewHidden = YES;
         };
         _timePicker.setTimeHandler = ^(NSInteger hour, NSInteger minute) {
-            [weakSelf updateTimeWithHour:hour andMinute:minute];
-            [weakSelf updateDailyRoutineNotification];
+            if ([weakSelf checkDailyRoutineWithHour:hour andMinute:minute]) {
+                [weakSelf updateTimeWithHour:hour andMinute:minute];
+                [weakSelf updateDailyRoutineNotification];
+                weakSelf.timePicker.viewHidden = YES;
+            } else {
+                [weakSelf remindReasonableDailyRoutine];
+                weakSelf.timePicker.viewHidden = NO;
+            }
+            
         };
     }
     return _timePicker;
@@ -282,6 +256,29 @@
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)checkDailyRoutineWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
+    NSString * ID = [(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID];
+    if ([ID isEqualToString:@"早饭"]) {
+        if (hour < 5 || (hour > 11 && minute > 0)) {
+            return NO;
+        }
+    } else if ([ID isEqualToString:@"午饭"]) {
+        if (hour < 11 || (hour > 14 && minute > 0)) {
+            return NO;
+        }
+    } else if ([ID isEqualToString:@"晚饭"]) {
+        if (hour < 16 || (hour > 21 && minute > 0)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)remindReasonableDailyRoutine {
+    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
+    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
 }
 
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
@@ -313,9 +310,9 @@
         NewHabitViewController * targetVC = segue.destinationViewController;
         targetVC.habitUpdateHandler = ^(BOOL isExisted) {
             [self updateData];
-            [[AppSettings sharedSettings]registerOrUpdateCustomHabit:customHabits[currentCustomHabitRow]];
-            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[currentCustomHabitRow]];
-            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabitCategory:((CustomHabit *)(customHabits[currentCustomHabitRow])).ID];
+            [[AppSettings sharedSettings]registerOrUpdateCustomHabit:customHabits[customHabits.count - 1]];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabit:customHabits[customHabits.count - 1]];
+            [[AppNotificationCenter sharedNotificationCenter]registerCustomHabitCategory:((CustomHabit *)(customHabits[customHabits.count - 1])).ID];
         };
     }
 }
