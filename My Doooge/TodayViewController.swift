@@ -327,10 +327,15 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     
 }
 
-extension TodayViewController: PresentViewControllerDelegate {
+extension TodayViewController: PresentViewControllerDelegate,AnimationEngineDelegate {
     
     func dismiss() {
 
+        
+    }
+    
+    func endFinishPlaying() {
+        
     }
 
 }
