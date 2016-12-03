@@ -37,16 +37,20 @@
 
 - (void)action {
     if (!self.hasPurchased) {
-        self.purchaseHandler(self.name, self.price);
+        self.buyHandler(self.name, self.price);
     } else {
         if (!self.hasUsed) {
-            self.useHandler(self.name);
+            self.useHandler(self.name, self.position);
         }
     }
 }
 
 - (void)setName:(NSString *)name {
     _name = name;
+}
+
+- (void)setPosition:(NSString *)position {
+    _position = position;
 }
 
 - (void)setImage:(UIImage *)image {
@@ -61,7 +65,16 @@
 
 - (void)setHasPurchased:(BOOL)hasPurchased {
     _hasPurchased = hasPurchased;
-    if (!_hasPurchased) {
+    [self setStatus];
+}
+
+- (void)setHasUsed:(BOOL)hasUsed {
+    _hasUsed = hasUsed;
+    [self setStatus];
+}
+
+- (void)setStatus {
+    if (!self.hasPurchased) {
         self.purchaseButton.userInteractionEnabled = YES;
         [self.purchaseButton setTitle:@"购买" forState:UIControlStateNormal];
         [self.purchaseButton setBackgroundColor:defaultOrangeColor];

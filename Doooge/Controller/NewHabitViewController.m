@@ -223,7 +223,7 @@
         [self.tableView addSubview:_timePicker];
         NewHabitViewController * __weak weakSelf = self;
         _timePicker.cancelHandler = ^(){
-            
+            weakSelf.timePicker.viewHidden = YES;
         };
         _timePicker.setTimeHandler = ^(NSInteger hour, NSInteger minute) {
             _hour = hour;
@@ -235,6 +235,7 @@
                 
                 
             }
+            weakSelf.timePicker.viewHidden = YES;
         };
     }
     return _timePicker;

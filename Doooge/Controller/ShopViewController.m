@@ -12,6 +12,7 @@
 #import "ShopData.h"
 
 #import "ItemCell.h"
+#import "ItemCell2.h"
 
 @interface ShopViewController ()<UICollectionViewDelegate>{
 
@@ -60,6 +61,7 @@
     [self.toyView registerClass:[ItemCell class] forCellWithReuseIdentifier:@"ItemCell"];
     self.decorateView.delegate = self;
     self.decorateView.dataSource = self.shopData;
+    [self.decorateView registerClass:[ItemCell2 class] forCellWithReuseIdentifier:@"ItemCell2"];
 }
 
 - (void)updateGoldCoins:(NSInteger)goldCoins {

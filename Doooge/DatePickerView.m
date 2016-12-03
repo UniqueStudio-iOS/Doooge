@@ -31,12 +31,12 @@
     [self setViewHidden:YES];
 }
 - (IBAction)didPressCancelButton {
-    [self setViewHidden:YES];
+//    [self setViewHidden:YES];
     self.cancelHandler();
 }
 
 - (IBAction)didPressSetTimeButton {
-    [self setViewHidden:YES];
+//    [self setViewHidden:YES];
     NSInteger hour, minute;
     [self.datePicker.calendar getHour:&hour minute:&minute second:NULL nanosecond:NULL fromDate:self.datePicker.date];
     self.setTimeHandler(hour, minute);

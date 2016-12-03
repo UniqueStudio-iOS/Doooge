@@ -24,6 +24,7 @@
 #import "NewHabitViewController.h"
 
 #import "DatePickerView.h"
+#import <SVProgressHUD.h>
 
 @interface HabitDevelopViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSInteger currentDailyRoutineRow;
@@ -222,10 +223,18 @@
         [self.view addSubview:_timePicker];
         HabitDevelopViewController * __weak weakSelf = self;
         _timePicker.cancelHandler = ^(){
+            weakSelf.timePicker.viewHidden = YES;
         };
         _timePicker.setTimeHandler = ^(NSInteger hour, NSInteger minute) {
-            [weakSelf updateTimeWithHour:hour andMinute:minute];
-            [weakSelf updateDailyRoutineNotification];
+            if ([weakSelf checkDailyRoutineWithHour:hour andMinute:minute]) {
+                [weakSelf updateTimeWithHour:hour andMinute:minute];
+                [weakSelf updateDailyRoutineNotification];
+                weakSelf.timePicker.viewHidden = YES;
+            } else {
+                [weakSelf remindReasonableDailyRoutine];
+                weakSelf.timePicker.viewHidden = NO;
+            }
+            
         };
     }
     return _timePicker;
@@ -247,6 +256,29 @@
 
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)checkDailyRoutineWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
+    NSString * ID = [(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID];
+    if ([ID isEqualToString:@"早饭"]) {
+        if (hour < 5 || (hour > 11 && minute > 0)) {
+            return NO;
+        }
+    } else if ([ID isEqualToString:@"午饭"]) {
+        if (hour < 11 || (hour > 14 && minute > 0)) {
+            return NO;
+        }
+    } else if ([ID isEqualToString:@"晚饭"]) {
+        if (hour < 16 || (hour > 21 && minute > 0)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)remindReasonableDailyRoutine {
+    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
+    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
 }
 
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {

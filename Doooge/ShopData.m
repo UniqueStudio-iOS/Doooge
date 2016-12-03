@@ -74,18 +74,21 @@
     return @[
              @{
                  @"name":@"pinkmat",
+                 @"position":@"left",
                  @"image":@"pinkmat",
-                 @"price":@1000
+                 @"price":@1
                  },
              @{
                  @"name":@"wingsmat",
+                 @"position":@"left",
                  @"image":@"wingsmat",
-                 @"price":@1000
+                 @"price":@1
                  },
              @{
                  @"name":@"magichat",
+                 @"position":@"left",
                  @"image":@"magichat",
-                 @"price":@1000
+                 @"price":@1
                  }
              ];
 }
@@ -151,6 +154,42 @@
     } else {
         ItemCell2 * itemCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell2" forIndexPath:indexPath];
         itemCell.userInteractionEnabled = YES;
+        
+        itemCell.name = self.decorateData[indexPath.row][@"name"];
+        itemCell.position = self.decorateData[indexPath.row][@"position"];
+        itemCell.image = [UIImage imageNamed:self.decorateData[indexPath.row][@"image"]];
+        itemCell.price = [self.decorateData[indexPath.row][@"price"]integerValue];
+        
+        itemCell.hasPurchased = [[AppSettings sharedSettings]decoratePurchaseStatusWithName:itemCell.name];
+        itemCell.hasUsed = [[AppSettings sharedSettings]decorateUseStatusWithName:itemCell.name];
+        
+        ItemCell2 * __weak weakItemCell = itemCell;
+        ShopData * __weak weakSelf = self;
+        itemCell.buyHandler = ^(NSString * name, NSInteger price) {
+            if ([[AppSettings sharedSettings]canAffordItemWithPrice:price]) {
+                [[AppSettings sharedSettings]gainDecorateWithName:name andPrice:price];
+                if ([[AppSettings sharedSettings]decoratePurchaseStatusWithName:name]) {
+                    NSLog(@"Purchase succeed!");
+                } else {
+                    NSLog(@"Purchase failed!");
+                }
+                
+                weakItemCell.hasPurchased = YES;
+                self.refreshGoinCoinsHandler();
+            }
+        };
+        itemCell.useHandler = ^(NSString * name, NSString * position) {
+            for (NSDictionary * decorateItem in weakSelf.decorateData) {
+                if ([decorateItem[@"position"] isEqualToString:position]) {
+                    if ([decorateItem[@"name"] isEqualToString:name]) {
+                        [[AppSettings sharedSettings]useDecorateWithName:decorateItem[@"name"]];
+                    } else {
+                        [[AppSettings sharedSettings]unuseDecorateWithName:decorateItem[@"name"]];
+                    }
+                }
+            }
+            [collectionView reloadData];
+        };
         return itemCell;
     }
 

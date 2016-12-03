@@ -200,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366911.388527"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366911.388527"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366911.388527"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366213.134812"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366214.096309"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366911.388527"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502366911.388527"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502367171.242782"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502367537.988003"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/Controller/HabitDevelopViewController.m"
-            timestampString = "502369822.341077"
+            timestampString = "502427983.212957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -500,7 +500,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doooge/AppSettings+HabitSettings.m"
@@ -510,6 +510,166 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "-registerOrUpdateCustomHabit:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/ItemCell2.m"
+            timestampString = "502430533.828287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-prepareForReuse"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/ItemCell2.m"
+            timestampString = "502430539.160971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/ShopViewController.m"
+            timestampString = "502430986.114265"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/AppSettings+ShopSettings.m"
+            timestampString = "502435905.459229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-foodWithName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/AppSettings+ShopSettings.m"
+            timestampString = "502432619.267268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-registerShopItems"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/AppSettings+ShopSettings.m"
+            timestampString = "502438352.014773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-registerShopItems"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/ShopData.m"
+            timestampString = "502441449.16004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/ShopData.m"
+            timestampString = "502441505.692172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/AppSettings+ShopSettings.m"
+            timestampString = "502441569.167835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-unuseDecorateWithName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Doooge/Controller/AppSettings+ShopSettings.m"
+            timestampString = "502441570.50902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-useDecorateWithName:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
