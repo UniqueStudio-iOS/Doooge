@@ -140,7 +140,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 
     @IBOutlet weak var growthLabel: UILabel!
     
-    var progresBar: ProgressBar!
+    var progressBar: ProgressBar!
     
     var messageView: MessageView!
     

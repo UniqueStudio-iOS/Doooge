@@ -22,12 +22,19 @@ enum DooogeAnimationType: Int {
 }
 
 
+@objc protocol AnimationEngineDelegate {
+    @objc optional func didFinshEating()
+    @objc optional func didFinishPlaying()
+
+}
+
 class AnimationEngine: NSObject {
 
     var animationView: AnimationView!
     var state: DooogeAnimationType = .normal
     var timer: Timer?
     
+    var delegate: AnimationEngineDelegate?
 
     
     struct FileManager {
@@ -75,11 +82,23 @@ class AnimationEngine: NSObject {
             self.perform(#selector(AnimationEngine.sleepState), with: nil, afterDelay:Double(animationArray.count-2) * 0.3)
             // 进入持续睡眠状态
             state = .sleeping
-        } else {
-            self.perform(#selector(AnimationEngine.defaultAnimation), with: nil, afterDelay: Double(animationArray.count) * 0.3-0.2)
+        } else if mode == .eat {
+            self.perform(#selector(AnimationEngine.endEating), with: nil, afterDelay: Double(animationArray.count) * 0.3)
+        } else if mode == .play {
+            self.perform(#selector(AnimationEngine.endPlaying), with: nil, afterDelay: Double(animationArray.count ) * 0.3)
         }
     }
     
+    
+    @objc private func endEating() {
+        delegate?.didFinshEating!()
+        defaultAnimation()
+    }
+    
+    @objc private func endPlaying() {
+        delegate?.didFinishPlaying!()
+        defaultAnimation()
+    }
     
     public func defaultAnimation() {
         state = .normal

@@ -250,7 +250,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-E5-vmR">
-                                        <rect key="frame" x="1.5" y="13.5" width="16" height="30"/>
+                                        <rect key="frame" x="2" y="14" width="16" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="W6u-4q-v8b"/>
                                             <constraint firstAttribute="width" constant="16" id="b7J-S9-ArQ"/>
@@ -288,7 +288,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rc-Bq-uWb">
-                                <rect key="frame" x="15" y="154.5" width="39" height="21"/>
+                                <rect key="frame" x="15" y="154" width="39" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="UXa-v3-fVy"/>
                                     <constraint firstAttribute="height" constant="21" id="bdU-f2-eN0"/>
@@ -298,8 +298,8 @@
                                     <action selector="back:" destination="vZ5-Gh-Ycd" eventType="touchUpInside" id="cSr-KO-Vek"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="2Vi-k5-ZKc">
-                                <rect key="frame" x="148.5" y="4" width="24" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="2Vi-k5-ZKc">
+                                <rect key="frame" x="148.5" y="3" width="24" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="BCF-2W-dzP"/>
                                     <constraint firstAttribute="height" constant="18" id="wAt-6Z-8wN"/>
@@ -335,6 +335,7 @@
                     <connections>
                         <outlet property="backButton" destination="Ua8-E5-vmR" id="MTK-xB-aKG"/>
                         <outlet property="coinLabel" destination="z1h-xM-aci" id="0hb-Sn-3k8"/>
+                        <outlet property="containerView" destination="4ru-V4-qcx" id="WNu-cI-gI1"/>
                         <outlet property="foodCollection" destination="2YC-Ox-Yqs" id="NzU-H6-o6l"/>
                         <outlet property="forwardButton" destination="29I-F1-gya" id="VOJ-Uf-d80"/>
                         <outlet property="view" destination="VYv-hz-WJE" id="uZo-R6-YcN"/>

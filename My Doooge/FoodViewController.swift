@@ -26,6 +26,7 @@ protocol PresentViewControllerDelegate {
 
 class FoodViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var coinLabel: UILabel!
     static let cellIdentifier = "FoodCell"
     
@@ -64,7 +65,9 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         
         currentRow = 3
-
+        
+        AnimationEngine.shared.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -127,6 +130,8 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        containerView.isHidden = true
         let food = self.foodList[indexPath.row]
         print(food)
         let id = food.id
@@ -169,17 +174,13 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         currentRow += 3
     }
     
-    
 
     
- /*
-     // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension FoodViewController:AnimationEngineDelegate {
+    @objc(didFinshEating)
+    func didFinshEating(){
+        containerView.isHidden = false
     }
-    */
-
 }
