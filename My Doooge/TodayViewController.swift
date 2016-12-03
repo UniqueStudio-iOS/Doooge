@@ -140,16 +140,19 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 
     @IBOutlet weak var growthLabel: UILabel!
     
+    var progresBar: ProgressBar!
     
     var messageView: MessageView!
     
     var tapGesture: UITapGestureRecognizer!
     
-
+    var notifications = [NotificationModel]()
+    
     @IBOutlet weak var verticalConstraint: NSLayoutConstraint!
     
     var tag: Int = 0
 
+    var notificationManager: NotificationManager!
     
     private var lifeValue: Int = 0
     
@@ -181,8 +184,13 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-        self.view.addSubview(AnimationEngine.shared.animationView)
-        animation.defaultAnimation()
+        AnimationEngine.shared.defaultAnimation()
+        
+        self.view.window?.addSubview(AnimationEngine.shared.animationView)
+        self.view.window?.addSubview(progressBar)
+        
+        
+        
     }
     
     
@@ -207,9 +215,8 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         //growthLabel.text = "\(lifeValue)"
         let width = UIScreen.main.bounds.width
         
-        let progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
+        progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
         progressBar.levelLabel.text = "Lv35"
-        self.view.addSubview(progressBar)
         
         if self.extensionContext?.widgetActiveDisplayMode == .compact {
             self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
@@ -218,15 +225,25 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         AnimationEngine.shared.initView(animationView)
         
         messageView = MessageView(frame: CGRect(width/2.0+30,60,97,22.5))
-        self.view.addSubview(messageView)
-        messageView.appear("Hello Worldello Worldello Worldello Worldello World")
+        self.view.window?.makeKeyAndVisible()
+        notificationManager = NotificationManager(view: messageView)
+        
+        
+        self.notifications = [
+            
+        NotificationModel("吃午饭",1,false),
+        NotificationModel("吃晚饭",2,false),
+        NotificationModel("吃早饭",3,false),
+        NotificationModel("吃夜宵",4,false),
+        ]
+        notificationManager.showRandom(content: notifications)
     }
     
-    
-    
+
 
     
     @IBAction func play(_ sender: AnyObject) {
+        animation.switchAnimation(.play)
 
     }
     
@@ -286,6 +303,10 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
         return Transition()
     }
     
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BackTransition()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFood" {
@@ -309,8 +330,7 @@ class TodayViewController: UIViewController, NCWidgetProviding,UIViewControllerT
 extension TodayViewController: PresentViewControllerDelegate {
     
     func dismiss() {
-        self.view.addSubview(AnimationEngine.shared.animationView)
-        animation.defaultAnimation()
+
     }
 
 }

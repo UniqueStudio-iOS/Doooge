@@ -23,7 +23,7 @@ class AnimationView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating), options: [.old,.new], context: nil)
+        //self.addObserver(self, forKeyPath: #keyPath(AnimationView.isAnimating), options: [.old,.new], context: nil)
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(AnimationView.tap(_:)))
         tapGesture.numberOfTapsRequired = 1

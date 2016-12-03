@@ -38,14 +38,16 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
     var delegate: PresentViewControllerDelegate?
     
     var foodList: [Food]!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let width = UIScreen.main.bounds.width
-        
-        let progressBar = ProgressBar(CGRect(width-120,2,100,13), 100, lv: 1)
-        progressBar.levelLabel.text = "Lv35"
-        self.view.addSubview(progressBar)
+
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width:60,height:47)
         flowLayout.minimumLineSpacing = 3
@@ -53,13 +55,13 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         forwardButton.isHidden = true
         backButton.isHidden = true
         
+        
         self.foodCollection.collectionViewLayout = flowLayout
         self.foodCollection.register(UINib(nibName:"FoodCell",bundle: nil), forCellWithReuseIdentifier: FoodViewController.cellIdentifier)
         load()
         self.foodCollection.delegate = self
         self.foodCollection.dataSource = self
         
-        self.view.addSubview(AnimationEngine.shared.animationView)
         
         currentRow = 3
 
@@ -120,6 +122,8 @@ class FoodViewController: UIViewController,UICollectionViewDelegate,UICollection
         cell.set(UIImage(named:food.image))
         return cell
     }
+    
+    
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

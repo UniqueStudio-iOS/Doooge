@@ -38,10 +38,12 @@ class MessageView: UIView {
     
     func appear(_ content: String) {
         textLabel.text = content
+        
         UIView.animate(withDuration: 0.4, animations: {
             self.alpha = 1.0
             
         }, completion: nil)
+ 
         isShow = true
         
     }
