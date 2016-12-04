@@ -90,12 +90,23 @@
 
 - (void)setHasClocked:(BOOL)hasClocked {
     _hasClocked = hasClocked;
-    if (_hasClocked) {
-        [self.clockButton setImage:[UIImage imageNamed:@"clocked"]forState:UIControlStateNormal];
-        [self.clockButton removeTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+    if (_hasCorrectWeekday) {
+        if (_hasClocked) {
+            [self.clockButton setImage:[UIImage imageNamed:@"clocked"]forState:UIControlStateNormal];
+            [self.clockButton removeTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            [self.clockButton setImage:[UIImage imageNamed:@"clock"]forState:UIControlStateNormal];
+            [self.clockButton addTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+}
+
+- (void)setHasCorrectWeekday:(BOOL)hasCorrectWeekday {
+    _hasCorrectWeekday = hasCorrectWeekday;
+    if (!_hasCorrectWeekday) {
+        self.clockButton.userInteractionEnabled = NO;
     } else {
-        [self.clockButton setImage:[UIImage imageNamed:@"clock"]forState:UIControlStateNormal];
-        [self.clockButton addTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+        self.clockButton.userInteractionEnabled = YES;
     }
 }
 

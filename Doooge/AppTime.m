@@ -68,6 +68,16 @@
     }
 }
 
+- (BOOL)isSameWeekdayWithDate:(NSDate *)date andWeek:(NSInteger)week {
+    NSCalendarUnit units = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
+    NSDateComponents * components = [self.calender components:units fromDate:date];
+    if (components.weekday - 1) {
+        return (1 << 6) & week;
+    } else {
+        return (1 << (components.weekday - 2) & week);
+    }
+}
+
 - (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
     NSDate * fromDate, * toDate;
     [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:date1];

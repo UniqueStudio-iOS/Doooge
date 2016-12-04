@@ -17,6 +17,7 @@ typedef void(^ClockHandler)(NSString * name);
 @property (nonatomic) NSInteger minute;
 @property (nonatomic) NSInteger week;
 @property (nonatomic) BOOL hasClocked;
+@property (nonatomic) BOOL hasCorrectWeekday;
 
 @property (nonatomic, copy) ClockHandler clockHandler;
 

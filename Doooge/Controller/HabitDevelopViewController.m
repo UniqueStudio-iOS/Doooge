@@ -134,6 +134,8 @@
         cell.name = customHabit.ID;
         cell.persist = customHabit.persistDays;
         [cell setTimeWithHour:customHabit.hour Minute:customHabit.minute andWeek:customHabit.week];
+        BOOL isSameWeekday = [[AppTime sharedTime]isSameWeekdayWithDate:[AppTime sharedTime].date andWeek:customHabit.week];
+        cell.hasCorrectWeekday = isSameWeekday;
         BOOL isSameDay = [[AppTime sharedTime]isSameDayWithDate1:[AppTime sharedTime].date andDate2:customHabit.lastClocked];
         cell.hasClocked = isSameDay;
         HabitDevelopViewController __weak * weakSelf = self;
