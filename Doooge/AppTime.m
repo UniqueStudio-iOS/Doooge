@@ -23,23 +23,23 @@
     return time;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
-- (NSDate *)date {
-    _date = [NSDate date];
-    return _date;
-}
-
+//- (instancetype)init {
+//    if (self = [super init]) {
+//        
+//    }
+//    return self;
+//}
+#pragma mark - Private Getter
 - (NSCalendar *)calender {
     _calender = [NSCalendar currentCalendar];
     return _calender;
 }
-
+#pragma mark - Public Getter
+- (NSDate *)date {
+    _date = [NSDate date];
+    return _date;
+}
+#pragma mark - Functions
 - (NSDate *)yesterday {
     return [NSDate dateWithTimeInterval:-24*60*60 sinceDate:self.date];
 }
@@ -78,14 +78,14 @@
     }
 }
 
+- (BOOL)isDate1:(NSDate *)date1 withinDate2:(NSDate *)date2 {
+    return ([date1 timeIntervalSinceDate:date2] <= 0);
+}
+
 - (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
     NSDate * fromDate, * toDate;
     [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:date1];
     [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:date2];
     return (NSInteger)[toDate timeIntervalSinceDate:fromDate]/(24*3600);
-}
-
-- (BOOL)isDate1:(NSDate *)date1 withinDate2:(NSDate *)date2 {
-    return ([date1 timeIntervalSinceDate:date2] <= 0);
 }
 @end

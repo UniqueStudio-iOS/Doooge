@@ -10,6 +10,7 @@
 
 typedef void(^CancelHandler)();
 typedef void(^SetTimeHandler)(NSInteger hour, NSInteger minute);
+
 @interface DatePickerView : UIView
 @property (nonatomic, copy) CancelHandler cancelHandler;
 @property (nonatomic, copy) SetTimeHandler setTimeHandler;

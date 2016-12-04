@@ -23,41 +23,29 @@
 @end
 
 @implementation DatePickerView
+
 @synthesize viewHidden = _viewHidden;
+#pragma mark - Initialize
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self gestureConfiguration];
     [self insertSubview:self.mainView aboveSubview:self.backgroundView];
     [self setViewHidden:YES];
 }
+#pragma mark - Action
 - (IBAction)didPressCancelButton {
-//    [self setViewHidden:YES];
     self.cancelHandler();
 }
 
 - (IBAction)didPressSetTimeButton {
-//    [self setViewHidden:YES];
     NSInteger hour, minute;
     [self.datePicker.calendar getHour:&hour minute:&minute second:NULL nanosecond:NULL fromDate:self.datePicker.date];
     self.setTimeHandler(hour, minute);
 }
 
-- (void)setViewHidden:(BOOL)viewHidden {
-    _viewHidden = viewHidden;
-    if (_viewHidden) {
-        [self hiddenViews];
-    } else {
-        [self revealViews];
-    }
-}
-
-- (void)setDate:(NSDate *)date {
-    _date = date;
-    self.datePicker.date = date;
-}
-
-- (BOOL)isViewHidden {
-    return _viewHidden;
+- (void)gestureConfiguration {
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenViews)];
+    [self.backgroundView addGestureRecognizer:tap];
 }
 
 - (void)hiddenViews {
@@ -91,9 +79,24 @@
     }];
     
 }
-
-- (void)gestureConfiguration {
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenViews)];
-    [self.backgroundView addGestureRecognizer:tap];
+#pragma mark - Setter Methods
+- (void)setViewHidden:(BOOL)viewHidden {
+    _viewHidden = viewHidden;
+    if (_viewHidden) {
+        [self hiddenViews];
+    } else {
+        [self revealViews];
+    }
 }
+
+- (void)setDate:(NSDate *)date {
+    _date = date;
+    self.datePicker.date = date;
+}
+#pragma mark - Getter Methods
+- (BOOL)isViewHidden {
+    return _viewHidden;
+}
+
+
 @end

@@ -14,6 +14,7 @@
 #import "AppTime.h"
 
 @implementation AppSettings(HabitSettings)
+#pragma mark - Register Methods
 - (void)registerDailyRoutines {
     NSDate * initialDate = [NSDate dateWithTimeIntervalSince1970:0];
     [self.userDefaults registerDefaults:@{
@@ -49,7 +50,7 @@
                                                   }
                                           }];
 }
-
+#pragma mark - Daily Routines
 - (void)updateDailyRoutine:(NSString *)ID withHour:(NSInteger)hour andMinute:(NSInteger)minute {
     NSMutableDictionary * content = [[self.userDefaults objectForKey:ID]mutableCopy];
     content[@"hour"] = [NSNumber numberWithInteger:hour];
@@ -61,7 +62,7 @@
 - (NSDictionary *)dailyRoutineWithName:(NSString *)name {
     return [self.userDefaults objectForKey:name];
 }
-
+#pragma mark - Custom Habits
 - (void)registerCustomHabits {
     [self.userDefaults registerDefaults:@{@"habits": [NSDictionary dictionary]}];
 }
@@ -109,7 +110,7 @@
 - (NSDictionary *)customHabitWithName:(NSString *)name {
     return [[self.userDefaults objectForKey:@"habits"]objectForKey:name];
 }
-
+#pragma mark - Growth Points And Gold Coins
 - (void)reduceDailyRoutinePastDaysGrowthPointsWithUnfinishedDays:(NSInteger)unfinished mutableDictionary:(NSMutableDictionary *)mutableDictionary andKey:(NSString *)key withDate:(NSDate *)date{
     self.growthPoints -= 5 * unfinished;
     mutableDictionary[@"last"] = date;

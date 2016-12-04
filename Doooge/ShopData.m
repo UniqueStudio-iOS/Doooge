@@ -14,12 +14,13 @@
 #import "ItemCell2.h"
 
 @interface ShopData()
-@property (nonatomic, readwrite, strong) NSArray * foodData;
-@property (nonatomic, readwrite, strong) NSArray * toyData;
-@property (nonatomic, readwrite, strong) NSArray * decorateData;
+@property (nonatomic, readwrite, copy) NSArray * foodData;
+@property (nonatomic, readwrite, copy) NSArray * toyData;
+@property (nonatomic, readwrite, copy) NSArray * decorateData;
 @end
 
 @implementation ShopData
+#pragma mark - Static Data
 + (NSArray *)foodData {
     return @[
              @{
@@ -92,7 +93,7 @@
                  }
              ];
 }
-
+#pragma mark - Initalize
 - (instancetype)init {
     if (self = [super init]) {
         _foodData = [ShopData foodData];
@@ -101,7 +102,7 @@
     }
     return self;
 }
-
+#pragma mark - Collection View Data Source
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
@@ -192,6 +193,5 @@
         };
         return itemCell;
     }
-
 }
 @end

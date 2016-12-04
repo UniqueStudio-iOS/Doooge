@@ -12,12 +12,11 @@
 + (instancetype)sharedTime;
 
 - (NSDate *)date;
-
 - (NSDate *)yesterday;
 
 - (NSDate *)timeFromHour:(NSInteger)hour andMinute:(NSInteger)minute;
 - (BOOL)isSameDayWithDate1:(NSDate *)date1 andDate2:(NSDate *)date2;
 - (BOOL)isSameWeekdayWithDate:(NSDate *)date andWeek:(NSInteger)week;
-- (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2;
 - (BOOL)isDate1:(NSDate *)date1 withinDate2:(NSDate *)date2;
+- (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2;
 @end

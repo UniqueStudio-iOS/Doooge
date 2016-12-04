@@ -11,7 +11,7 @@
 #import "ShopData.h"
 
 @implementation AppSettings(ShopSettings)
-#pragma mark Register Methods
+#pragma mark - Register Methods
 - (void)registerShopItems {
     ShopData * data = [[ShopData alloc]init];
     
@@ -33,12 +33,12 @@
     }
     [self.userDefaults registerDefaults:@{@"decorate":decorateItems}];
 }
-#pragma mark Shop
+#pragma mark - Shop General
 - (BOOL)canAffordItemWithPrice:(NSInteger)price {
     return (self.goldCoins - price) >= 0;
 }
 
-#pragma mark Food
+#pragma mark - Food Methods
 - (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price{
     self.goldCoins -= price;
     NSMutableDictionary * dictionary = [[self.userDefaults objectForKey:@"food"]mutableCopy];
@@ -51,7 +51,7 @@
 - (NSInteger)foodWithName:(NSString *)name {
     return [[[self.userDefaults objectForKey:@"food"]objectForKey:name]integerValue];
 }
-#pragma mark Toy
+#pragma mark - Toy Methods
 - (void)gainToyWithName:(NSString *) name andPrice:(NSInteger)price {
     self.goldCoins -= price;
     NSMutableDictionary * dictionary = [[self.userDefaults objectForKey:@"toy"]mutableCopy];
@@ -64,7 +64,7 @@
 - (BOOL)toyStatusWithName:(NSString *)name {
     return [[[self.userDefaults objectForKey:@"toy"]objectForKey:name]boolValue];
 }
-#pragma mark Decorate
+#pragma mark - Decorate Methods
 - (void)gainDecorateWithName:(NSString *)name andPrice:(NSInteger)price {
     self.goldCoins -= price;
     NSMutableDictionary * decorateItems = [[self.userDefaults objectForKey:@"decorate"]mutableCopy];

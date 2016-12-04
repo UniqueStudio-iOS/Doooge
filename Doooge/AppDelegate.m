@@ -24,32 +24,13 @@ static NSString * const kSleepKey = @"睡觉";
 @end
 
 @implementation AppDelegate
-
-
+#pragma mark - App Delegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.backgroundColor = [UIColor whiteColor];
     [AppSettings sharedSettings];
     [self authorizationCheck];
     [self dataCheck];
     return YES;
-}
-
-- (void)authorizationCheck {
-    if ([AppSettings sharedSettings].isAuthorized == NO) {
-        [[AppNotificationCenter sharedNotificationCenter]requestNotificationAuthorization];
-    }
-}
-
-- (void)dataCheck {
-    if ([AppSettings sharedSettings].isPrimary == YES) {
-        [[AppSettings sharedSettings]registerShopItems];
-        [[AppSettings sharedSettings]registerDailyRoutines];
-        [[AppSettings sharedSettings]registerCustomHabits];
-        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
-        [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
-
-        [AppSettings sharedSettings].primary = NO;
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -77,6 +58,28 @@ static NSString * const kSleepKey = @"睡觉";
     [self updateCustomHabitsWithUserDefaults:userDefaults];
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+#pragma mark - Check Methods
+- (void)authorizationCheck {
+    if ([AppSettings sharedSettings].isAuthorized == NO) {
+        [[AppNotificationCenter sharedNotificationCenter]requestNotificationAuthorization];
+    }
+}
+
+- (void)dataCheck {
+    if ([AppSettings sharedSettings].isPrimary == YES) {
+        [[AppSettings sharedSettings]registerShopItems];
+        [[AppSettings sharedSettings]registerDailyRoutines];
+        [[AppSettings sharedSettings]registerCustomHabits];
+        [[AppDatabase sharedDatabase]createDefaultDailyRoutines];
+        [[AppNotificationCenter sharedNotificationCenter]registerDefaultDailyRoutines];
+        
+        [AppSettings sharedSettings].primary = NO;
+    }
+}
+#pragma mark - Update Methods
 - (void)updateDailyRoutinesWithUserDefaults:(NSUserDefaults *)userDefaults {
     [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kBreakfastKey fromUserDefaults:userDefaults];
     [[AppDatabase sharedDatabase]updateDailyRoutineWithName:kLunchKey fromUserDefaults:userDefaults];
@@ -91,10 +94,4 @@ static NSString * const kSleepKey = @"睡觉";
         [[AppDatabase sharedDatabase]updateCustomHabitWithName:name fromUserDefaults:userDefaults];
     }
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-
 @end

@@ -15,7 +15,7 @@
 @end
 
 @implementation EditNameViewController
-
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self basicConfiguration];
@@ -38,12 +38,12 @@
     self.editText.delegate = self;
     [self gestureConfiguration];
 }
-
+#pragma mark - UI Methods
 - (void)loadBarButton {
     self.navigationItem.rightBarButtonItem = self.completeButton;
     self.navigationItem.leftBarButtonItem = self.backButton;
 }
-#pragma mark Lazy Load
+#pragma mark - Lazy Load Methods
 - (UIBarButtonItem *)completeButton {
     if (!_completeButton) {
         _completeButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(completeEdit)];
@@ -65,7 +65,7 @@
     }
     return _backButton;
 }
-#pragma mark Interact
+#pragma mark - Actions
 - (void)completeEdit {
     self.nameEditedHandler(self.editText.text);
     [self.navigationController popViewControllerAnimated:YES];
@@ -84,7 +84,7 @@
 - (void)dismissKeyboard{
     [self.editText resignFirstResponder];
 }
-#pragma mark TextFieldDelegate
+#pragma mark - Delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     return [textField resignFirstResponder];
 }

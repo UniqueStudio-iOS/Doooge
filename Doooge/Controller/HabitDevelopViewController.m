@@ -42,11 +42,10 @@
 @property (nonatomic, strong) CustomHabitSectionHeaderView * customHabitSectionHeaderView;
 
 @property (nonatomic, strong) DatePickerView * timePicker;
-
 @end
 
 @implementation HabitDevelopViewController
-
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateData];
@@ -60,28 +59,34 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)basicConfiguration {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [[UIView alloc]init];
     dailyRoutineCellRows = dailyRoutines.count;
     [self timePicker];
 }
-
+#pragma mark - Gadgets
 - (void)updateData {
     dailyRoutines = [[AppDatabase sharedDatabase]allDailyRoutine];
     customHabits = [[AppDatabase sharedDatabase]allCustomHabit];
     [self.tableView reloadData];
 }
 
+- (void)prepareDateWithRow:(NSInteger)row {
+    DailyRoutine * dailyRoutine = dailyRoutines[row];
+    NSDate * date = [[AppTime sharedTime]timeFromHour:dailyRoutine.hour andMinute:dailyRoutine.minute];
+    [self.timePicker setDate:date];
+}
+#pragma mark - UI Methods
 - (void)loadBarButton {
     self.navigationItem.leftBarButtonItem = self.backButton;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - TableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -185,13 +190,7 @@
         [self updateData];
     }
 }
-
-- (void)prepareDateWithRow:(NSInteger)row {
-    DailyRoutine * dailyRoutine = dailyRoutines[row];
-    NSDate * date = [[AppTime sharedTime]timeFromHour:dailyRoutine.hour andMinute:dailyRoutine.minute];
-    [self.timePicker setDate:date];
-}
-
+#pragma mark - Lazy Load Methods
 - (DailyRoutineSectionHeaderView *)dailyRoutineSectionHeaderView {
     if (!_dailyRoutineSectionHeaderView) {
         _dailyRoutineSectionHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"DailyRoutineSectionHeaderView" owner:nil options:nil]firstObject];
@@ -202,11 +201,9 @@
             if (isPacked) {
                 dailyRoutineCellRows = 0;
                 [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
-//                [weakSelf.tableView reloadData];
             } else {
                 dailyRoutineCellRows = dailyRoutines.count;
                 [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
-//                [weakSelf.tableView reloadData];
             }
         };
     }
@@ -262,7 +259,7 @@
     }
     return _backButton;
 }
-
+#pragma mark - Actions
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -285,11 +282,6 @@
     return YES;
 }
 
-- (void)remindReasonableDailyRoutine {
-    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
-    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
-}
-
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
     [[AppDatabase sharedDatabase]updateHour:hour andMinute:minute withDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
     [[AppSettings sharedSettings]updateDailyRoutine:[(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID] withHour:hour andMinute:minute];
@@ -298,6 +290,11 @@
 
 - (void)updateDailyRoutineNotification {
     [[AppNotificationCenter sharedNotificationCenter]registerDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
+}
+
+- (void)remindReasonableDailyRoutine {
+    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
+    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
 }
 
 - (void)deselectCellForCurrentIndexPath {
@@ -323,8 +320,7 @@
     [AppSettings sharedSettings].goldCoins += 3;
     [AppSettings sharedSettings].growthPoints += 5;
 }
-#pragma mark - Navigation
-
+#pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier]isEqualToString:@"modifyCustomHabit"]) {
         NewHabitViewController * targetVC = segue.destinationViewController;

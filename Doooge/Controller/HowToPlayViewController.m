@@ -15,10 +15,11 @@
 @end
 
 @implementation HowToPlayViewController
-
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadBarButton];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,11 +31,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark Gadgets
 - (void)loadBarButton {
     self.navigationItem.leftBarButtonItem = self.backButton;
 }
-
+#pragma mark - Lazy Load Methods
 - (UIBarButtonItem *)backButton {
     if (!_backButton) {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -48,7 +49,7 @@
     }
     return _backButton;
 }
-
+#pragma mark - Actions
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }

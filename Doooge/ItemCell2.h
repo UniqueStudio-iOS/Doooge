@@ -12,8 +12,8 @@ typedef void(^BuyHandler)(NSString * name, NSInteger price);
 typedef void(^UseHandler)(NSString * name, NSString * position);
 
 @interface ItemCell2 : UICollectionViewCell
-@property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSString * position;
+@property (nonatomic, copy) NSString * name;
+@property (nonatomic, copy) NSString * position;
 @property (nonatomic, strong) UIImage * image;
 @property (nonatomic) NSInteger price;
 
