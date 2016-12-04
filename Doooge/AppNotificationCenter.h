@@ -18,6 +18,7 @@
 
 - (void)registerDefaultDailyRoutines;
 - (void)registerDailyRoutine:(DailyRoutine *)dailyRoutine;
+
 - (void)registerCustomHabit:(CustomHabit *)customHabit;
 - (void)removeCustomHabit:(CustomHabit *)customHabit;
 

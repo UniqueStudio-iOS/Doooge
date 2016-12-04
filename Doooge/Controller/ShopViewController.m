@@ -28,7 +28,7 @@
 @end
 
 @implementation ShopViewController
-
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self basicConfiguration];
@@ -46,11 +46,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadData {
-    [self updateGoldCoins:[AppSettings sharedSettings].goldCoins];
- 
-}
-
 - (void)basicConfiguration {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.foodView.delegate = self;
@@ -63,11 +58,23 @@
     self.decorateView.dataSource = self.shopData;
     [self.decorateView registerClass:[ItemCell2 class] forCellWithReuseIdentifier:@"ItemCell2"];
 }
+#pragma mark - Gadgets
+- (void)loadBarButton {
+    self.navigationItem.leftBarButtonItem = self.backButton;
+}
+#pragma mark - Actions
+- (void)loadData {
+    [self updateGoldCoins:[AppSettings sharedSettings].goldCoins];
+}
 
 - (void)updateGoldCoins:(NSInteger)goldCoins {
     [self.goldCoinLabel setText:[NSString stringWithFormat:@"金币：%ld", goldCoins]];
 }
 
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - Lazy Load Methods
 - (ShopData *)shopData {
     if (!_shopData) {
         _shopData = [[ShopData alloc]init];
@@ -77,10 +84,6 @@
         };
     }
     return _shopData;
-}
-
-- (void)loadBarButton {
-    self.navigationItem.leftBarButtonItem = self.backButton;
 }
 
 - (UIBarButtonItem *)backButton {
@@ -95,10 +98,6 @@
         _backButton = [[UIBarButtonItem alloc]initWithCustomView:button];
     }
     return _backButton;
-}
-
-- (void)back {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

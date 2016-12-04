@@ -11,7 +11,7 @@
 #import "ShopData.h"
 
 @implementation AppSettings(ShopSettings)
-#pragma mark Register Methods
+#pragma mark - Register Methods
 - (void)registerShopItems {
     ShopData * data = [[ShopData alloc]init];
     
@@ -33,38 +33,38 @@
     }
     [self.userDefaults registerDefaults:@{@"decorate":decorateItems}];
 }
-#pragma mark Shop
+#pragma mark - Shop General
 - (BOOL)canAffordItemWithPrice:(NSInteger)price {
     return (self.goldCoins - price) >= 0;
 }
 
-#pragma mark Food
+#pragma mark - Food Methods
 - (void)increaseFoodWithName:(NSString *)name andPrice:(NSInteger)price{
     self.goldCoins -= price;
     NSMutableDictionary * dictionary = [[self.userDefaults objectForKey:@"food"]mutableCopy];
     
     [dictionary setObject:[NSNumber numberWithInteger:[[dictionary objectForKey:name]integerValue] + 1] forKey:name];
     
-    [self.userDefaults setObject:dictionary forKey:@"food"];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:dictionary] forKey:@"food"];
 }
 
 - (NSInteger)foodWithName:(NSString *)name {
     return [[[self.userDefaults objectForKey:@"food"]objectForKey:name]integerValue];
 }
-#pragma mark Toy
+#pragma mark - Toy Methods
 - (void)gainToyWithName:(NSString *) name andPrice:(NSInteger)price {
     self.goldCoins -= price;
     NSMutableDictionary * dictionary = [[self.userDefaults objectForKey:@"toy"]mutableCopy];
     
     [dictionary setObject:[NSNumber numberWithBool:YES] forKey:name];
     
-    [self.userDefaults setObject:dictionary forKey:@"toy"];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:dictionary] forKey:@"toy"];
 }
 
 - (BOOL)toyStatusWithName:(NSString *)name {
     return [[[self.userDefaults objectForKey:@"toy"]objectForKey:name]boolValue];
 }
-#pragma mark Decorate
+#pragma mark - Decorate Methods
 - (void)gainDecorateWithName:(NSString *)name andPrice:(NSInteger)price {
     self.goldCoins -= price;
     NSMutableDictionary * decorateItems = [[self.userDefaults objectForKey:@"decorate"]mutableCopy];
@@ -72,8 +72,8 @@
     NSMutableDictionary * decorateItem = [[decorateItems objectForKey:name]mutableCopy];
     decorateItem[@"buy"] = @YES;
     
-    [decorateItems setObject:decorateItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:decorateItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (void)useDecorateWithName:(NSString *)name {
@@ -82,8 +82,8 @@
     NSMutableDictionary * targetItem = [[decorateItems objectForKey:name]mutableCopy];
     targetItem[@"use"] = @YES;
     
-    [decorateItems setObject:targetItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:targetItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (void)unuseDecorateWithName:(NSString *)name {
@@ -92,8 +92,8 @@
     NSMutableDictionary * targetItem = [[decorateItems objectForKey:name]mutableCopy];
     targetItem[@"use"] = @NO;
     
-    [decorateItems setObject:targetItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:targetItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (BOOL)decoratePurchaseStatusWithName:(NSString *)name {

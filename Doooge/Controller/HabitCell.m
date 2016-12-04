@@ -13,18 +13,15 @@
 @property (nonatomic, strong) IBOutlet UILabel * timeLabel;
 @end
 @implementation HabitCell
-
+#pragma mark - General
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
+#pragma mark - Setter Methods
 - (void)setName:(NSString *)name {
     _name = name;
     [self.nameLabel setText:_name];
@@ -53,7 +50,7 @@
     _minute = minute;
     [self updateTimeLabel];
 }
-
+#pragma mark - Actions
 - (void)updateTimeLabel {
     NSString * hour;
     NSString * minute;

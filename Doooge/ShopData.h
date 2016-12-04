@@ -11,9 +11,9 @@
 typedef void(^RefreshGoldCoinsHandler)();
 
 @interface ShopData : NSObject<UICollectionViewDataSource>
-@property (nonatomic, readonly, strong) NSArray * foodData;
-@property (nonatomic, readonly, strong) NSArray * toyData;
-@property (nonatomic, readonly, strong) NSArray * decorateData;
+@property (nonatomic, readonly, copy) NSArray * foodData;
+@property (nonatomic, readonly, copy) NSArray * toyData;
+@property (nonatomic, readonly, copy) NSArray * decorateData;
 
 @property (nonatomic, copy) RefreshGoldCoinsHandler refreshGoinCoinsHandler;
 

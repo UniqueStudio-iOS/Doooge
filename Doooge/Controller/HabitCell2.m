@@ -16,7 +16,7 @@
 @end
 
 @implementation HabitCell2
-
+#pragma mark - General
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.hasClocked = NO;
@@ -24,10 +24,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
-
+#pragma mark - Setter Methods
 - (void)setName:(NSString *)name {
     _name = name;
     [self.nameLabel setText:_name];
@@ -63,6 +61,28 @@
     [self updateTimeLabel];
 }
 
+- (void)setHasClocked:(BOOL)hasClocked {
+    _hasClocked = hasClocked;
+    if (_hasCorrectWeekday) {
+        if (_hasClocked) {
+            [self.clockButton setImage:[UIImage imageNamed:@"clocked"]forState:UIControlStateNormal];
+            [self.clockButton removeTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            [self.clockButton setImage:[UIImage imageNamed:@"clock"]forState:UIControlStateNormal];
+            [self.clockButton addTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+}
+
+- (void)setHasCorrectWeekday:(BOOL)hasCorrectWeekday {
+    _hasCorrectWeekday = hasCorrectWeekday;
+    if (!_hasCorrectWeekday) {
+        self.clockButton.userInteractionEnabled = NO;
+    } else {
+        self.clockButton.userInteractionEnabled = YES;
+    }
+}
+#pragma mark - Action
 - (void)updateTimeLabel {
     NSString * hour;
     NSString * minute;
@@ -86,17 +106,6 @@
     if (_week & Sunday) week = [week stringByAppendingString:@"周日 "];
     NSString * time = [NSString stringWithFormat:@"%@%@:%@", week, hour, minute];
     [self.timeLabel setText:time];
-}
-
-- (void)setHasClocked:(BOOL)hasClocked {
-    _hasClocked = hasClocked;
-    if (_hasClocked) {
-        [self.clockButton setImage:[UIImage imageNamed:@"clocked"]forState:UIControlStateNormal];
-        [self.clockButton removeTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
-    } else {
-        [self.clockButton setImage:[UIImage imageNamed:@"clock"]forState:UIControlStateNormal];
-        [self.clockButton addTarget:self action:@selector(clock) forControlEvents:UIControlEventTouchUpInside];
-    }
 }
 
 - (void)clock {

@@ -25,6 +25,7 @@
 @end
 
 @implementation AppNotificationCenter
+#pragma mark - Singleton And Initialize
 + (instancetype)sharedNotificationCenter {
     static AppNotificationCenter * notificationCenter = nil;
     static dispatch_once_t onceToken;
@@ -41,7 +42,7 @@
     }
     return self;
 }
-
+#pragma mark - Request Method
 - (void)requestNotificationAuthorization {
     [self.userNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if (error) {
@@ -55,7 +56,7 @@
         }
     }];
 }
-
+#pragma mark - General Trigger Content Request Remove
 - (UNCalendarNotificationTrigger *)triggerWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
     NSDateComponents * time = [[NSDateComponents alloc]init];
     time.hour = hour;
@@ -93,7 +94,7 @@
 - (void)removeWithIdentifier:(NSString *)identifier {
     [self.userNotificationCenter removePendingNotificationRequestsWithIdentifiers:@[identifier]];
 }
-
+#pragma mark - Daily Routine
 - (void)registerDefaultDailyRoutines {
     NSArray * models = [NotificationData defaultDailyRoutineConfiguration];
     for (NSDictionary * model in models) {
@@ -113,11 +114,7 @@
     UNMutableNotificationContent * targetContent = [self contentWithTitle:@"Doooge" andBody:content];
     [self requestWithIdentifier:dailyRoutine.ID trigger:targetTrigger andContent:targetContent];
 }
-
-- (NSString *)identifierWithID:(NSString *)ID andWeekday:(NSInteger)weekday {
-    return [NSString stringWithFormat:@"%@-%ld", ID, weekday];
-}
-
+#pragma mark - Custom Habit
 - (void)registerCustomHabit:(CustomHabit *)customHabit {
     if (customHabit.hasRemind == YES) {
         for (int unit = 1, weekday = 1 ; weekday <= 7 ; unit <<= 1, ++weekday) {
@@ -146,6 +143,10 @@
     [self removeCustomHabitCategory:customHabit.ID];
 }
 
+- (NSString *)identifierWithID:(NSString *)ID andWeekday:(NSInteger)weekday {
+    return [NSString stringWithFormat:@"%@-%ld", ID, weekday];
+}
+#pragma mark - Category
 - (void)registerCustomHabitCategory:(NSString *)name {
         [self.userNotificationCenter getNotificationCategoriesWithCompletionHandler:^(NSSet<UNNotificationCategory *> * _Nonnull categories) {
             UNNotificationAction * action = [UNNotificationAction actionWithIdentifier:@"clock" title:@"滴！打卡" options:UNNotificationActionOptionNone];
@@ -169,7 +170,7 @@
         [self.userNotificationCenter setNotificationCategories:mutableCategories];
     }];
 }
-
+#pragma mark - Delegate
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     if ([response.actionIdentifier isEqualToString:@"clock"]) {
         NSString * categoryIdentifier = response.notification.request.content.categoryIdentifier;

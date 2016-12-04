@@ -14,6 +14,7 @@
 
 @interface AppSettings(HabitSettings)
 - (void)registerDailyRoutines;
+- (void)registerCustomHabits;
 
 - (void)updateDailyRoutine:(NSString *)ID withHour:(NSInteger)hour andMinute:(NSInteger)minute;
 - (NSDictionary *)dailyRoutineWithName:(NSString *)name;
@@ -22,4 +23,7 @@
 - (void)deleteCustomHabitWithName:(NSString *)name;
 - (void)updateCustomHabitWithName:(NSString *)name lastClocked:(NSDate *)date andPersistDays:(NSInteger)persistDays;
 - (NSDictionary *)customHabitWithName:(NSString *)name;
+
+- (void)calculateGrowthPointsWithDailyRoutines;
+- (void)calculateGrowthPointsWithCustomHabits;
 @end

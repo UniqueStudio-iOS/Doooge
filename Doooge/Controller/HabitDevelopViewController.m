@@ -42,11 +42,10 @@
 @property (nonatomic, strong) CustomHabitSectionHeaderView * customHabitSectionHeaderView;
 
 @property (nonatomic, strong) DatePickerView * timePicker;
-
 @end
 
 @implementation HabitDevelopViewController
-
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateData];
@@ -60,28 +59,34 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)basicConfiguration {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [[UIView alloc]init];
     dailyRoutineCellRows = dailyRoutines.count;
     [self timePicker];
 }
-
+#pragma mark - Gadgets
 - (void)updateData {
     dailyRoutines = [[AppDatabase sharedDatabase]allDailyRoutine];
     customHabits = [[AppDatabase sharedDatabase]allCustomHabit];
     [self.tableView reloadData];
 }
 
+- (void)prepareDateWithRow:(NSInteger)row {
+    DailyRoutine * dailyRoutine = dailyRoutines[row];
+    NSDate * date = [[AppTime sharedTime]timeFromHour:dailyRoutine.hour andMinute:dailyRoutine.minute];
+    [self.timePicker setDate:date];
+}
+#pragma mark - UI Methods
 - (void)loadBarButton {
     self.navigationItem.leftBarButtonItem = self.backButton;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - TableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -134,11 +139,18 @@
         cell.name = customHabit.ID;
         cell.persist = customHabit.persistDays;
         [cell setTimeWithHour:customHabit.hour Minute:customHabit.minute andWeek:customHabit.week];
+        BOOL isSameWeekday = [[AppTime sharedTime]isSameWeekdayWithDate:[AppTime sharedTime].date andWeek:customHabit.week];
+        cell.hasCorrectWeekday = isSameWeekday;
         BOOL isSameDay = [[AppTime sharedTime]isSameDayWithDate1:[AppTime sharedTime].date andDate2:customHabit.lastClocked];
         cell.hasClocked = isSameDay;
         HabitDevelopViewController __weak * weakSelf = self;
         cell.clockHandler = ^(NSString * name) {
             CustomHabit * targetCustomHabit = [[AppDatabase sharedDatabase]customHabitWithName:name];
+            if ([weakSelf testCustomHabitWithHour:targetCustomHabit.hour andMinute:targetCustomHabit.minute]) {
+                [weakSelf finishCustomHabitInTime];
+            } else {
+                [weakSelf finishCustomHabitLater];
+            }
             [[AppDatabase sharedDatabase]updateLastClocked:[AppTime sharedTime].date withCustomHabit:targetCustomHabit];
             [[AppSettings sharedSettings]updateCustomHabitWithName:targetCustomHabit.ID lastClocked:targetCustomHabit.lastClocked andPersistDays:customHabit.persistDays];
             [weakSelf updateData];
@@ -178,13 +190,7 @@
         [self updateData];
     }
 }
-
-- (void)prepareDateWithRow:(NSInteger)row {
-    DailyRoutine * dailyRoutine = dailyRoutines[row];
-    NSDate * date = [[AppTime sharedTime]timeFromHour:dailyRoutine.hour andMinute:dailyRoutine.minute];
-    [self.timePicker setDate:date];
-}
-
+#pragma mark - Lazy Load Methods
 - (DailyRoutineSectionHeaderView *)dailyRoutineSectionHeaderView {
     if (!_dailyRoutineSectionHeaderView) {
         _dailyRoutineSectionHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"DailyRoutineSectionHeaderView" owner:nil options:nil]firstObject];
@@ -194,10 +200,10 @@
         _dailyRoutineSectionHeaderView.packButtonPressedHandler = ^(BOOL isPacked) {
             if (isPacked) {
                 dailyRoutineCellRows = 0;
-                [weakSelf.tableView reloadData];
+                [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
             } else {
                 dailyRoutineCellRows = dailyRoutines.count;
-                [weakSelf.tableView reloadData];
+                [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
             }
         };
     }
@@ -253,7 +259,7 @@
     }
     return _backButton;
 }
-
+#pragma mark - Actions
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -276,11 +282,6 @@
     return YES;
 }
 
-- (void)remindReasonableDailyRoutine {
-    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
-    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
-}
-
 - (void)updateTimeWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
     [[AppDatabase sharedDatabase]updateHour:hour andMinute:minute withDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
     [[AppSettings sharedSettings]updateDailyRoutine:[(DailyRoutine *)dailyRoutines[currentDailyRoutineRow]ID] withHour:hour andMinute:minute];
@@ -291,12 +292,35 @@
     [[AppNotificationCenter sharedNotificationCenter]registerDailyRoutine:dailyRoutines[currentDailyRoutineRow]];
 }
 
+- (void)remindReasonableDailyRoutine {
+    [SVProgressHUD setMinimumDismissTimeInterval:0.7];
+    [SVProgressHUD showInfoWithStatus:@"请设置健康合理的作息时间噢～"];
+}
+
 - (void)deselectCellForCurrentIndexPath {
     NSIndexPath * targetIndex = [NSIndexPath indexPathForRow:currentDailyRoutineRow inSection:0];
     [self.tableView deselectRowAtIndexPath:targetIndex animated:YES];
 }
-#pragma mark - Navigation
 
+- (BOOL)testCustomHabitWithHour:(NSInteger)hour andMinute:(NSInteger)minute {
+    NSDate * targetDate = [[AppTime sharedTime]timeFromHour:hour andMinute:minute];
+    if (([AppTime sharedTime].date.timeIntervalSince1970 - targetDate.timeIntervalSince1970) <= 3600) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)finishCustomHabitInTime {
+    [AppSettings sharedSettings].goldCoins += 5;
+    [AppSettings sharedSettings].growthPoints += 10;
+}
+
+- (void)finishCustomHabitLater {
+    [AppSettings sharedSettings].goldCoins += 3;
+    [AppSettings sharedSettings].growthPoints += 5;
+}
+#pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier]isEqualToString:@"modifyCustomHabit"]) {
         NewHabitViewController * targetVC = segue.destinationViewController;

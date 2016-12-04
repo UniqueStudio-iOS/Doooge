@@ -11,6 +11,7 @@
 #import "AppSettings.h"
 
 @implementation NotificationData
+#pragma mark - Static Data
 + (NSString *) dailyRoutineNotificationContentWithID:(NSString *)ID {
     if ([ID isEqualToString:@"早饭"])
         return [NSString stringWithFormat:@"吃个美味的早餐来开启美好的一天吧~%@也要吃早餐啦！", [AppSettings sharedSettings].petName];

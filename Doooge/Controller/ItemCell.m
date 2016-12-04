@@ -18,7 +18,7 @@
 @end
 
 @implementation ItemCell
-
+#pragma mark - General
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle]loadNibNamed:@"ItemCell" owner:nil options:nil]firstObject];
@@ -35,11 +35,11 @@
     [super awakeFromNib];
     [self.purchaseButton addTarget:self action:@selector(purchase) forControlEvents:UIControlEventTouchUpInside];
 }
-
+#pragma mark - Actions
 - (void)purchase {
     self.purchaseHandler(self.style, self.name, self.price);
 }
-
+#pragma mark - Setter Methods
 - (void)setName:(NSString *)name {
     _name = name;
 }

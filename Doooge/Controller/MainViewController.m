@@ -13,7 +13,7 @@
 #import "AppNotificationCenter.h"
 
 @interface MainViewController ()
-@property (nonatomic, strong) NSString * petName;
+@property (nonatomic, copy) NSString * petName;
 @property (nonatomic) NSInteger growthPoints;
 @property (nonatomic) NSInteger goldCoins;
 @property (nonatomic) NSInteger petLevel;
@@ -31,6 +31,7 @@
 @end
 
 @implementation MainViewController
+#pragma mark - General
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self advancedUIConfiguration];
@@ -47,7 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark UI
+#pragma mark - UI Methods
 - (void)advancedUIConfiguration {
     //ImageView
     self.imageView.layer.cornerRadius = kIconSideLength;
@@ -110,23 +111,23 @@
     [button.layer addSublayer:backgroundLayer];
 }
 
-#pragma mark Data
+#pragma mark - Data Methods
 - (void)refreshData {
     self.growthPoints = [AppSettings sharedSettings].growthPoints;
     self.petName = [AppSettings sharedSettings].petName;
 }
 
-#pragma mark Methods of Setter
+#pragma mark - Setter Methods
 - (void)setPetName:(NSString *)petName {
     _petName = petName;
     [self.petNameLabel setText:_petName];
 }
 
-- (void)setGrowthPoint:(NSInteger)growthPoint {
+- (void)setGrowthPoints:(NSInteger)growthPoint {
     _growthPoints = growthPoint;
     [self.growthPointsLabel setText:[NSString stringWithFormat:@"%ld", (long)self.growthPoints]];
 }
-#pragma mark Segue
+#pragma mark - Segue Methods
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"fromMainToEdit"]) {
         EditNameViewController * destViewController = (EditNameViewController *)segue.destinationViewController;

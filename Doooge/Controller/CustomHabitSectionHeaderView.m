@@ -12,11 +12,11 @@
 @property (nonatomic, strong) IBOutlet UIButton * addButton;
 @end
 @implementation CustomHabitSectionHeaderView
-
+#pragma mark - Initialize
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
-
+#pragma mark - Actions
 - (IBAction)didPressedAddButton:(UIButton *)addButton {
     self.addButtonPressedHandler();
 }

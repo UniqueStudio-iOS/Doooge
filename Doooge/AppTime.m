@@ -23,27 +23,37 @@
     return time;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
+//- (instancetype)init {
+//    if (self = [super init]) {
+//        
+//    }
+//    return self;
+//}
+#pragma mark - Private Getter
+- (NSCalendar *)calender {
+    _calender = [NSCalendar currentCalendar];
+    return _calender;
 }
-
+#pragma mark - Public Getter
 - (NSDate *)date {
     _date = [NSDate date];
     return _date;
 }
-
-- (NSCalendar *)calender {
-    _calender = [NSCalendar currentCalendar];
-    return _calender;
+#pragma mark - Functions
+- (NSDate *)yesterday {
+    return [NSDate dateWithTimeInterval:-24*60*60 sinceDate:self.date];
 }
 
 - (NSDate *)timeFromHour:(NSInteger)hour andMinute:(NSInteger)minute {
     NSDateComponents * components = [[NSDateComponents alloc]init];
     components.hour = hour;
     components.minute = minute;
+    components.second = 0;
+    NSCalendarUnit units = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
+    NSDateComponents * defaultComponents = [self.calender components:units fromDate:self.date];
+    components.year = defaultComponents.year;
+    components.month = defaultComponents.month;
+    components.day = defaultComponents.day;
     return [self.calender dateFromComponents:components];
 }
 
@@ -58,14 +68,24 @@
     }
 }
 
-- (BOOL)isMoreThanOneDayWithDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
+- (BOOL)isSameWeekdayWithDate:(NSDate *)date andWeek:(NSInteger)week {
     NSCalendarUnit units = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
-    NSDateComponents * components1 = [self.calender components:units fromDate:date1];
-    NSDateComponents * components2 = [self.calender components:units fromDate:date2];
-    if ((labs(components1.day - components2.day) > 1) && (components1.month == components2.month) && (components1.year == components2.year)) {
-        return YES;
+    NSDateComponents * components = [self.calender components:units fromDate:date];
+    if (components.weekday - 1) {
+        return (1 << 6) & week;
     } else {
-        return NO;
+        return (1 << (components.weekday - 2) & week);
     }
+}
+
+- (BOOL)isDate1:(NSDate *)date1 withinDate2:(NSDate *)date2 {
+    return ([date1 timeIntervalSinceDate:date2] <= 0);
+}
+
+- (NSInteger)intervalDaysBetweenDate1:(NSDate *)date1 andDate2:(NSDate *)date2 {
+    NSDate * fromDate, * toDate;
+    [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:date1];
+    [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:date2];
+    return (NSInteger)[toDate timeIntervalSinceDate:fromDate]/(24*3600);
 }
 @end

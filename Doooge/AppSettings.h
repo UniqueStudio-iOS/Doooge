@@ -16,7 +16,7 @@
 @property (nonatomic) NSInteger growthPoints;
 @property (nonatomic) NSInteger goldCoins;
 @property (nonatomic) NSInteger petLevel;
-@property (nonatomic) NSString * petName;
+@property (nonatomic, copy) NSString * petName;
 @property (nonatomic, getter=isPrimary) BOOL primary;
 @property (nonatomic, getter=isAuthorized) BOOL authorized;
 @end

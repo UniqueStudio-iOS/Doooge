@@ -11,12 +11,13 @@
 typedef void(^ClockHandler)(NSString * name);
 
 @interface HabitCell2 : UITableViewCell
-@property (nonatomic, strong) NSString * name;
+@property (nonatomic, copy) NSString * name;
 @property (nonatomic) NSInteger persist;
 @property (nonatomic) NSInteger hour;
 @property (nonatomic) NSInteger minute;
 @property (nonatomic) NSInteger week;
 @property (nonatomic) BOOL hasClocked;
+@property (nonatomic) BOOL hasCorrectWeekday;
 
 @property (nonatomic, copy) ClockHandler clockHandler;
 

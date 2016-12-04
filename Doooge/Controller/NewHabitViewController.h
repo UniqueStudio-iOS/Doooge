@@ -12,7 +12,6 @@
 typedef void(^HabitUpdatedHandler)(BOOL isExisted);
 
 @interface NewHabitViewController : UITableViewController
-
 @property (nonatomic, copy) HabitUpdatedHandler habitUpdateHandler;
 
 - (void)existedCustomHabit:(CustomHabit *)customHabit;

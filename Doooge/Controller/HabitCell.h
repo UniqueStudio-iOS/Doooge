@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HabitCell : UITableViewCell
-@property (nonatomic, strong) NSString * name;
+@property (nonatomic, copy) NSString * name;
 @property (nonatomic) NSInteger persist;
 @property (nonatomic) NSInteger hour;
 @property (nonatomic) NSInteger minute;

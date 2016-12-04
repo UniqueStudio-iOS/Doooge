@@ -29,7 +29,7 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 @synthesize primary = _primary;
 @synthesize authorized = _authorized;
 
-#pragma mark Singleton
+#pragma mark - Singleton And Initialize
 + (instancetype)sharedSettings {
     static AppSettings * settings = nil;
     static dispatch_once_t onceToken;
@@ -44,8 +44,8 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
         _userDefaults = [[NSUserDefaults alloc]initWithSuiteName:kSuiteName];
         
         [_userDefaults registerDefaults:@{
-                                          kGrowthPointsKey:@50,
-                                          kGoldCoinsKey:@20,
+                                          kGrowthPointsKey:@100,
+                                          kGoldCoinsKey:@50,
                                           kPetLevelKey:@1,
                                           kPetNameKey:@"Doooge",
                                           kPrimaryKey:@YES,
@@ -60,16 +60,25 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
     }
     return self;
 }
-#pragma mark GrowthPoints
+#pragma mark - GrowthPoints
 - (void)setGrowthPoints:(NSInteger)growthPoints {
     _growthPoints = growthPoints;
+    if (_growthPoints < 0) {
+        _growthPoints = 0;
+    }
+    if (_growthPoints >= (self.petLevel * 50 + 250)) {
+        NSInteger goldCoinsAdd = ((self.petLevel * 5 + 10) > 100)?100:(self.petLevel * 5 + 10);
+        self.goldCoins = self.goldCoins + goldCoinsAdd;
+        _growthPoints = _growthPoints - (self.petLevel * 50 + 250) + 50;
+        self.petLevel += 1;
+    }
     [self.userDefaults setInteger:_growthPoints forKey:kGrowthPointsKey];
 }
 
 - (NSInteger)growthPoints {
     return _growthPoints;
 }
-#pragma mark GoldCoins
+#pragma mark - GoldCoins
 - (void)setGoldCoins:(NSInteger)goldCoins {
     _goldCoins = goldCoins;
     [self.userDefaults setInteger:_goldCoins forKey:kGoldCoinsKey];
@@ -78,7 +87,7 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 - (NSInteger)goldCoins {
     return _goldCoins;
 }
-#pragma mark PetLevel
+#pragma mark - PetLevel
 - (void)setPetLevel:(NSInteger)petLevel {
     _petLevel = petLevel;
     [self.userDefaults setInteger:_petLevel forKey:kPetLevelKey];
@@ -87,7 +96,7 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 - (NSInteger)petLevel {
     return _petLevel;
 }
-#pragma mark PetName
+#pragma mark - PetName
 - (void)setPetName:(NSString *)petName {
     _petName = petName;
     [self.userDefaults setObject:_petName forKey:kPetNameKey];
@@ -96,7 +105,7 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 - (NSString *)petName {
     return _petName;
 }
-#pragma mark Primary
+#pragma mark - Primary
 - (void)setPrimary:(BOOL)primary {
     _primary = primary;
     [self.userDefaults setBool:_primary forKey:kPrimaryKey];
@@ -105,7 +114,7 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 - (BOOL)isPrimary {
     return _primary;
 }
-#pragma mark Authorized
+#pragma mark - Authorized
 - (void)setAuthorized:(BOOL)authorized {
     _authorized = authorized;
     [self.userDefaults setBool:_authorized forKey:kAuthorizedKey];

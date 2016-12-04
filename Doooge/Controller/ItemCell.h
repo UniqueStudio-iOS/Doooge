@@ -11,7 +11,7 @@
 typedef void(^PurchaseHandler)(ItemCellStyle style, NSString * name, NSInteger price);
 
 @interface ItemCell : UICollectionViewCell
-@property (nonatomic, strong) NSString * name;
+@property (nonatomic, copy) NSString * name;
 @property (nonatomic, strong) UIImage * image;
 @property (nonatomic) NSInteger price;
 
