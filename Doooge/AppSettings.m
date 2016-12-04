@@ -44,8 +44,8 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
         _userDefaults = [[NSUserDefaults alloc]initWithSuiteName:kSuiteName];
         
         [_userDefaults registerDefaults:@{
-                                          kGrowthPointsKey:@50,
-                                          kGoldCoinsKey:@20,
+                                          kGrowthPointsKey:@295,
+                                          kGoldCoinsKey:@50,
                                           kPetLevelKey:@1,
                                           kPetNameKey:@"Doooge",
                                           kPrimaryKey:@YES,
@@ -63,6 +63,15 @@ static NSString * kSuiteName = @"group.com.vic.Doooge";
 #pragma mark GrowthPoints
 - (void)setGrowthPoints:(NSInteger)growthPoints {
     _growthPoints = growthPoints;
+    if (_growthPoints < 0) {
+        _growthPoints = 0;
+    }
+    if (_growthPoints >= (self.petLevel * 50 + 250)) {
+        NSInteger goldCoinsAdd = ((self.petLevel * 5 + 10) > 100)?100:(self.petLevel * 5 + 10);
+        self.goldCoins = self.goldCoins + goldCoinsAdd;
+        _growthPoints = _growthPoints - (self.petLevel * 50 + 250) + 50;
+        self.petLevel += 1;
+    }
     [self.userDefaults setInteger:_growthPoints forKey:kGrowthPointsKey];
 }
 

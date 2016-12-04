@@ -70,6 +70,8 @@ static NSString * const kSleepKey = @"睡觉";
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[AppSettings sharedSettings]calculateGrowthPointsWithDailyRoutines];
+    [[AppSettings sharedSettings]calculateGrowthPointsWithCustomHabits];
     NSUserDefaults * userDefaults = [AppSettings sharedSettings].userDefaults;
     [self updateDailyRoutinesWithUserDefaults:userDefaults];
     [self updateCustomHabitsWithUserDefaults:userDefaults];

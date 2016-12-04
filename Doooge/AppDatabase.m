@@ -110,8 +110,9 @@
 - (void)updateDailyRoutineWithName:(NSString *)name fromUserDefaults:(NSUserDefaults *)userDefaults {
     DailyRoutine * dailyRoutine = [self dailyRoutineWithName:name];
     NSDictionary * dailyRoutineDictionary = [userDefaults objectForKey:name];
+    NSInteger persistDays = [dailyRoutineDictionary[@"persist"]integerValue];
     [self.realm beginWriteTransaction];
-    dailyRoutine.persistDays = [dailyRoutineDictionary[@"persist"]integerValue];
+    dailyRoutine.persistDays = persistDays;
     [self.realm commitWriteTransaction];
     NSLog(@"Update Daily Routine From UserDefaults.");
 }

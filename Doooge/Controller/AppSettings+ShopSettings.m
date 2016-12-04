@@ -45,7 +45,7 @@
     
     [dictionary setObject:[NSNumber numberWithInteger:[[dictionary objectForKey:name]integerValue] + 1] forKey:name];
     
-    [self.userDefaults setObject:dictionary forKey:@"food"];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:dictionary] forKey:@"food"];
 }
 
 - (NSInteger)foodWithName:(NSString *)name {
@@ -58,7 +58,7 @@
     
     [dictionary setObject:[NSNumber numberWithBool:YES] forKey:name];
     
-    [self.userDefaults setObject:dictionary forKey:@"toy"];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:dictionary] forKey:@"toy"];
 }
 
 - (BOOL)toyStatusWithName:(NSString *)name {
@@ -72,8 +72,8 @@
     NSMutableDictionary * decorateItem = [[decorateItems objectForKey:name]mutableCopy];
     decorateItem[@"buy"] = @YES;
     
-    [decorateItems setObject:decorateItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:decorateItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (void)useDecorateWithName:(NSString *)name {
@@ -82,8 +82,8 @@
     NSMutableDictionary * targetItem = [[decorateItems objectForKey:name]mutableCopy];
     targetItem[@"use"] = @YES;
     
-    [decorateItems setObject:targetItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:targetItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (void)unuseDecorateWithName:(NSString *)name {
@@ -92,8 +92,8 @@
     NSMutableDictionary * targetItem = [[decorateItems objectForKey:name]mutableCopy];
     targetItem[@"use"] = @NO;
     
-    [decorateItems setObject:targetItem forKey:name];
-    [self.userDefaults setObject:decorateItems forKey:@"decorate"];
+    [decorateItems setObject:[NSDictionary dictionaryWithDictionary:targetItem] forKey:name];
+    [self.userDefaults setObject:[NSDictionary dictionaryWithDictionary:decorateItems] forKey:@"decorate"];
 }
 
 - (BOOL)decoratePurchaseStatusWithName:(NSString *)name {

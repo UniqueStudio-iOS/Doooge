@@ -23,4 +23,7 @@
 - (void)deleteCustomHabitWithName:(NSString *)name;
 - (void)updateCustomHabitWithName:(NSString *)name lastClocked:(NSDate *)date andPersistDays:(NSInteger)persistDays;
 - (NSDictionary *)customHabitWithName:(NSString *)name;
+
+- (void)calculateGrowthPointsWithDailyRoutines;
+- (void)calculateGrowthPointsWithCustomHabits;
 @end

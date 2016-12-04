@@ -199,10 +199,12 @@
         _dailyRoutineSectionHeaderView.packButtonPressedHandler = ^(BOOL isPacked) {
             if (isPacked) {
                 dailyRoutineCellRows = 0;
-                [weakSelf.tableView reloadData];
+                [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
+//                [weakSelf.tableView reloadData];
             } else {
                 dailyRoutineCellRows = dailyRoutines.count;
-                [weakSelf.tableView reloadData];
+                [weakSelf.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.30];
+//                [weakSelf.tableView reloadData];
             }
         };
     }

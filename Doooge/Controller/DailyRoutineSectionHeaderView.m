@@ -22,8 +22,9 @@
     self.isPacked = !self.isPacked;
     [UIView animateWithDuration:0.50 delay:0.10 usingSpringWithDamping:1.00 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.packButton.transform = CGAffineTransformRotate(self.packButton.transform, M_PI);
-    } completion:^(BOOL finished) {
         self.packButtonPressedHandler(self.isPacked);
+    } completion:^(BOOL finished) {
+        
     }];
 }
 @end

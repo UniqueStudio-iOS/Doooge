@@ -40,6 +40,10 @@
     return _calender;
 }
 
+- (NSDate *)yesterday {
+    return [NSDate dateWithTimeInterval:-24*60*60 sinceDate:self.date];
+}
+
 - (NSDate *)timeFromHour:(NSInteger)hour andMinute:(NSInteger)minute {
     NSDateComponents * components = [[NSDateComponents alloc]init];
     components.hour = hour;
@@ -69,5 +73,9 @@
     [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:date1];
     [self.calender rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:date2];
     return (NSInteger)[toDate timeIntervalSinceDate:fromDate]/(24*3600);
+}
+
+- (BOOL)isDate1:(NSDate *)date1 withinDate2:(NSDate *)date2 {
+    return ([date1 timeIntervalSinceDate:date2] <= 0);
 }
 @end
